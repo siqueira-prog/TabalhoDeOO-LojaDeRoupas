@@ -6,9 +6,8 @@ import java.util.*;
 import model.Usuario;
 
 
-
 //class
-public class Administrador extends Usuario {
+public class ControleAdministrador extends Usuario {
 	
 	// scanner
 	private Scanner sc = new Scanner(System.in);
@@ -17,7 +16,7 @@ public class Administrador extends Usuario {
 	private String matricula;
 	
 	//constructor
-	public Administrador( 
+	public ControleAdministrador( 
 			String c, 
 			String nom, 
 			String e, 
@@ -47,7 +46,7 @@ public class Administrador extends Usuario {
 	
 	public ArrayList<String>  cadastrar(ArrayList<String> data_adm, String c, String n, String e, String s, int niv ) { 
 								
-		Cliente cliente = new Cliente(
+		ControleAdministrador admin = new ControleAdministrador(
 				c,
 				n,
 				e,
@@ -55,11 +54,11 @@ public class Administrador extends Usuario {
 				niv
 				);
 		
-		data_adm.add(cliente.cpf);
-		data_adm.add(cliente.nomeDoUsuario);
-		data_adm.add(cliente.email);
-		data_adm.add(cliente.senha);
-		String cliente_nivel_String = Integer.toString(cliente.nivel);
+		data_adm.add(admin.cpf);
+		data_adm.add(admin.nomeDoUsuario);
+		data_adm.add(admin.email);
+		data_adm.add(admin.senha);
+		String cliente_nivel_String = Integer.toString(admin.nivel);
 		data_adm.add(cliente_nivel_String);
 			
 		return data_adm;

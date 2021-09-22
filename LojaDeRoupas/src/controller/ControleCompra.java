@@ -3,10 +3,12 @@ package controller;
 
 import java.util.*;
 
+import model.Produto;
+
 import model.CartaoDeCredito;
 
 //class
-public class Compra {
+public class ControleCompra {
 
 	//scanner
 	public static Scanner sc;
@@ -14,13 +16,13 @@ public class Compra {
 	//attribute 
 	private String idDaCompra;
 	private int qtdSolicitada;
-	private Cliente cliente;
+	private ControleCliente cliente;
 	private Produto produto;
 	private CartaoDeCredito cartao[];
 	
 	//constructor
 	
-	public Compra( String id, int qtd, Cliente c, Produto p) { 
+	public ControleCompra( String id, int qtd, ControleCliente c, Produto p) { 
 		idDaCompra = id;
 		qtdSolicitada = qtd ;
 		cliente = c;
@@ -62,10 +64,10 @@ public class Compra {
 	public void setQtdSolicitada(int qtdSolicitada) {
 		this.qtdSolicitada = qtdSolicitada;
 	}
-	public Cliente getCliente() {
+	public ControleCliente getCliente() {
 		return cliente;
 	}
-	public void setCliente(Cliente cliente) {
+	public void setCliente(ControleCliente cliente) {
 		this.cliente = cliente;
 	}
 	public Produto getProduto() {
@@ -83,6 +85,7 @@ public class Compra {
 
 }
 	
+
 
 
 

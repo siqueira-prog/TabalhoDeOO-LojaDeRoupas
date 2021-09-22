@@ -3,9 +3,11 @@ package controller;
 
 import java.util.*;
 
+import model.Produto;
+
 
 //class
-public class Camiseta extends Produto {
+public class ControleCamiseta extends Produto {
 	
 	// scanner
 	private Scanner sc = new Scanner(System.in);
@@ -19,7 +21,7 @@ public class Camiseta extends Produto {
 	private String codigo;
 	
 	//constructor
-	public Camiseta(String cod,String n, String c, String t, String comp, String tp) {
+	public ControleCamiseta(String cod,String n, String c, String t, String comp, String tp) {
 		codigo = cod;
 		nome = n;
 		cor = c;
@@ -40,7 +42,7 @@ public class Camiseta extends Produto {
 			String tp 
 			) { 
 								
-		Camiseta camisa = new Camiseta(
+		ControleCamiseta camisa = new ControleCamiseta(
 				cod,
 				n,
 				c,
@@ -173,3 +175,4 @@ public class Camiseta extends Produto {
 	
 	
 }
+

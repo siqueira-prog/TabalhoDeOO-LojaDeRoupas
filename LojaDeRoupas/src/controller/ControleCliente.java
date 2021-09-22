@@ -10,7 +10,7 @@ import model.Endereco;
 import model.Telefone;
 
 //class
-public class Cliente extends Usuario{
+public class ControleCliente extends Usuario{
 	
 	// scanner
 	private Scanner sc = new Scanner(System.in);
@@ -21,7 +21,7 @@ public class Cliente extends Usuario{
 	private CartaoDeCredito cartao[];
 	
 	//constructor
-	public Cliente( 
+	public ControleCliente( 
 			String c, 
 			String nom, 
 			String e, 
@@ -54,7 +54,7 @@ public class Cliente extends Usuario{
 	
 	public ArrayList<String>  cadastrar(ArrayList<String> data_client, String c, String n, String e, String s, int niv ) { 
 								
-		Cliente cliente = new Cliente(
+		ControleCliente cliente = new ControleCliente(
 				c,
 				n,
 				e,

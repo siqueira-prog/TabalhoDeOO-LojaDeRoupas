@@ -1,5 +1,7 @@
 package view;
 
-public class TelaDeCadastroDeCliente {
+import javax.swing.*;
 
+public class TelaDeCadastroDeCliente extends JFrame {
+	
 }
