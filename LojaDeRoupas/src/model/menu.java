@@ -27,7 +27,9 @@ public static void main(String[] args) {
 					+ "Digite 1 para testar os métodos da classe Cliente.\n"
 					+ "Digite 2 para testar os métodos da classe Administrador\n"
 					+ "Digite 3 para testar os métodos da classe Camiseta\n"
-					+ "Digite 4 para sair.");
+					+ "Digite 4 para testar os métodos da classe Loja."
+					+ "5 Para sair");
+			
 			int opcao = sc.nextInt(); 
 			
 			if (opcao == 1) {
@@ -39,8 +41,11 @@ public static void main(String[] args) {
 	 	 	else if (opcao == 3) {
 				testeCamiseta();
 			}
-	 	 			
 	 	 	else if (opcao == 4) {
+				testeLoja();
+			}
+	 	 			
+	 	 	else if (opcao == 5) {
 	 	 		System.out.println("Obrigado por usar o nosso sistema de teste, tenha um ótimo dia!"
 	 	 							+"\n"
 	 	 							+"Volte sempre!");
@@ -307,6 +312,60 @@ public static void testeCamiseta() {
 				
 				);
 }
-public static void testeLoja() {}
+public static void testeLoja() {
+//criando database - data_client
+	ArrayList<String> data_loja = new ArrayList<String>();
+	
+	//instanciando objetos - class Cliente
+	
+	Loja loja1 = new Loja(null, null, null, null);
+	
+	//metodo cadastrar - class Cliente 
+	
+	loja1.cadastrar(data_loja, "1654654", "Seila", "Seinao", "emailinstitu@email.com");
 
+	// metodo visualizar - class Cliente 
+	
+	System.out.println("Abaixo estarão alguns dados pré cadastrados de clientes fictícios" + "\n" + "\n");
+	
+	loja1.visualizar(data_loja, "emailinstitu@email.com");
+	
+	// metodo editar - class Cliente 
+	
+	System.out.println(
+			"Agora testa-se o método editar. Contudo, os clientes 1, 2 e 10 estão progamados" + "\n"+
+			"para serem atualizados. O cliente a ser atualizado pode ser alterado pelo parametro" + "\n"+
+			"na função editar."+ "\n"
+			);
+	
+//	cliente1.editar(data_client, "1111111");
+//	System.out.println("\n");
+//	cliente1.visualizar(data_client, "1111111");
+//	
+//	cliente2.editar(data_client, "2111111");
+//	System.out.println("\n");
+//	cliente2.visualizar(data_client, "2111111");
+//	
+//	cliente10.editar(data_client, "10101010101010");
+//	System.out.println("\n");
+//	cliente10.visualizar(data_client, "10101010101010");
+	
+	// metodo deletar -- class Cliente 
+	
+//	System.out.println(
+//			 "\n" + "\n" + 
+//			"Após o teste do método editar, o método deletar é acionado para teste." + "\n" + "\n"
+//	);
+//	
+//	cliente1.deletar(data_client, "1111111");
+//	cliente2.deletar(data_client, "2111111");
+//	cliente10.deletar(data_client, "10101010101010");
+//	
+//	System.out.println(
+//			"\n"+
+//			"database após deleção dos clientes solicitados: " + "\n" +
+//			data_client
+//			
+//			);
+	}
 }
