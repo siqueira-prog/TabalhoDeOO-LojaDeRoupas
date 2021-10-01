@@ -7,7 +7,7 @@ import java.util.*;
 public class Loja {
 	
 	//scanner
-	public static Scanner sc;
+	private Scanner sc = new Scanner(System.in);
 			
 	//attribute
 	private String nomeDaLoja;
@@ -17,9 +17,9 @@ public class Loja {
 	//private Endereco endereco;
 	
 	//constructor
-	public Loja(String n, String c, String nf, String ec) { 
-		nomeDaLoja = n;
+	public Loja(String c, String n, String nf, String ec) { 
 		cnpj = c ;
+		nomeDaLoja = n;
 		nomeFantasia = nf;
 		emailComercial = ec;
 		//endereco = e;
@@ -27,8 +27,8 @@ public class Loja {
 	
 	//toString
 	public String toString() {
-		return  "nomeDaLoja :" + nomeDaLoja + "\n" +
-				"cnpj :" + cnpj + "\n" +
+		return  "cnpj :" + cnpj + "\n" +
+				"nomeDaLoja :" + nomeDaLoja + "\n" +
 				"nomeFantasia :" + nomeFantasia + "\n" +
 				"emailComercial :" + emailComercial + "\n"; //+
 				//"endereco :" + endereco + "\n";
@@ -61,53 +61,76 @@ public class Loja {
 			
 			return data_loja;
 		}
-		public void visualizar(ArrayList<String> data_loja, String emailComercial) {
+		public void visualizar(ArrayList<String> data_loja, String cnpj) {
 			
-			int position = data_loja.indexOf(emailComercial);
+			int position = data_loja.indexOf(cnpj);
 			
-			if(data_loja.contains(emailComercial)) {
+			if(data_loja.contains(cnpj)) {
 				
 				System.out.println(
 						
 						"INFORMAÇÕES DA LOJA"+"\n"+
-						"nomeDaLoja: " + data_loja.get(position-3)+"\n"+
-						"cnpj: " + data_loja.get(position-2)+"\n"+
-						"nomeFantasia: " + data_loja.get(position-1)+"\n"+
-						"emailComercial: " + data_loja.get(position)+"\n"
+						"cnpj: " + data_loja.get(position)+"\n"+
+						"nomeDaLoja: " + data_loja.get(position+1)+"\n"+
+						"nomeFantasia: " + data_loja.get(position+2)+"\n"+
+						"emailComercial: " + data_loja.get(position+3)+"\n"
 						
 						);
 				}
 				
 			else {
 				
-				System.out.println("Endereço não encontrado!");	}
+				System.out.println("Loja não cadastrada!");	}
 			
 		}	
 		
-		public void editar(ArrayList<String> data_loja, String emailComercial) {
+		public ArrayList<String>  editar(ArrayList<String> data_loja, String c) {
 			
-			int position = data_loja.indexOf(emailComercial);
-				
+			
+			int position = data_loja.indexOf(c);
+			
+			
 			data_loja.remove(position);
-			data_loja.remove(position-1);
-			data_loja.remove(position-2);
-			data_loja.remove(position-3);
+			data_loja.remove(position);
+			data_loja.remove(position);
+			data_loja.remove(position);
+			
+			String cnpj = c;
+			data_loja.add(cnpj);
+			
+			System.out.println("Digite o novo nome da loja: " + "\n");
+			String nome = sc.nextLine();
+			data_loja.add(nome);
+			
+			System.out.println("Digite o novo nome fantasia da loja: " + "\n");
+			String nomef = sc.nextLine();
+			data_loja.add(nomef);
+			
+			System.out.println("Digite o novo email comercial da loja: " + "\n");
+			String email = sc.nextLine();
+			data_loja.add(email);
 
+			
+			System.out.println("Dados atualizados com sucesso!");
+						
+			return data_loja;
+		}
 		
-			System.out.println("Digite o nome da loja: " + "\n");
-			String new_nomeDaLoja = sc.nextLine();
-			data_loja.add(new_nomeDaLoja);
-			System.out.println("Digite o cpnj da loja: " + "\n");
-			String new_cpnj = sc.nextLine();
-			data_loja.add(new_cpnj);
-			System.out.println("Digite o nome fantasia da loja: " + "\n");
-			String nomeFantasia = sc.nextLine();
-			data_loja.add(nomeFantasia);
-			System.out.println("Digite o email comercial da loja " + "\n");
-			String new_emailComercial = sc.nextLine();
-			data_loja.add(new_emailComercial);
-				
-			}
+		public ArrayList<String>  deletar(ArrayList<String> data_loja, String cnpj) {
+			
+			// deleting registration
+			
+			int position = data_loja.indexOf(cnpj);
+			
+			data_loja.remove(position);
+			data_loja.remove(position);
+			data_loja.remove(position);
+			data_loja.remove(position);
+
+			
+			System.out.println("Cadastro deletado com sucesso!");
+			return data_loja;
+		}
 	//getters and setters 
 	public String getNomeDaLoja() {
 		return nomeDaLoja;

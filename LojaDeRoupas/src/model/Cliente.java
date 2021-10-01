@@ -52,7 +52,7 @@ public class Cliente extends Usuario{
 		Cliente cliente = new Cliente(
 				c,
 				n,
-				e,
+				e, 			
 				s,
 				niv
 				);

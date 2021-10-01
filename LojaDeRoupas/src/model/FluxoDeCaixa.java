@@ -13,6 +13,16 @@ public class FluxoDeCaixa {
 			produto = p;
 			compra = c;
 		}
+	
+	// method construction
+		
+		public  void exportar() {
+			
+		}
+		
+		public  void visualizar() {
+			
+		}
 		
 	//getters and setters 
 	public Produto getProduto() {
@@ -26,16 +36,6 @@ public class FluxoDeCaixa {
 	}
 	public void setCompra(Compra compra) {
 		this.compra = compra;
-	}
-	
-	// method construction
-	
-	public  void exportar() {
-		
-	}
-	
-	public  void visualizar() {
-		
 	}
 		
 }

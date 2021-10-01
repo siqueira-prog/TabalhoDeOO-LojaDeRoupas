@@ -8,17 +8,20 @@ import java.util.*;
 public class Endereco {
 	
 	//scanner
-			public static Scanner sc;
+	private Scanner sc = new Scanner(System.in);
 			
 	//attribute
+	private String id;
+	private String cep;
 	private String logradouro;
 	private int numeroEnd;
 	private String bairro;
-	private String cep;
 	private String cidade;
 	private String estado;
+	
 	//constructor
-		public Endereco( String l, int n, String b, String c, String cid, String e) { 
+	public Endereco(String identificador, String c, String l, int n, String b, String cid, String e) { 
+			id = identificador;
 			logradouro = l;
 			numeroEnd = n;
 			bairro = b; 
@@ -29,33 +32,47 @@ public class Endereco {
 		
 	//method construction
 		
-		public void cadastrar() { 
+	public ArrayList<String> cadastrar(ArrayList<String> data_endereco, String id, String c, String l, int n, String b, String cid, String e) { 
 			
-			ArrayList<String> data_endereco = new ArrayList<String>();
-			data_endereco.add(logradouro); 
-			String numeroEnd_string = Integer.toString(numeroEnd);
+			Endereco endereco = new Endereco(
+					id,
+					c,
+					l,
+					n,
+					b,
+					cid,
+					e
+					);
+			
+			data_endereco.add(endereco.id);
+			data_endereco.add(endereco.cep); 
+			data_endereco.add(endereco.logradouro); 
+			
+			String numeroEnd_string = Integer.toString(endereco.numeroEnd);
 			data_endereco.add(numeroEnd_string);
-			data_endereco.add(bairro); 
-			data_endereco.add(cep); 
-			data_endereco.add(cidade); 
-			data_endereco.add(estado); 
+			
+			data_endereco.add(endereco.bairro); 
+			data_endereco.add(endereco.cidade); 
+			data_endereco.add(endereco.estado);
+			
+			return data_endereco; 
 			
 			
 		}
 		
-		public void visualizar(ArrayList<String> data_endereco, String logradouro) {
+	public void visualizar(ArrayList<String> data_endereco, String id) {
 			
-			int position = data_endereco.indexOf(logradouro);
+			int position = data_endereco.indexOf(id);
 			
-			if(data_endereco.contains(logradouro)) {
+			if(data_endereco.contains(id)) {
 				
 				System.out.println(
 						
-						"INFORMAÇÕES DE ENDEREÇO"+"\n"+
-						"logradouro: " + data_endereco.get(position)+"\n"+
-						"numeroEnd: " + data_endereco.get(position+1)+"\n"+
-						"bairro: " + data_endereco.get(position+2)+"\n"+
-						"cep: " + data_endereco.get(position+3)+"\n"+
+						"INFORMAÇÕES DO ENDEREÇO"+"\n"+
+						"Cep: " + data_endereco.get(position)+"\n"+
+						"Logradouro: " + data_endereco.get(position+1)+"\n"+
+						"Número do endereço: " + data_endereco.get(position+2)+"\n"+
+						"bairro: " + data_endereco.get(position+3)+"\n"+
 						"cidade: " + data_endereco.get(position+4)+"\n"+
 						"estado: " + data_endereco.get(position+5)+"\n"
 						
@@ -68,33 +85,36 @@ public class Endereco {
 			
 		}	
 		
-		public void editar(ArrayList<String> data_endereco, String logradouro) {
+	public void editar(ArrayList<String> data_endereco, String id) {
 			
-			int position = data_endereco.indexOf(logradouro);
-				
+			int position = data_endereco.indexOf(id);
+			
 			data_endereco.remove(position);
-			data_endereco.remove(position+1);
-			data_endereco.remove(position+2);
-			data_endereco.remove(position+3);
-			data_endereco.remove(position+4);
-			data_endereco.remove(position+5);
-		
-			System.out.println("Digite seu logradouro: " + "\n");
-			String new_logradouro = sc.nextLine();
-			data_endereco.add(new_logradouro);
-			System.out.println("Digite seu numeroEnd: " + "\n");
-			String new_numeroEnd = sc.nextLine();
-			data_endereco.add(new_numeroEnd);
-			System.out.println("Digite seu bairro: " + "\n");
-			String new_bairro = sc.nextLine();
-			data_endereco.add(new_bairro);
-			System.out.println("Digite seu cep: " + "\n");
+			data_endereco.remove(position);
+			data_endereco.remove(position);
+			data_endereco.remove(position);
+			data_endereco.remove(position);
+			data_endereco.remove(position);
+			data_endereco.remove(position);
+			
+			data_endereco.add(id);
+			
+			System.out.println("Digite o cep: " + "\n");
 			String new_cep = sc.nextLine();
 			data_endereco.add(new_cep);
+			System.out.println("Digite o logradouro: " + "\n");
+			String new_logradouro = sc.nextLine();
+			data_endereco.add(new_logradouro);
+			System.out.println("Digite o número do endereço: " + "\n");
+			String new_numeroEnd = sc.nextLine();
+			data_endereco.add(new_numeroEnd);
+			System.out.println("Digite o bairro: " + "\n");
+			String new_bairro = sc.nextLine();
+			data_endereco.add(new_bairro);
 			System.out.println("Digite seu cidade: " + "\n");
 			String new_cidade = sc.nextLine();
 			data_endereco.add(new_cidade);
-			System.out.println("Digite seu estado: " + "\n");
+			System.out.println("Digite sua estado: " + "\n");
 			String new_estado = sc.nextLine();
 			data_endereco.add(new_estado);
 				
@@ -120,15 +140,12 @@ public class Endereco {
 	public void setBairro(String bairro) {
 		this.bairro = bairro;
 	}
-	
 	public String getCep() {
 		return cep;
 	}
-
 	public void setCep(String cep) {
 		this.cep = cep;
 	}
-
 	public String getCidade() {
 		return cidade;
 	}

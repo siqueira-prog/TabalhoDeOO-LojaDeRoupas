@@ -8,85 +8,97 @@ import java.util.Scanner;
 public class Telefone {
 	
 	//scanner
-		public static Scanner sc;
-		
+	private Scanner sc = new Scanner(System.in);
+	
 	//attribute 
+	private int id;
 	private int ddd;
 	private int numero;
 		
 	//constructor
-		public Telefone(int d, int n) { 
+		public Telefone(int identificador, int d, int n) { 
+			id = identificador;
 			ddd = d;
 			numero = n;
 		}
 		
-		//toString 
+	//method construction
 		
-		public String toString() {
-			return  "ddd :" + ddd + "\n" +
-					"numero :" + numero + "\n" ;
+	public ArrayList<String>  cadastrar(ArrayList<String> data_telefone, int i, int d, int n) { 
+			
+			 Telefone telefone = new Telefone(
+					 i,
+					 d,
+					 n
+					);
+			 
+			 String id_String = Integer.toString(telefone.id);
+			 data_telefone.add(id_String);
+			 
+			 String ddd_String = Integer.toString(telefone.ddd);
+			 data_telefone.add(ddd_String);
+			 
+			 String numero_String = Integer.toString(telefone.numero);
+			 data_telefone.add(numero_String);
+			 
+			 
+			return data_telefone; 
+			
+			
 		}
 		
-		//method construction
-		
-		public void cadastrar() { 
-			
-			ArrayList<String> data_tell = new ArrayList<String>();
-			String ddd_string = Integer.toString(ddd);
-			String numero_string = Integer.toString(numero);
-			data_tell.add(ddd_string); 
-			data_tell.add(numero_string); 
-			
-			
-		}
-		
-		public void visualizar(ArrayList<String> data_tell, String numero) {
+		public void visualizar(ArrayList<String> data_telefone, String id) {
 					
-					int position = data_tell.indexOf(numero);
+					int position = data_telefone.indexOf(id);
 					
-					if(data_tell.contains(numero)) {
+					if(data_telefone.contains(id)) {
 						
 						System.out.println(
 								
 								"INFORMAÇÕES DE TELEFONE"+"\n"+
-								"ddd: " + data_tell.get(position-1)+"\n"+
-								"numero: " + data_tell.get(position)+"\n"
+								"Telefone número: " + data_telefone.get(position)+"\n"+
+								"ddd: " + data_telefone.get(position+1)+"\n"+
+								"numero: " + data_telefone.get(position+2)+"\n"
 								
 								);
 						}
 						
 					else {
 						
-						System.out.println("Numero não encontrado!");	}
+						System.out.println("Telefone não encontrado!");	}
 					
 				}		
 		
-		public void editar(ArrayList<String> data_tell, String numero) {
+		public void editar(ArrayList<String> data_telefone, String id) {
 						
-					int position = data_tell.indexOf(numero);
+					int position = data_telefone.indexOf(id);
 						
-					data_tell.remove(position);
-					data_tell.remove(position-1);
+					data_telefone.remove(position);
+					data_telefone.remove(position);
+					data_telefone.remove(position);
+					
+					data_telefone.add(id);
 				
 					System.out.println("Digite seu ddd: " + "\n");
 					String new_ddd = sc.nextLine();
-					data_tell.add(new_ddd);
+					data_telefone.add(new_ddd);
 					System.out.println("Digite seu numero: " + "\n");
 					String new_numero = sc.nextLine();
-					data_tell.add(new_numero);
+					data_telefone.add(new_numero);
 						
 						
 					}
 					
-		public void deletar(ArrayList<String> data_tell, String numero) {
+		public void deletar(ArrayList<String> data_telefone, String id) {
 					
 					// deleting registration
 					
 					
-					int position = data_tell.indexOf(numero);
+					int position = data_telefone.indexOf(id);
 					
-					data_tell.remove(position);
-					data_tell.remove(position-1);
+					data_telefone.remove(position);
+					data_telefone.remove(position);
+					data_telefone.remove(position);
 					
 					
 				}

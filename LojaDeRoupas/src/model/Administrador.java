@@ -110,7 +110,7 @@ public class Administrador extends Usuario {
 			System.out.println("Digite sua nova senha: " + "\n");
 			String senha = sc.nextLine();
 			data_adm.add(senha);
-			String nivel = "1";
+			String nivel = "0";
 			data_adm.add(nivel);
 			
 			System.out.println("Dados atualizados com sucesso!");
