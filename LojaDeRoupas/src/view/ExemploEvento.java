@@ -9,6 +9,7 @@ public class ExemploEvento implements ActionListener {
    private static JFrame f;
    private static JButton b;
 
+   // Exemplo de evento
    public ExemploEvento() {
       f = new JFrame("Exemplo de Evento");
       b = new JButton("Clique aqui!");
