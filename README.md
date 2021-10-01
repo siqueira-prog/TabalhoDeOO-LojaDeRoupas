@@ -1,2 +1,2 @@
 # TabalhoDeOO-LojaDeRoupas
-Reposit√≥rio para desenvolvimento de um Software em Java utilizando o padr√£o MVC na Discplina de Orienta√ß√£o √† Objetos
+Professora, o frontend ainda n„o est· integrado com o backend, sugiro visualizar os arquivos isoladamente, os CRUD'S est„o todos prontos, porÈm ainda est· na pasta model vamos pass·-los para a controller quando formos fazer a integraÁ„o a frontend.
