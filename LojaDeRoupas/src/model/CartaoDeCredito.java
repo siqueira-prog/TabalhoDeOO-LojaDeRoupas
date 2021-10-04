@@ -28,8 +28,20 @@ public class CartaoDeCredito{
 		anoDataVenc = a;
 	}
 	
-	//method construction
+
+	public String toString() {
+		return 	  "\n"+"bandeira do cartão  = " + bandeira
+				+ "\n"+"Número do cartão    = " + numeroDoCartao 
+				+ "\n"+"Código de segurança = "+ codigoDeSeguranca 
+				+ "\n"+"Data de criação     = " + dataNasc 
+				+ "\n"+"Mês de vencimento   = " + mesDataVenc 
+				+ "\n"+"Ano de vencimento   = "+ anoDataVenc + "\n";
+	}
+
+
 	
+	//method construction
+
 	public ArrayList<String>  cadastrar(ArrayList<String> data_cartao, String c, String b, String n, String d, int m, int a) { 
 		
 		CartaoDeCredito cartao = new CartaoDeCredito(

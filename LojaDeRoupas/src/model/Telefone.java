@@ -22,8 +22,17 @@ public class Telefone {
 			numero = n;
 		}
 		
+	
+		
 	//method construction
 		
+	@Override
+		public String toString() {
+			return "" + ddd + "" + numero;
+		}
+
+
+
 	public ArrayList<String>  cadastrar(ArrayList<String> data_telefone, int i, int d, int n) { 
 			
 			 Telefone telefone = new Telefone(

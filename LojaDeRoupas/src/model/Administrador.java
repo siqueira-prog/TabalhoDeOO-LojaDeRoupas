@@ -1,30 +1,29 @@
 // package
 package model;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Random;
 
 //class
 public class Administrador extends Usuario {
 	
-	// scanner
-	private Scanner sc = new Scanner(System.in);
-	
 	//attribute 
-	private String matricula;
+	private int matricula;
 	
 	//constructor
 	public Administrador( 
-			String c, 
+			int c, 
 			String nom, 
 			String e, 
 			String s, 
+			int m,
 			int niv) 
 	{ 
-		nomeDoUsuario = nom;
-		cpf = c;
-		email = e;	
-		senha = s;
-		nivel = niv;
+		this.nomeDoUsuario = nom;
+		this.cpf = c;
+		this.email = e;	
+		this.senha = s; 
+		this.nivel = niv;
 	}
 	
 	//toString
@@ -41,27 +40,54 @@ public class Administrador extends Usuario {
 	
 	//method construction
 	
-	public ArrayList<String>  cadastrar(ArrayList<String> data_adm, String c, String n, String e, String s, int niv ) { 
-								
-		Cliente cliente = new Cliente(
+		//refatorado - atributo matrícula adicionado no cadastro/tirei os prints
+	public ArrayList<String>  cadastrar(
+			ArrayList<String> data_adm,
+			int c,
+			String n,
+			String e,
+			String s,
+			Telefone tel,
+			Endereco end[],
+			CartaoDeCredito cdc[]
+			) { 
+		
+		Random random = new Random();
+		int m = random.nextInt(100000000);
+		
+		int niv = 0;
+		
+		Administrador administrador = new Administrador(
 				c,
 				n,
 				e,
 				s,
+				m,
 				niv
 				);
 		
-		data_adm.add(cliente.cpf);
-		data_adm.add(cliente.nomeDoUsuario);
-		data_adm.add(cliente.email);
-		data_adm.add(cliente.senha);
-		String cliente_nivel_String = Integer.toString(cliente.nivel);
+		String cpf_String = Integer.toString(administrador.cpf);
+		data_adm.add(cpf_String);
+		
+		data_adm.add(administrador.nomeDoUsuario);
+		
+		data_adm.add(administrador.email);
+		
+		data_adm.add(administrador.senha);
+		
+		String matricula_string = Integer.toString(m);
+		data_adm.add(matricula_string);
+		
+		String cliente_nivel_String = Integer.toString(administrador.nivel);
 		data_adm.add(cliente_nivel_String);
 			
 		return data_adm;
 		}
 
-		public void  visualizar(ArrayList<String> data_adm, String c) {
+		// preciso entender como integrar o método visualizar com a interface gráfica
+	public void  visualizar(
+			ArrayList<String> data_adm,
+			String c) {
 			
 			
 			int position = data_adm.indexOf(c);
@@ -75,7 +101,8 @@ public class Administrador extends Usuario {
 						"Nome: " + data_adm.get(position+1)+"\n"+
 						"Email: " + data_adm.get(position+2)+"\n"+
 						"Senha: " + data_adm.get(position+3)+"\n"+
-						"Nível: " + data_adm.get(position+4)+"\n"
+						"Matricula: " + data_adm.get(position+4)+"\n"+
+						"Nível: " + data_adm.get(position+5)+"\n"
 						
 						);
 				}
@@ -86,40 +113,51 @@ public class Administrador extends Usuario {
 			
 		}
 		
-
-		public ArrayList<String>  editar(ArrayList<String> data_adm, String c) {
-			
-			
-			int position = data_adm.indexOf(c);
-			
+		//refatorado - atributo matrícula adicionado no método editar/tirei os prints
+	public ArrayList<String>  editar(
+			ArrayList<String> data_adm,
+			String cpf,
+			String n,
+			String e,
+			String s,
+			Telefone tel,
+			Endereco end[],
+			CartaoDeCredito cdc[]
+			) 
+	{
+			int position = data_adm.indexOf(cpf);
 			
 			data_adm.remove(position);
 			data_adm.remove(position);
 			data_adm.remove(position);
 			data_adm.remove(position);
 			data_adm.remove(position);
+			data_adm.remove(position);
 			
-			String cpf = c;
 			data_adm.add(cpf);
-			System.out.println("Digite seu novo nome: " + "\n");
-			String nome = sc.nextLine();
-			data_adm.add(nome);
-			System.out.println("Digite seu novo email: " + "\n");
-			String email = sc.nextLine();
-			data_adm.add(email);
-			System.out.println("Digite sua nova senha: " + "\n");
-			String senha = sc.nextLine();
-			data_adm.add(senha);
+			
+			data_adm.add(n);
+			
+			data_adm.add(e);
+			
+			data_adm.add(s);
+			
+			// a matrícula é sempre gerada de forma aleatória
+			Random random = new Random();
+			int m = random.nextInt(100000000);
+			
+			String matricula_string = Integer.toString(m);
+			data_adm.add(matricula_string);
+			
+			// o nivel do administrador é sempre 0
 			String nivel = "0";
 			data_adm.add(nivel);
-			
-			System.out.println("Dados atualizados com sucesso!");
 						
 			return data_adm;
 		}
-
-
-		public ArrayList<String>  deletar(ArrayList<String> data_adm, String c) {
+	
+		//refatorado - atributo matrícula também é deletado
+	public ArrayList<String>  deletar(ArrayList<String> data_adm, String c) {
 			
 			// deleting registration
 			
@@ -130,17 +168,17 @@ public class Administrador extends Usuario {
 			data_adm.remove(position);
 			data_adm.remove(position);
 			data_adm.remove(position);
+			data_adm.remove(position);
 			
-			System.out.println("Cadastro deletado com sucesso!");
 			return data_adm;
 		}
 	
 	//getters and setters
-	public String getMatricula() {
+	public int getMatricula() {
 		return matricula;
 	}
 
-	public void setMatricula(String matricula) {
+	public void setMatricula(int matricula) {
 		this.matricula = matricula;
 	}
 
@@ -152,11 +190,11 @@ public class Administrador extends Usuario {
 		this.nomeDoUsuario = nomeDoUsuario;
 	}
 
-	public String getCpf() {
+	public int getCpf() {
 		return cpf;
 	}
 
-	public void setCpf(String cpf) {
+	public void setCpf(int cpf) {
 		this.cpf = cpf;
 	}
 

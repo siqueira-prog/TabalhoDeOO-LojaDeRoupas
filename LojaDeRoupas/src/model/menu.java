@@ -33,7 +33,8 @@ public static void main(String[] args) {
 					+ "Digite 7 para testar os métodos da classe Endereco\n"
 					+ "Digite 8 para testar os métodos da classe Telefone\n"
 					+ "Digite 9 para testar os métodos da classe FluxoDeCaixa\n"
-					+ "Digite 10 Para sair\n");
+					+ "digite 10 para usar o teste auxiliar\n"
+					+ "Digite 11 Para sair\n");
 			
 			int opcao = sc.nextInt(); 
 			
@@ -64,8 +65,11 @@ public static void main(String[] args) {
 	 	 	else if (opcao == 9) {
 	 	 		testeFluxoDeCaixa();
 			}
-	 	 			
 	 	 	else if (opcao == 10) {
+	 	 		testeAuxiliar();
+			}
+	 	 			
+	 	 	else if (opcao == 11) {
 	 	 		System.out.println("Obrigado por usar o nosso sistema de teste, tenha um ótimo dia!"
 	 	 							+"\n"
 	 	 							+"Volte sempre!\n");
@@ -83,32 +87,96 @@ public static void testeCliente () {
 	//criando database - data_client
 	ArrayList<String> data_client = new ArrayList<String>();
 	
+	//instanciando objetos auxiliares
+	
+	Telefone tel = new Telefone(0, 0, 0);
+	Telefone telefone1 = new Telefone(1, 61 , 98726178);
+	Telefone telefone2 = new Telefone(2, 55 , 98777178);
+	Telefone telefone3 = new Telefone(3, 61 , 98724448);
+	Telefone telefone4 = new Telefone(4, 55 , 90987668);
+	Telefone telefone5 = new Telefone(5, 61 , 99812357);
+	Telefone telefone6 = new Telefone(6, 66 , 91226178);
+	Telefone telefone7 = new Telefone(7, 61 , 92726178);
+	Telefone telefone8 = new Telefone(8, 67 , 93826178);
+	Telefone telefone9 = new Telefone(9, 33 , 94926178);
+	Telefone telefone10 = new Telefone(10,55 , 95726118);
+	
+	Endereco endereco0 = new Endereco(null, null, null, 0, null, null, null);
+	Endereco endereco1 = new Endereco("1", "67125-012", "Abaiara", 123, "VILA OLÍMPIA ", "SÃO PAULO", "SP");
+	Endereco endereco2 = new Endereco("2", "77425-110", "bílio Martins", 145, "JD PETROPOLIS- PIRACICABA", "SÃO PAULO", "SP");
+	Endereco endereco3 = new Endereco("3","51030-600", "Acaraú", 212, "VILA MARIANA", "SÃO PAULO", "SP");
+	Endereco endereco4 = new Endereco("4","63504-650", "Acopiara", 771, "BROOKLIN ", "SÃO PAULO", "SP");
+	Endereco endereco5 = new Endereco("5","78110-044", "Aiuá", 199 , "AV. PAULISTA", "SÃO PAULO", "SP");
+	Endereco endereco6 = new Endereco("6", "67125-012", "Abaiara", 123, "VILA OLÍMPIA ", "SÃO PAULO", "SP");
+	Endereco endereco7 = new Endereco("7", "77425-110", "bílio Martins", 145, "JD PETROPOLIS- PIRACICABA", "SÃO PAULO", "SP");
+	Endereco endereco8 = new Endereco("8","51030-600", "Acaraú", 212, "VILA MARIANA", "SÃO PAULO", "SP");
+	Endereco endereco9 = new Endereco("9","63504-650", "Acopiara", 771, "BROOKLIN ", "SÃO PAULO", "SP");
+	Endereco endereco10= new Endereco("10","78110-044", "Aiuá", 199 , "AV. PAULISTA", "SÃO PAULO", "SP");
+
+	Endereco end0[] = {endereco0};
+	Endereco end1[] = {endereco1};
+	Endereco end2[] = {endereco2};
+	Endereco end3[] = {endereco3};
+	Endereco end4[] = {endereco4};
+	Endereco end5[] = {endereco5};
+	Endereco end6[] = {endereco6};
+	Endereco end7[] = {endereco7};
+	Endereco end8[] = {endereco8};
+	Endereco end9[] = {endereco9};
+	Endereco end10[] = {endereco10};
+	
+	CartaoDeCredito cartao0 = new CartaoDeCredito(null, null, null, null, 0, 0);
+	CartaoDeCredito cartao1 = new CartaoDeCredito ("FLO1fmu", "Visa", "643373604576", "3/12/2011", 1, 2020);
+	CartaoDeCredito cartao2 = new CartaoDeCredito ("Jasj123", "Elo", "701790511786", "1/12/2015" ,2, 2021);
+	CartaoDeCredito cartao3 = new CartaoDeCredito ("AASDS12", "MasterCard", "1232151521", "3/2/2012", 5, 2022);
+	CartaoDeCredito cartao4 = new CartaoDeCredito ("wqeq44q", "American Express", "98686881", "3/12/2018",6, 2031);
+	CartaoDeCredito cartao5 = new CartaoDeCredito ("123QQQ2", "Discover Network", "12312551231", "3/12/2019", 1, 2030);
+	CartaoDeCredito cartao6 = new CartaoDeCredito ("AASDA23", "Hipercard", "12312412555", "8/3/2018", 11, 2028);
+	CartaoDeCredito cartao7 = new CartaoDeCredito ("13Q2A4A", "Diners Club", "1246241241212", "3/6/2015", 9, 2022);
+	CartaoDeCredito cartao8 = new CartaoDeCredito ("Q3R3A1A", "Visa Electron", "009089868724", "6/1/2018",8, 2019);
+	CartaoDeCredito cartao9 = new CartaoDeCredito ("A4A3A6A", "Alelo", "31513573727", "3/9/2021", 3, 2040);
+	CartaoDeCredito cartao10 = new CartaoDeCredito ("1343QQ2", "Visa", "19000051231", "3/12/2025", 1, 2050);
+
+	
+	CartaoDeCredito cdc0[] = {cartao0};
+	CartaoDeCredito cdc1[] = {cartao1};
+	CartaoDeCredito cdc2[] = {cartao2};
+	CartaoDeCredito cdc3[] = {cartao3};
+	CartaoDeCredito cdc4[] = {cartao4};
+	CartaoDeCredito cdc5[] = {cartao5};
+	CartaoDeCredito cdc6[] = {cartao6};
+	CartaoDeCredito cdc7[] = {cartao7};
+	CartaoDeCredito cdc8[] = {cartao8};
+	CartaoDeCredito cdc9[] = {cartao9};
+	CartaoDeCredito cdc10[] = {cartao10};
+	
 	//instanciando objetos - class Cliente
 	
-	Cliente cliente1 = new Cliente(null, null, null, null, 0);
-	Cliente cliente2 = new Cliente(null, null, null, null, 0);
-	Cliente cliente3 = new Cliente(null, null, null, null, 0);
-	Cliente cliente4 = new Cliente(null, null, null, null, 0);
-	Cliente cliente5 = new Cliente(null, null, null, null, 0);
-	Cliente cliente6 = new Cliente(null, null, null, null, 0);
-	Cliente cliente7 = new Cliente(null, null, null, null, 0);
-	Cliente cliente8 = new Cliente(null, null, null, null, 0);
-	Cliente cliente9 = new Cliente(null, null, null, null, 0);
-	Cliente cliente10 = new Cliente(null, null, null, null, 0);
+	Cliente cliente1 = new Cliente(0, null, null, null, tel, end0, cdc0, 0);
+	Cliente cliente2 = new Cliente(0, null, null, null, tel, end0, cdc0, 0);
+	Cliente cliente3 = new Cliente(0, null, null, null, tel, end0, cdc0, 0);
+	Cliente cliente4 = new Cliente(0, null, null, null, tel, end0, cdc0, 0);
+	Cliente cliente5 = new Cliente(0, null, null, null, tel, end0, cdc0, 0);
+	Cliente cliente6 = new Cliente(0, null, null, null, tel, end0, cdc0, 0);
+	Cliente cliente7 = new Cliente(0, null, null, null, tel, end0, cdc0, 0);
+	Cliente cliente8 = new Cliente(0, null, null, null, tel, end0, cdc0, 0);
+	Cliente cliente9 = new Cliente(0, null, null, null, tel, end0, cdc0, 0);
+	Cliente cliente10 =new Cliente(0, null, null, null, tel, end0, cdc0, 0);
+
 	
 	
 	//metodo cadastrar - class Cliente 
 	
-	cliente1.cadastrar(data_client,"1111111", "cliente1", "cliente1@email.com", "111", 1);
-	cliente2.cadastrar(data_client,"2111111", "cliente2", "cliente2@email.com", "222", 1);
-	cliente3.cadastrar(data_client,"3333333", "cliente3", "cliente3@email.com", "333", 1);
-	cliente4.cadastrar(data_client,"4444444", "cliente4", "cliente4@email.com", "444", 1);
-	cliente5.cadastrar(data_client,"5555555", "cliente5", "cliente5@email.com", "555", 1);
-	cliente6.cadastrar(data_client,"6666666", "cliente6", "cliente6@email.com", "666", 1);
-	cliente7.cadastrar(data_client,"7777777", "cliente7", "cliente7@email.com", "777", 1);
-	cliente8.cadastrar(data_client,"8888888", "cliente8", "cliente8@email.com", "888", 1);
-	cliente9.cadastrar(data_client,"9999999", "cliente9", "cliente9@email.com", "999", 1);
-	cliente10.cadastrar(data_client,"10101010101010", "cliente10", "cliente10@email.com", "101010", 1);
+	cliente1.cadastrar(data_client,1111111, "cliente1", "cliente1@email.com", "1234GG", telefone1, end1, cdc1);
+	cliente2.cadastrar(data_client,2111111, "cliente2", "cliente2@email.com", "123ff1", telefone2, end2, cdc2);
+	cliente3.cadastrar(data_client,3333333, "cliente3", "cliente3@email.com", "DDS1DD", telefone3, end3, cdc3);
+	cliente4.cadastrar(data_client,4444444, "cliente4", "cliente4@email.com", "ASDASF", telefone4, end4, cdc4);
+	cliente5.cadastrar(data_client,5555555, "cliente5", "cliente5@email.com", "VFXAI1", telefone5, end5, cdc5);
+	cliente6.cadastrar(data_client,6666666, "cliente6", "cliente6@email.com", "4D13CV", telefone6, end6, cdc6);
+	cliente7.cadastrar(data_client,7777777, "cliente7", "cliente7@email.com", "GGG123", telefone7, end7, cdc7);
+	cliente8.cadastrar(data_client,8888888, "cliente8", "cliente8@email.com", "A3A1A54", telefone8, end8, cdc8);
+	cliente9.cadastrar(data_client,9999999, "cliente9", "cliente9@email.com", "12312Q4", telefone9, end9, cdc9);
+	cliente10.cadastrar(data_client,1010101,"cliente10","cliente10@email.com","1032SAF", telefone10, end10, cdc10);
 	
 
 	// metodo visualizar - class Cliente 
@@ -124,28 +192,23 @@ public static void testeCliente () {
 	cliente7.visualizar(data_client, "7777777");
 	cliente8.visualizar(data_client, "8888888");
 	cliente9.visualizar(data_client, "9999999");
-	cliente10.visualizar(data_client, "10101010101010");
+	cliente10.visualizar(data_client, "1010101");
 	
 	// metodo editar - class Cliente 
 	
 	System.out.println(
-			"Agora testa-se o método editar. Contudo, os clientes 1, 2 e 10 estão progamados" + "\n"+
+			"Agora testa-se o método editar. Contudo, os clientes 1 e 2  estão progamados" + "\n"+
 			"para serem atualizados. O cliente a ser atualizado pode ser alterado pelo parametro" + "\n"+
 			"na função editar."+ "\n"
 			);
 	
-	cliente1.editar(data_client, "1111111");
+	cliente1.editar(data_client, "1111111", "novonome1", "novoemail1@email.com", "123123", telefone10, end10, cdc10);
 	System.out.println("\n");
 	cliente1.visualizar(data_client, "1111111");
 	
-	cliente2.editar(data_client, "2111111");
+	cliente2.editar(data_client, "2111111", "novonome2", "novoemail2@email.com", "GGE3123", telefone1, end1, cdc1);
 	System.out.println("\n");
 	cliente2.visualizar(data_client, "2111111");
-	
-	cliente10.editar(data_client, "10101010101010");
-	System.out.println("\n");
-	cliente10.visualizar(data_client, "10101010101010");
-	
 	// metodo deletar -- class Cliente 
 	
 	System.out.println(
@@ -155,7 +218,6 @@ public static void testeCliente () {
 	
 	cliente1.deletar(data_client, "1111111");
 	cliente2.deletar(data_client, "2111111");
-	cliente10.deletar(data_client, "10101010101010");
 	
 	System.out.println(
 			"\n"+
@@ -168,32 +230,40 @@ public static void testeAdministrador() {
 	//criando database - data_adm
 		ArrayList<String> data_adm = new ArrayList<String>();
 		
+		//instanciando objetos auxiliares
+		
+		Telefone tel = new Telefone(0, 0, 0);
+		
+		Endereco endereco = new Endereco(null, null, null, 0, null, null, null);
+		Endereco end[] = {endereco};
+		CartaoDeCredito cartao = new CartaoDeCredito(null, null, null, null, 0, 0);
+		CartaoDeCredito cdc[] = {cartao};
+		
 		//instanciando objetos - class Administrador
 		
-		Administrador adm1 = new Administrador(null, null, null, null, 0);
-		Administrador adm2 = new Administrador(null, null, null, null, 0);
-		Administrador adm3 = new Administrador(null, null, null, null, 0);
-		Administrador adm4 = new Administrador(null, null, null, null, 0);
-		Administrador adm5 = new Administrador(null, null, null, null, 0);
-		Administrador adm6 = new Administrador(null, null, null, null, 0);
-		Administrador adm7 = new Administrador(null, null, null, null, 0);
-		Administrador adm8 = new Administrador(null, null, null, null, 0);
-		Administrador adm9 = new Administrador(null, null, null, null, 0);
-		Administrador adm10 = new Administrador(null, null, null, null,0);
-		
+		Administrador adm1 = new Administrador(0, null, null, null, 0, 0);
+		Administrador adm2 = new Administrador(0, null, null, null, 0, 0);
+		Administrador adm3 = new Administrador(0, null, null, null, 0, 0);
+		Administrador adm4 = new Administrador(0, null, null, null, 0, 0);
+		Administrador adm5 = new Administrador(0, null, null, null, 0, 0);
+		Administrador adm6 = new Administrador(0, null, null, null, 0, 0);
+		Administrador adm7 = new Administrador(0, null, null, null, 0, 0);
+		Administrador adm8 = new Administrador(0, null, null, null, 0, 0);
+		Administrador adm9 = new Administrador(0, null, null, null, 0, 0);
+		Administrador adm10 = new Administrador(0, null, null, null, 0, 0);
 		
 		//metodo cadastrar - class Administrador 
 		
-		adm1.cadastrar(data_adm,"1111111", "adm1", "adm1@email.com", "111", 0);
-		adm2.cadastrar(data_adm,"2111111", "adm2", "adm2@email.com", "222", 0);
-		adm3.cadastrar(data_adm,"3333333", "adm3", "adm3@email.com", "333", 0);
-		adm4.cadastrar(data_adm,"4444444", "adm4", "adm4@email.com", "444", 0);
-		adm5.cadastrar(data_adm,"5555555", "adm5", "adm5@email.com", "555", 0);
-		adm6.cadastrar(data_adm,"6666666", "adm6", "adm6@email.com", "666", 0);
-		adm7.cadastrar(data_adm,"7777777", "adm7", "adm7@email.com", "777", 0);
-		adm8.cadastrar(data_adm,"8888888", "adm8", "adm8@email.com", "888", 0);
-		adm9.cadastrar(data_adm,"9999999", "adm9", "adm9@email.com", "999", 0);
-		adm10.cadastrar(data_adm,"10101010101010", "adm10", "adm10@email.com", "101010", 0);
+		adm1.cadastrar(data_adm,1111111 , "adm1", "adm1@email.com", "111", tel, end, cdc);
+		adm2.cadastrar(data_adm,2111111, "adm2", "adm2@email.com", "222", tel, end, cdc);
+		adm3.cadastrar(data_adm,3333333, "adm3", "adm3@email.com", "333", tel, end, cdc);
+		adm4.cadastrar(data_adm,4444444, "adm4", "adm4@email.com", "444", tel, end, cdc);
+		adm5.cadastrar(data_adm,5555555, "adm5", "adm5@email.com", "555", tel, end, cdc);
+		adm6.cadastrar(data_adm,6666666, "adm6", "adm6@email.com", "666", tel, end, cdc);
+		adm7.cadastrar(data_adm,7777777, "adm7", "adm7@email.com", "777", tel, end, cdc);
+		adm8.cadastrar(data_adm,8888888, "adm8", "adm8@email.com", "888", tel, end, cdc);
+		adm9.cadastrar(data_adm,9999999, "adm9", "adm9@email.com", "999", tel, end, cdc);
+		adm10.cadastrar(data_adm,101010, "adm10", "adm10@email.com", "101010", tel, end, cdc);
 		
 		// metodo visualizar - class Administrador 
 		
@@ -208,7 +278,7 @@ public static void testeAdministrador() {
 		adm7.visualizar(data_adm, "7777777");
 		adm8.visualizar(data_adm, "8888888");
 		adm9.visualizar(data_adm, "9999999");
-		adm10.visualizar(data_adm, "10101010101010");
+		adm10.visualizar(data_adm, "101010");
 		
 		// metodo editar - class Administrador 
 		
@@ -218,17 +288,17 @@ public static void testeAdministrador() {
 				"na função editar."+ "\n"
 				);
 		
-		adm1.editar(data_adm, "1111111");
+		adm1.editar(data_adm, "1111111", "nome1","email1@email.com", "senha1", tel, end, cdc);
 		System.out.println("\n");
 		adm1.visualizar(data_adm, "1111111");
 		
-		adm2.editar(data_adm, "2111111");
+		adm2.editar(data_adm, "2111111", "nome2","email2@email.com", "senha2", tel, end, cdc);
 		System.out.println("\n");
 		adm2.visualizar(data_adm, "2111111");
 		
-		adm10.editar(data_adm, "10101010101010");
+		adm10.editar(data_adm, "101010", "nome10","email10@email.com", "senha10", tel, end, cdc);
 		System.out.println("\n");
-		adm10.visualizar(data_adm, "10101010101010");
+		adm10.visualizar(data_adm, "101010");
 		
 		// metodo deletar - class Administrador 
 		
@@ -239,7 +309,7 @@ public static void testeAdministrador() {
 		
 		adm1.deletar(data_adm, "1111111");
 		adm2.deletar(data_adm, "2111111");
-		adm10.deletar(data_adm, "10101010101010");
+		adm10.deletar(data_adm, "101010");
 		
 		System.out.println(
 				"\n"+
@@ -701,4 +771,44 @@ public static void testeTelefone() {
 				);
 }
 public static void testeFluxoDeCaixa() {}
+public static void testeAuxiliar() {
+
+	Telefone tel = new Telefone(1, 61, 998140718);
+	
+	Endereco endereco = new Endereco("1", "67125-012", "Abaiara", 123, "VILA OLÍMPIA ", "SÃO PAULO", "SP");
+		
+	Endereco end[] = {endereco};
+	
+	CartaoDeCredito cartao = new CartaoDeCredito("FLO1fmu", "Visa", "643373604576", "3/12/2011", 1, 2020);
+	
+	CartaoDeCredito cdc[] = {cartao};
+	
+	Cliente cliente = new Cliente(1234,"cliente","cliente@email.com","GGG123",tel,end,cdc,0);
+	
+	//System.out.println(cliente);
+	
+	System.out.println(cliente);
+	System.out.println("\n");
+	System.out.println("\n");
+	/*
+	String cpf_String = Integer.toString(cliente.cpf);
+	data_client.add(cpf_String);
+	
+	data_client.add(cliente.nomeDoUsuario);
+	
+	data_client.add(cliente.email);
+	
+	data_client.add(cliente.senha);
+	
+	String ddd_String = Integer.toString(cliente.telefone.getDdd());
+	String number_String = Integer.toString(cliente.telefone.getNumero());
+	String fullnumber = ddd_String + number_String;
+	data_client.add(fullnumber);
+	
+	
+	
+	String cliente_nivel_String = Integer.toString(cliente.nivel);
+	data_client.add(cliente_nivel_String);
+	*/
+}
 }

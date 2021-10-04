@@ -29,9 +29,21 @@ public class Endereco {
 			cidade = cid;
 			estado = e;
 		}
+	
+	
 		
 	//method construction
-		
+
+	public String toString() {
+		return 		
+		      "\n"+"Cep        = " + cep
+			+ "\n"+"Logradouro = " + logradouro 
+			+ "\n"+"Número     = "+ numeroEnd 
+			+ "\n"+"Bairro     = " + bairro 
+			+ "\n"+"Cidade     = " + cidade 
+			+ "\n"+"Estado     = "+ estado + "\n";
+	}
+
 	public ArrayList<String> cadastrar(ArrayList<String> data_endereco, String id, String c, String l, int n, String b, String cid, String e) { 
 			
 			Endereco endereco = new Endereco(
