@@ -56,7 +56,7 @@ public abstract class Produto {
 	
 	public abstract ArrayList<String>  cadastrar(ArrayList<String> data_camiseta, String cod, String n, String c, String t, String comp, String tp );
 	public abstract void visualizar (ArrayList<String> data_camiseta, String cod);
-	public abstract ArrayList<String>  alterar(ArrayList<String> data_camiseta, String cod);
+	public abstract ArrayList<String>  alterar(ArrayList<String> data_camiseta, String cod, String n, String c, String t, String comp, String tp);
 	public abstract ArrayList<String>  deletar(ArrayList<String> data_camiseta, String cod); 
 	
 

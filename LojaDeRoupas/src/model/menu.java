@@ -1,4 +1,4 @@
-package model;
+	package model;
 
 import java.util.*;
 
@@ -6,14 +6,13 @@ import java.util.*;
 
 //import java.util.*; 
 
-//Teste
+//Teste 
 
 public class menu {
 
 private  static Scanner sc;
 
-public static void main(String[] args) {		
-	
+public static void main(String[] args) {		 
 
 		// Creating the menu:
 	
@@ -82,6 +81,8 @@ public static void main(String[] args) {
 	
 }		
 // test methods
+
+	// refatorado
 public static void testeCliente () {
 	
 	//criando database - data_client
@@ -226,6 +227,7 @@ public static void testeCliente () {
 			
 			);
 }
+	// refatorado
 public static void testeAdministrador() {
 	//criando database - data_adm
 		ArrayList<String> data_adm = new ArrayList<String>();
@@ -318,9 +320,10 @@ public static void testeAdministrador() {
 				
 				);
 }
+	// refatorado
 public static void testeCamiseta() {
 	
-	//criando database - data_camiseta
+		//criando database - data_camiseta
 		ArrayList<String> data_camiseta = new ArrayList<String>();
 		
 		//instanciando objetos - class Camiseta
@@ -373,15 +376,15 @@ public static void testeCamiseta() {
 				"na função editar."+ "\n"
 				);
 		
-		camiseta1.alterar(data_camiseta, "1111");
+		camiseta1.alterar(data_camiseta, "1111", "KongCamiseta1Alterada", "cor_alteradaX", "tamanhoX","composiçãoX","tipoX");
 		System.out.println("\n");
 		camiseta1.visualizar(data_camiseta, "1111");
 		
-		camiseta2.alterar(data_camiseta, "2222");
+		camiseta2.alterar(data_camiseta, "2222", "KongCamiseta2Alterada", "cor_alteradaY", "tamanhoY", "composiçãoY","tipoY");
 		System.out.println("\n");
 		camiseta2.visualizar(data_camiseta, "2222");
 		
-		camiseta3.alterar(data_camiseta, "3333");
+		camiseta3.alterar(data_camiseta, "3333", "KongCamiseta3Alterada", "cor_alteradaZ", "tamanhoZ", "composiçãoZ","tipoz");
 		System.out.println("\n");
 		camiseta3.visualizar(data_camiseta, "3333");
 		
@@ -403,22 +406,28 @@ public static void testeCamiseta() {
 				
 				);
 }
+	// refatorado
 public static void testeLoja() {
 	
 	//criando database - data_loja
 	ArrayList<String> data_loja = new ArrayList<String>();
 	
-	//instanciando objetos - class Loja
+	//instanciando objetos auxiliares	
+	Endereco endereco1 = new Endereco("1", "67125-012", "Abaiara", 123, "VILA OLÍMPIA ", "SÃO PAULO", "SP");
+	Endereco endereco2 = new Endereco("2", "77425-110", "bílio Martins", 145, "JD PETROPOLIS- PIRACICABA", "SÃO PAULO", "SP");
+	Endereco endereco3 = new Endereco("3","51030-600", "Acaraú", 212, "VILA MARIANA", "SÃO PAULO", "SP");
+	Endereco endereco4 = new Endereco("4","63504-650", "Acopiara", 771, "BROOKLIN ", "SÃO PAULO", "SP");
 	
-	Loja loja1 = new Loja(null, null, null, null);
-	Loja loja2 = new Loja(null, null, null, null);
-	Loja loja3 = new Loja(null, null, null, null);
+	//instanciando objetos do tipo loja 
+	Loja loja1 = new Loja(null, null, null, null, null);
+	Loja loja2 = new Loja(null, null, null, null, null);
+	Loja loja3 = new Loja(null, null, null, null, null);
 	
 	//metodo cadastrar - class Loja
 	
-	loja1.cadastrar(data_loja, "78.353.334/0001-36",  "Kong Team T-Shirt" , "KongFilial_1", "kong1@email.com");
-	loja2.cadastrar(data_loja, "87.821.715/0001-93",  "Kong Team T-Shirt" , "KongFilial_2", "kong2@email.com");
-	loja3.cadastrar(data_loja, "61.462.605/0001-99",  "Kong Team T-Shirt" , "kongFilial_3", "kong3@email.com");
+	loja1.cadastrar(data_loja, "78.353.334/0001-36",  "Kong Team T-Shirt" , "KongFilial_1", "kong1@email.com", endereco1);
+	loja2.cadastrar(data_loja, "87.821.715/0001-93",  "Kong Team T-Shirt" , "KongFilial_2", "kong2@email.com", endereco2);
+	loja3.cadastrar(data_loja, "61.462.605/0001-99",  "Kong Team T-Shirt" , "kongFilial_3", "kong3@email.com", endereco3);
 
 	// metodo visualizar - class Loja
 	
@@ -436,7 +445,7 @@ public static void testeLoja() {
 			"na função editar."+ "\n"
 			);
 	
-	loja1.editar(data_loja,"78.353.334/0001-36");
+	loja1.editar(data_loja,"78.353.334/0001-36",  "Kong Team T-Shirt atualizado" , "newKongFilial1", "newKong1@email.com", endereco4);
 	loja1.visualizar(data_loja, "78.353.334/0001-36");
 	
 	// metodo deletar -- class Loja

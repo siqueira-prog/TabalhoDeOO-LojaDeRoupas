@@ -1,22 +1,20 @@
+//refatorado - tirei os prints e adaptei os métodos alterar, cadastrar e editar 
+
 //package
 package model;
 
-import java.util.*;
-
+import java.util.ArrayList;
 
 //class
 public class Camiseta extends Produto {
 	
-	// scanner
-	private Scanner sc = new Scanner(System.in);
-	
 	//attribute
+	private String codigo;
 	private String nome;
 	private String cor;
 	private String tamanho;
 	private String composicao;
 	private String tipo;
-	private String codigo;
 	
 	//constructor
 	public Camiseta(String cod,String n, String c, String t, String comp, String tp) {
@@ -85,11 +83,12 @@ public class Camiseta extends Produto {
 			
 		}
 
-	public ArrayList<String>  alterar(ArrayList<String> data_camiseta, String cod) {
-			
+	public ArrayList<String>  alterar(ArrayList<String> data_camiseta, String cod,String n, String c, String t, String comp, String tp) {
 			
 			int position = data_camiseta.indexOf(cod);
 			
+			Camiseta camiseta = new Camiseta(cod, n, c, t, comp, tp);
+			
 			data_camiseta.remove(position);
 			data_camiseta.remove(position);
 			data_camiseta.remove(position);
@@ -97,26 +96,17 @@ public class Camiseta extends Produto {
 			data_camiseta.remove(position);
 			data_camiseta.remove(position);
 			
-			
-			String codigo = cod;
-			data_camiseta.add(codigo);
-			System.out.println("Digite o novo nome da camiseta: " + "\n");
-			String nome = sc.nextLine();
-			data_camiseta.add(nome);
-			System.out.println("Digite a nova cor da camiseta: " + "\n");
-			String cor = sc.nextLine();
-			data_camiseta.add(cor);
-			System.out.println("Digite o novo tamanho da camiseta: " + "\n");
-			String tamanho = sc.nextLine();
-			data_camiseta.add(tamanho);
-			System.out.println("Digite a nova composição da camiseta : " + "\n");
-			String composicao = sc.nextLine();
-			data_camiseta.add(composicao);
-			System.out.println("Digite o novo tipo da camiseta: " + "\n");
-			String tipo = sc.nextLine();
-			data_camiseta.add(tipo);
-			
-			System.out.println("Dados atualizados com sucesso!");
+			data_camiseta.add(camiseta.codigo);
+
+			data_camiseta.add(camiseta.nome);
+
+			data_camiseta.add(camiseta.cor);
+
+			data_camiseta.add(camiseta.tamanho);
+
+			data_camiseta.add(camiseta.composicao);
+
+			data_camiseta.add(camiseta.tipo);
 						
 			return data_camiseta;
 		}
@@ -134,7 +124,6 @@ public class Camiseta extends Produto {
 			data_camiseta.remove(position);
 			data_camiseta.remove(position);
 			
-			System.out.println("Produto deletado com sucesso!");
 			return data_camiseta;
 		}
 	
