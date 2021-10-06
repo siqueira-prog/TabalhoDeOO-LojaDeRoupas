@@ -12,7 +12,7 @@ public abstract class Produto {
 	protected double precoFab;
 	protected int qtd;
 	protected String descricao;
-	protected String cadegoria;
+	protected String categoria;
 	
 	//getters and setters 
 	public String getCodigoProduto() {
@@ -45,18 +45,18 @@ public abstract class Produto {
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
-	public String getCadegoria() {
-		return cadegoria;
+	public String getCategoria() {
+		return categoria;
 	}
-	public void setCadegoria(String cadegoria) {
-		this.cadegoria = cadegoria;
+	public void setCategoria(String categoria) {
+		this.categoria = categoria;
 	}
 	
 	//method signature
 	
-	public abstract ArrayList<String>  cadastrar(ArrayList<String> data_camiseta, String cod, String n, String c, String t, String comp, String tp );
-	public abstract void visualizar (ArrayList<String> data_camiseta, String cod);
-	public abstract ArrayList<String>  alterar(ArrayList<String> data_camiseta, String cod, String n, String c, String t, String comp, String tp);
+	public abstract ArrayList<String>  cadastrar(ArrayList<String> data_camiseta, Camiseta camisa);
+	public abstract void visualizar (ArrayList<String> data_camiseta, String codP);
+	public abstract ArrayList<String>  alterar(ArrayList<String> data_camiseta, String codP, Camiseta newCamiseta);
 	public abstract ArrayList<String>  deletar(ArrayList<String> data_camiseta, String cod); 
 	
 

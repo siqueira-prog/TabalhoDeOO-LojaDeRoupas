@@ -64,9 +64,9 @@ public class Cliente extends Usuario{
 			) { 
 		
 		
-		int niv = 1;
+			int niv = 1;
 		
-		Cliente cliente = new Cliente(c,n,e,s,tel,end,cdc,niv);
+			Cliente cliente = new Cliente(c,n,e,s,tel,end,cdc,niv);
 		
 			String cpf_String = Integer.toString(cliente.cpf);
 			data_client.add(cpf_String);
