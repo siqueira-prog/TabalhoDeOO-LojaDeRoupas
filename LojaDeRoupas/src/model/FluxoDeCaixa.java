@@ -86,7 +86,7 @@ public class FluxoDeCaixa {
 			float gastos = calculaGastos(data_camiseta);
 			float ganho_bruto = calculaGanhoBruto(data_camiseta);
 			float ganho_liquido = ganho_bruto-gastos;
-			return ganho_liquido;
+			return ganho_liquido;	
 		}
 
 	//getters and setters 

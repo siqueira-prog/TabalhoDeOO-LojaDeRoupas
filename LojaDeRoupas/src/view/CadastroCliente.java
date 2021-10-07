@@ -32,7 +32,17 @@ public class CadastroCliente {
     // Input confirmar senha
     private static JLabel labelConfirmSenha = new JLabel("Repita sua senha:");
     JPasswordField confirmSenha = new JPasswordField();
-
+    
+    // TELEFONE
+    
+    // Input DDD
+    private static JLabel labelDDD = new JLabel("Didigite seu DDD:");
+    private static JTextField fieldDDD = new JTextField();
+    
+    // Input Número
+    private static JLabel labelNumero = new JLabel("Didigite seu número:");
+    private static JTextField fieldNumero = new JTextField();
+    
     // ENDEREÇO
 
     // Logradouro
@@ -92,7 +102,19 @@ public class CadastroCliente {
         // Input confirmar senha
         labelConfirmSenha.setBounds(50, 510, 250, 50);
         confirmSenha.setBounds(50, 550, 250, 50);
-
+        
+        /*
+        // TELEFONE
+        
+        // input DDD
+        labelDDD.setBounds(50, 150, 250, 50);
+        fieldDDD.setBounds(50, 190, 250, 50);
+        
+        // input Número
+        labelNumero.setBounds(50, 150, 250, 50);
+        fieldNumero.setBounds(50, 190, 250, 50);
+        */
+        
         // ENDEREÇO
 
         // Input logradouro
@@ -136,7 +158,15 @@ public class CadastroCliente {
         janela.add(senha);
         janela.add(labelConfirmSenha);
         janela.add(confirmSenha);
-
+        
+        /*
+        // Telefone
+        janela.add(labelDDD);
+        janela.add(fieldDDD);
+        janela.add(labelNumero);
+        janela.add(fieldNumero);
+        */
+        
         // Endereço
 
         janela.add(labelLogradouro);

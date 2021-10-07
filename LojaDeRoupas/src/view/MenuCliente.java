@@ -13,7 +13,7 @@ public class MenuCliente implements ActionListener {
     private static JButton botaoComprar = new JButton("Comprar");
     private static JButton botaoEditPerfil = new JButton("Editar Perfil");
 
-    public MenuCliente() {
+    public void menuCliente() {
 
         // JANELA
         titulo.setFont(new Font("Arial", Font.BOLD, 20));
@@ -38,6 +38,10 @@ public class MenuCliente implements ActionListener {
         janela.setSize(750, 550);
         janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         janela.setVisible(true);
+        
+        MenuCliente menuCliente = new MenuCliente();
+        botaoComprar.addActionListener(menuCliente);
+        botaoEditPerfil.addActionListener(menuCliente);
     }
 
     public static void main(String[] args) {

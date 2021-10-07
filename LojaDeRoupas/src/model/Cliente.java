@@ -80,7 +80,7 @@ public class Cliente extends Usuario{
 			String ddd_String = Integer.toString(cliente.telefone.getDdd());
 			String number_String = Integer.toString(cliente.telefone.getNumero());
 			String fullnumber = ddd_String + number_String;
-			data_client.add(fullnumber);
+			data_client.add(fullnumber);  
 			
 			String endereco_string = Arrays.toString(cliente.endereco);
 			data_client.add(endereco_string);
