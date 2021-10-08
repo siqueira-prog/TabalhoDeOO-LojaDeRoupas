@@ -48,15 +48,15 @@ public class Home implements ActionListener {
 		janela.setVisible(true);
 	}
 
-    // MÉTODO PARA SER PUXADO POR OUTRA INTERFACE
+	// MÉTODO PARA SER PUXADO POR OUTRA INTERFACE
 	public void home() {
 		Home menu = new Home();
 		logarCliente.addActionListener(menu);
 		cadastrarCliente.addActionListener(menu);
 		logarAdmin.addActionListener(menu);
 	}
-	
-    // MÉTODO MAIN PARA RODAR A INTERFACE SEPARADAMENTE
+
+	// MÉTODO MAIN PARA RODAR A INTERFACE SEPARADAMENTE
 	public static void main(String[] args) {
 		Home menu = new Home();
 		logarCliente.addActionListener(menu);
@@ -64,14 +64,14 @@ public class Home implements ActionListener {
 		logarAdmin.addActionListener(menu);
 	}
 
-    // ORIENTAÇÃO DAS AÇÕES 
+	// ORIENTAÇÃO DAS AÇÕES
 	public void actionPerformed(ActionEvent e) {
 		Object src = e.getSource();
 		if (src == logarCliente) {
 			new LoginCliente().loginCliente();
 		}
 		if (src == cadastrarCliente) {
-			new CadastroCliente().cadastroCliente();
+			// new CadastroCliente().cadastroCliente();
 		}
 		if (src == logarAdmin) {
 			new LoginAdmin().loginAdmin();
