@@ -4,12 +4,12 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-public class DetalheCliente implements ActionListener {
+public class EditarPerfilCliente implements ActionListener {
     // [DEFININDO VARIÁVEIS]
 
     // JANELA
-    private static JFrame janela = new JFrame("Detalhes do Cliente");
-    private static JLabel titulo = new JLabel("Detalhes do Cliente");
+    private static JFrame janela = new JFrame("Cliente");
+    private static JLabel titulo = new JLabel("Cliente - Editar Perfil ");
     private static JLabel subtitulo1 = new JLabel("Infomações Pessoais");
     private static JLabel subtitulo2 = new JLabel("Infomações de Endereço");
     private static JLabel subtitulo3 = new JLabel("Infomações do Cartão de Crédito");
@@ -18,11 +18,11 @@ public class DetalheCliente implements ActionListener {
 
     // Input nome
     private static JLabel labelNome = new JLabel("Didigite seu nome:");
-    private static JTextField fieldNome = new JTextField("Mateus");
+    private static JTextField fieldNome = new JTextField();
 
     // Input CPF
     private static JLabel labelCPF = new JLabel("Didigite seu CPF:");
-    private static JTextField fieldCPF = new JTextField("777.777.777-77");
+    private static JTextField fieldCPF = new JTextField();
 
     // Input email
     private static JLabel labelEmail = new JLabel("Didigite seu email:");
@@ -96,11 +96,13 @@ public class DetalheCliente implements ActionListener {
     private static JTextField fieldMesVenc = new JTextField();
     private static JTextField fieldAnoVenc = new JTextField();
 
-    // Botao
-    private static JButton editar = new JButton("Editar");
-    private static JButton cancelar = new JButton("Cancelar");
+    // Botões
 
-    public DetalheCliente() {
+    private static JButton cadastrar = new JButton("Cadastrar");
+    private static JButton cancelar = new JButton("Cancelar");
+    private static JButton excluir = new JButton("Excluir");
+
+    public EditarPerfilCliente() {
 
         // JANELA
 
@@ -114,99 +116,85 @@ public class DetalheCliente implements ActionListener {
         subtitulo2.setBounds(380, 80, 250, 50);
         subtitulo3.setFont(new Font("Arial", Font.BOLD, 14));
         subtitulo3.setBounds(730, 80, 250, 50);
-        editar.setBounds(256, 640, 250, 50);
-        cancelar.setBounds(512, 640, 250, 50);
+        cadastrar.setBounds(20, 640, 250, 50);
+        cadastrar.setBackground(Color.GREEN);
+        cancelar.setBounds(380, 640, 250, 50);
+        excluir.setBounds(730, 640, 250, 50);
+        excluir.setBackground(Color.RED);
 
         // INFORMAÇÕES PESSOAIS
 
         // Input nome
         labelNome.setBounds(20, 110, 250, 50);
         fieldNome.setBounds(20, 150, 250, 50);
-        fieldNome.setEditable(false);
 
         // Input CPF
         labelCPF.setBounds(20, 190, 250, 50);
         fieldCPF.setBounds(20, 230, 250, 50);
-        fieldCPF.setEditable(false);
 
         // Input email
         labelEmail.setBounds(20, 270, 250, 50);
         fieldEmail.setBounds(20, 310, 250, 50);
-        fieldEmail.setEditable(false);
 
         // Input DDD
         labelDDD.setBounds(20, 350, 50, 50);
         fieldDDD.setBounds(20, 390, 50, 50);
-        fieldDDD.setEditable(false);
 
         // Input telefone
         labelTele.setBounds(90, 350, 250, 50);
         fieldTele.setBounds(90, 390, 180, 50);
-        fieldTele.setEditable(false);
 
         // Iput senha
         labelSenha.setBounds(20, 430, 250, 50);
         senha.setBounds(20, 470, 250, 50);
-        senha.setEditable(false);
 
         // Input confirmar senha
         labelConfirmSenha.setBounds(20, 510, 250, 50);
         confirmSenha.setBounds(20, 550, 250, 50);
-        confirmSenha.setEditable(false);
 
         // ENDEREÇO
 
         // Input logradouro
         labelLogradouro.setBounds(380, 110, 250, 50);
         fieldLogradouro.setBounds(380, 150, 250, 50);
-        fieldLogradouro.setEditable(false);
 
         // Input Numero Endereço
         labelNumeroEnd.setBounds(380, 190, 50, 50);
         fieldNumeroEnd.setBounds(380, 230, 50, 50);
-        fieldNumeroEnd.setEditable(false);
 
         // Input bairro
         labelBairro.setBounds(450, 190, 200, 50);
         fieldBairro.setBounds(450, 230, 180, 50);
-        fieldBairro.setEditable(false);
 
         // Iput cep
         labelCep.setBounds(380, 270, 250, 50);
         fieldCep.setBounds(380, 310, 250, 50);
-        fieldCep.setEditable(false);
 
         // Input cidade
         labelCidade.setBounds(380, 350, 250, 50);
         fieldCidade.setBounds(380, 390, 250, 50);
-        fieldCidade.setEditable(false);
 
         // Input estado
         labelEstado.setBounds(380, 430, 250, 50);
         fieldEstado.setBounds(380, 470, 250, 50);
-        fieldEstado.setEditable(false);
 
         // CARTÃO DE CRÉDITO
 
         // Input bandeira
         labelBand.setBounds(730, 110, 250, 50);
         fieldBand.setBounds(730, 150, 250, 50);
-        fieldBand.setEditable(false);
 
         // Input numero do cartão
         labelNumCart.setBounds(730, 190, 250, 50);
         fieldNumCart.setBounds(730, 230, 250, 50);
-        fieldNumCart.setEditable(false);
 
         // Input código de segurança
         labelCodSeg.setBounds(730, 270, 250, 50);
         fieldCodSeg.setBounds(730, 310, 250, 50);
-        fieldCodSeg.setEditable(false);
 
         // Iput data de nascimento
         labelDataNasc.setBounds(730, 350, 250, 50);
         fieldDataNasc.setBounds(730, 390, 250, 50);
-        fieldDataNasc.setEditable(false);
 
         // Input data de vencimento do cartão
 
@@ -214,18 +202,20 @@ public class DetalheCliente implements ActionListener {
         labelMesVenc.setBounds(730, 450, 250, 50);
         labelAnoVenc.setBounds(880, 450, 250, 50);
         fieldMesVenc.setBounds(730, 490, 100, 50);
-        fieldMesVenc.setEditable(false);
         fieldAnoVenc.setBounds(880, 490, 100, 50);
-        fieldAnoVenc.setEditable(false);
-        // [ADICIONANDO A JANELA]
 
+        // [ADICIONANDO A JANELA]
+        janela.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        janela.setVisible(true);
+        janela.setSize(1024, 768);
         janela.add(titulo);
         janela.add(subtitulo1);
         janela.add(subtitulo2);
         janela.add(subtitulo3);
 
-        janela.add(editar);
+        janela.add(cadastrar);
         janela.add(cancelar);
+        janela.add(excluir);
 
         // Informações pessoais
 
@@ -275,32 +265,22 @@ public class DetalheCliente implements ActionListener {
         janela.add(fieldMesVenc);
         janela.add(fieldAnoVenc);
 
-        janela.setSize(1024, 768);
-        janela.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        janela.setVisible(true);
     }
 
-    public void detalharCliente() {
-        DetalheCliente detalharcliente = new DetalheCliente();
-        editar.addActionListener(detalharcliente);
+    public void editarPerfil() {
+        EditarPerfilCliente editarperfilcliente = new EditarPerfilCliente();
+        // cadastrar.addActionListener(cadastrocliente);
     }
 
     public static void main(String[] args) {
-        DetalheCliente detalharcliente = new DetalheCliente();
-        editar.addActionListener(detalharcliente);
-        cancelar.addActionListener(detalharcliente);
+        EditarPerfilCliente editarperfilcliente = new EditarPerfilCliente();
+        // cadastrar.addActionListener(cadastrocliente);
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         // TODO Auto-generated method stub
         Object src = e.getSource();
-        if (src == editar) {
-            new EditarPerfilCliente().editarPerfil();
-        }
-        if (src == cancelar) {
-            janela.dispose();
-        }
         // if (src == cadastrar) {
         // JOptionPane.showMessageDialog(null, "Cadastro efetivado com sucesso!", null,
         // JOptionPane.INFORMATION_MESSAGE);

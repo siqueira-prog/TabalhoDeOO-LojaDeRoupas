@@ -29,10 +29,10 @@ public class Home implements ActionListener {
 		// Setando tamanhos
 		titulo.setFont(new Font("Arial", Font.BOLD, 20));
 		titulo.setBounds(20, 20, 250, 50);
-		logarCliente.setBounds(250, 150, 250, 50);
-		logarAdmin.setBounds(250, 215, 250, 50);
-		texto.setBounds(370, 275, 200, 30);
-		cadastrarCliente.setBounds(250, 315, 250, 50);
+		logarCliente.setBounds(240, 150, 250, 50);
+		logarAdmin.setBounds(240, 215, 250, 50);
+		texto.setBounds(360, 275, 200, 30);
+		cadastrarCliente.setBounds(240, 315, 250, 50);
 		janela.setLayout(null);
 
 		// Adicionando elementos
@@ -43,7 +43,7 @@ public class Home implements ActionListener {
 		janela.add(cadastrarCliente);
 
 		// Janela
-		janela.setSize(750, 550);
+		janela.setSize(720, 540);
 		janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		janela.setVisible(true);
 	}
@@ -71,7 +71,7 @@ public class Home implements ActionListener {
 			new LoginCliente().loginCliente();
 		}
 		if (src == cadastrarCliente) {
-			new CadastroCliente().cadastroCliente();
+			new CadastroCliente().cadastrarCliente();
 		}
 		if (src == logarAdmin) {
 			new LoginAdmin().loginAdmin();
