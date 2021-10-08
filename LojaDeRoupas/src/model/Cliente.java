@@ -35,7 +35,7 @@ public class Cliente extends Usuario{
 	}
 	
 	//toString
-	
+
 	public String toString() {
 		String endereco_string = Arrays.toString(endereco);
 		String cartao_string = Arrays.toString(cartao);
@@ -48,7 +48,7 @@ public class Cliente extends Usuario{
 				"endereço :" + "\n" + endereco_string + "\n"+
 				"CartaoDeCredito :" + "\n"+ cartao_string + "\n";
 	}
-	
+
 	//method construction
 	
 	public ArrayList<String>  cadastrar(

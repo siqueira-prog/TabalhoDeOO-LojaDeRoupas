@@ -78,8 +78,8 @@ public class Administrador extends Usuario {
 		String matricula_string = Integer.toString(m);
 		data_adm.add(matricula_string);
 		
-		String cliente_nivel_String = Integer.toString(administrador.nivel);
-		data_adm.add(cliente_nivel_String);
+		String adm_nivel_String = Integer.toString(administrador.nivel);
+		data_adm.add(adm_nivel_String);
 			
 		return data_adm;
 		}
