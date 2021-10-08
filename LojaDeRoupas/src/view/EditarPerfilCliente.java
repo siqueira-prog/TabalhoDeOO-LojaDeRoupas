@@ -4,12 +4,12 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-public class CadastroCliente implements ActionListener {
+public class EditarPerfilCliente implements ActionListener {
     // [DEFININDO VARIÁVEIS]
 
     // JANELA
-    private static JFrame janela = new JFrame("Cadastro de Cliente");
-    private static JLabel titulo = new JLabel("Cadastro de Cliente");
+    private static JFrame janela = new JFrame("Cliente");
+    private static JLabel titulo = new JLabel("Cliente - Editar Perfil ");
     private static JLabel subtitulo1 = new JLabel("Infomações Pessoais");
     private static JLabel subtitulo2 = new JLabel("Infomações de Endereço");
     private static JLabel subtitulo3 = new JLabel("Infomações do Cartão de Crédito");
@@ -100,8 +100,9 @@ public class CadastroCliente implements ActionListener {
 
     private static JButton cadastrar = new JButton("Cadastrar");
     private static JButton cancelar = new JButton("Cancelar");
+    private static JButton excluir = new JButton("Excluir");
 
-    public CadastroCliente() {
+    public EditarPerfilCliente() {
 
         // JANELA
 
@@ -115,9 +116,11 @@ public class CadastroCliente implements ActionListener {
         subtitulo2.setBounds(380, 80, 250, 50);
         subtitulo3.setFont(new Font("Arial", Font.BOLD, 14));
         subtitulo3.setBounds(730, 80, 250, 50);
-        cadastrar.setBounds(256, 640, 250, 50);
+        cadastrar.setBounds(20, 640, 250, 50);
         cadastrar.setBackground(Color.GREEN);
-        cancelar.setBounds(512, 640, 250, 50);
+        cancelar.setBounds(380, 640, 250, 50);
+        excluir.setBounds(730, 640, 250, 50);
+        excluir.setBackground(Color.RED);
 
         // INFORMAÇÕES PESSOAIS
 
@@ -212,6 +215,7 @@ public class CadastroCliente implements ActionListener {
 
         janela.add(cadastrar);
         janela.add(cancelar);
+        janela.add(excluir);
 
         // Informações pessoais
 
@@ -263,23 +267,23 @@ public class CadastroCliente implements ActionListener {
 
     }
 
-    public void cadastrarCliente() {
-        CadastroCliente cadastrocliente = new CadastroCliente();
-        cadastrar.addActionListener(cadastrocliente);
+    public void editarPerfil() {
+        EditarPerfilCliente editarperfilcliente = new EditarPerfilCliente();
+        // cadastrar.addActionListener(cadastrocliente);
     }
 
     public static void main(String[] args) {
-        CadastroCliente cadastrocliente = new CadastroCliente();
-        cadastrar.addActionListener(cadastrocliente);
+        EditarPerfilCliente editarperfilcliente = new EditarPerfilCliente();
+        // cadastrar.addActionListener(cadastrocliente);
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         // TODO Auto-generated method stub
         Object src = e.getSource();
-        if (src == cadastrar) {
-            JOptionPane.showMessageDialog(null, "Cadastro efetivado com sucesso!", null,
-                    JOptionPane.INFORMATION_MESSAGE);
-        }
+        // if (src == cadastrar) {
+        // JOptionPane.showMessageDialog(null, "Cadastro efetivado com sucesso!", null,
+        // JOptionPane.INFORMATION_MESSAGE);
+        // }
     }
 }

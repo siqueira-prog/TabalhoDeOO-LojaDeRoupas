@@ -55,8 +55,7 @@ public class MenuCliente implements ActionListener {
             new Compra();
         }
         if (src == botaoEditPerfil) {
-            new DetalheCliente().editarPerfil();
-            ;
+            new DetalheCliente().detalharCliente();
         }
 
     }
