@@ -4,17 +4,14 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-public class CadastroCliente implements ActionListener {
-    // [DEFININDO VARIÁVEIS]
+public class CadastroCliente {
+    // [DEFININDO VARI�VEIS]
 
     // JANELA
     private static JFrame janela = new JFrame("Cadastro de Cliente");
     private static JLabel titulo = new JLabel("Cadastro de Cliente");
-    private static JLabel subtitulo1 = new JLabel("Infomações Pessoais");
-    private static JLabel subtitulo2 = new JLabel("Infomações de Endereço");
-    private static JLabel subtitulo3 = new JLabel("Infomações do Cartão de Crédito");
 
-    // INFORMAÇÕES PESSOAIS
+    // INFORMA��ES PESSOAIS
 
     // Input nome
     private static JLabel labelNome = new JLabel("Didigite seu nome:");
@@ -27,14 +24,6 @@ public class CadastroCliente implements ActionListener {
     // Input email
     private static JLabel labelEmail = new JLabel("Didigite seu email:");
     private static JTextField fieldEmail = new JTextField();
-
-    // Input DDD
-    private static JLabel labelDDD = new JLabel("DDD:");
-    private static JTextField fieldDDD = new JTextField();
-
-    // Input telefone
-    private static JLabel labelTele = new JLabel("Telefone:");
-    private static JTextField fieldTele = new JTextField();
 
     // Input senha
     private static JLabel labelSenha = new JLabel("Didigite sua senha:");
@@ -50,18 +39,18 @@ public class CadastroCliente implements ActionListener {
     private static JLabel labelDDD = new JLabel("Didigite seu DDD:");
     private static JTextField fieldDDD = new JTextField();
     
-    // Input Número
-    private static JLabel labelNumero = new JLabel("Didigite seu número:");
+    // Input N�mero
+    private static JLabel labelNumero = new JLabel("Didigite seu n�mero:");
     private static JTextField fieldNumero = new JTextField();
     
-    // ENDEREÇO
+    // ENDERE�O
 
     // Logradouro
     private static JLabel labelLogradouro = new JLabel("Logradouro:");
     private static JTextField fieldLogradouro = new JTextField();
 
-    // Numero do Endereço
-    private static JLabel labelNumeroEnd = new JLabel("Nº:");
+    // Numero do Endere�o
+    private static JLabel labelNumeroEnd = new JLabel("N� do endere�o:");
     private static JTextField fieldNumeroEnd = new JTextField();
 
     // Bairro
@@ -80,38 +69,9 @@ public class CadastroCliente implements ActionListener {
     private static JLabel labelEstado = new JLabel("Estado");
     private static JTextField fieldEstado = new JTextField();
 
-    // CARTÃO DE CRÉDITO
-
-    // Bandeira
-    private static JLabel labelBand = new JLabel("Didigite a bandeira do cartão:");
-    private static JTextField fieldBand = new JTextField();
-
-    // Número do Cartão
-    private static JLabel labelNumCart = new JLabel("Didigite o número do seu cartão:");
-    private static JTextField fieldNumCart = new JTextField();
-
-    // Código de Segurança
-    private static JLabel labelCodSeg = new JLabel("Didigite o código de segurança:");
-    private static JTextField fieldCodSeg = new JTextField();
-
-    // Input data de nascimento
-    private static JLabel labelDataNasc = new JLabel("Digite a sua data de nascimento:");
-    private static JTextField fieldDataNasc = new JTextField();
-
-    // Input data de vencimento do cartão
-    private static JLabel labelDataVenc = new JLabel("Digite a data de vencimento do cartão:");
-    private static JLabel labelMesVenc = new JLabel("Mês:");
-    private static JLabel labelAnoVenc = new JLabel("Ano:");
-
-    private static JTextField fieldMesVenc = new JTextField();
-    private static JTextField fieldAnoVenc = new JTextField();
-
-    // Botões
-
     private static JButton cadastrar = new JButton("Cadastrar");
-    private static JButton cancelar = new JButton("Cancelar");
 
-    public CadastroCliente() {
+    public void cadastroCliente() {
 
         // JANELA
 
@@ -119,111 +79,74 @@ public class CadastroCliente implements ActionListener {
 
         titulo.setFont(new Font("Arial", Font.BOLD, 20));
         titulo.setBounds(20, 20, 250, 50);
-        subtitulo1.setFont(new Font("Arial", Font.BOLD, 14));
-        subtitulo1.setBounds(20, 80, 250, 50);
-        subtitulo2.setFont(new Font("Arial", Font.BOLD, 14));
-        subtitulo2.setBounds(380, 80, 250, 50);
-        subtitulo3.setFont(new Font("Arial", Font.BOLD, 14));
-        subtitulo3.setBounds(730, 80, 250, 50);
-        cadastrar.setBounds(256, 640, 250, 50);
-        cadastrar.setBackground(Color.GREEN);
-        cancelar.setBounds(512, 640, 250, 50);
+        cadastrar.setBounds(50, 640, 250, 50);
 
-        // INFORMAÇÕES PESSOAIS
+        // INFORMA��ES PESSOAIS
 
         // Input nome
-        labelNome.setBounds(20, 110, 250, 50);
-        fieldNome.setBounds(20, 150, 250, 50);
+        labelNome.setBounds(50, 150, 250, 50);
+        fieldNome.setBounds(50, 190, 250, 50);
 
         // Input CPF
-        labelCPF.setBounds(20, 190, 250, 50);
-        fieldCPF.setBounds(20, 230, 250, 50);
+        labelCPF.setBounds(50, 240, 250, 50);
+        fieldCPF.setBounds(50, 280, 250, 50);
 
         // Input email
-        labelEmail.setBounds(20, 270, 250, 50);
-        fieldEmail.setBounds(20, 310, 250, 50);
-
-        // Input DDD
-        labelDDD.setBounds(20, 350, 50, 50);
-        fieldDDD.setBounds(20, 390, 50, 50);
-
-        // Input telefone
-        labelTele.setBounds(90, 350, 250, 50);
-        fieldTele.setBounds(90, 390, 180, 50);
+        labelEmail.setBounds(50, 330, 250, 50);
+        fieldEmail.setBounds(50, 370, 250, 50);
 
         // Iput senha
-        labelSenha.setBounds(20, 430, 250, 50);
-        senha.setBounds(20, 470, 250, 50);
+        labelSenha.setBounds(50, 420, 250, 50);
+        senha.setBounds(50, 460, 250, 50);
 
         // Input confirmar senha
-        labelConfirmSenha.setBounds(20, 510, 250, 50);
-        confirmSenha.setBounds(20, 550, 250, 50);
-
-        // ENDEREÇO
+        labelConfirmSenha.setBounds(50, 510, 250, 50);
+        confirmSenha.setBounds(50, 550, 250, 50);
+        
+        /*
+        // TELEFONE
+        
+        // input DDD
+        labelDDD.setBounds(50, 150, 250, 50);
+        fieldDDD.setBounds(50, 190, 250, 50);
+        
+        // input N�mero
+        labelNumero.setBounds(50, 150, 250, 50);
+        fieldNumero.setBounds(50, 190, 250, 50);
+        */
+        
+        // ENDERE�O
 
         // Input logradouro
-        labelLogradouro.setBounds(380, 110, 250, 50);
-        fieldLogradouro.setBounds(380, 150, 250, 50);
+        labelLogradouro.setBounds(350, 150, 250, 50);
+        fieldLogradouro.setBounds(350, 190, 250, 50);
 
-        // Input Numero Endereço
-        labelNumeroEnd.setBounds(380, 190, 50, 50);
-        fieldNumeroEnd.setBounds(380, 230, 50, 50);
+        // Input Numero Endere�o
+        labelNumeroEnd.setBounds(350, 240, 250, 50);
+        fieldNumeroEnd.setBounds(350, 280, 250, 50);
 
         // Input bairro
-        labelBairro.setBounds(450, 190, 200, 50);
-        fieldBairro.setBounds(450, 230, 180, 50);
+        labelBairro.setBounds(350, 330, 250, 50);
+        fieldBairro.setBounds(350, 370, 250, 50);
 
         // Iput cep
-        labelCep.setBounds(380, 270, 250, 50);
-        fieldCep.setBounds(380, 310, 250, 50);
+        labelCep.setBounds(350, 420, 250, 50);
+        fieldCep.setBounds(350, 460, 250, 50);
 
         // Input cidade
-        labelCidade.setBounds(380, 350, 250, 50);
-        fieldCidade.setBounds(380, 390, 250, 50);
+        labelCidade.setBounds(350, 510, 250, 50);
+        fieldCidade.setBounds(350, 550, 250, 50);
 
         // Input estado
-        labelEstado.setBounds(380, 430, 250, 50);
-        fieldEstado.setBounds(380, 470, 250, 50);
-
-        // CARTÃO DE CRÉDITO
-
-        // Input bandeira
-        labelBand.setBounds(730, 110, 250, 50);
-        fieldBand.setBounds(730, 150, 250, 50);
-
-        // Input numero do cartão
-        labelNumCart.setBounds(730, 190, 250, 50);
-        fieldNumCart.setBounds(730, 230, 250, 50);
-
-        // Input código de segurança
-        labelCodSeg.setBounds(730, 270, 250, 50);
-        fieldCodSeg.setBounds(730, 310, 250, 50);
-
-        // Iput data de nascimento
-        labelDataNasc.setBounds(730, 350, 250, 50);
-        fieldDataNasc.setBounds(730, 390, 250, 50);
-
-        // Input data de vencimento do cartão
-
-        labelDataVenc.setBounds(730, 430, 250, 50);
-        labelMesVenc.setBounds(730, 450, 250, 50);
-        labelAnoVenc.setBounds(880, 450, 250, 50);
-        fieldMesVenc.setBounds(730, 490, 100, 50);
-        fieldAnoVenc.setBounds(880, 490, 100, 50);
+        labelEstado.setBounds(350, 600, 250, 50);
+        fieldEstado.setBounds(350, 640, 250, 50);
 
         // [ADICIONANDO A JANELA]
-        janela.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        janela.setVisible(true);
-        janela.setSize(1024, 768);
+
         janela.add(titulo);
-        janela.add(subtitulo1);
-        janela.add(subtitulo2);
-        janela.add(subtitulo3);
-
         janela.add(cadastrar);
-        janela.add(cancelar);
 
-        // Informações pessoais
+        // Informa��es pessoais
 
         janela.add(labelNome);
         janela.add(fieldNome);
@@ -231,10 +154,6 @@ public class CadastroCliente implements ActionListener {
         janela.add(fieldCPF);
         janela.add(labelEmail);
         janela.add(fieldEmail);
-        janela.add(labelDDD);
-        janela.add(fieldDDD);
-        janela.add(labelTele);
-        janela.add(fieldTele);
         janela.add(labelSenha);
         janela.add(senha);
         janela.add(labelConfirmSenha);
@@ -248,7 +167,7 @@ public class CadastroCliente implements ActionListener {
         janela.add(fieldNumero);
         */
         
-        // Endereço
+        // Endere�o
 
         janela.add(labelLogradouro);
         janela.add(fieldLogradouro);
@@ -263,41 +182,8 @@ public class CadastroCliente implements ActionListener {
         janela.add(labelEstado);
         janela.add(fieldEstado);
 
-        // Cartão de Crédito
-
-        janela.add(labelBand);
-        janela.add(fieldBand);
-        janela.add(labelNumCart);
-        janela.add(fieldNumCart);
-        janela.add(labelCodSeg);
-        janela.add(fieldCodSeg);
-        janela.add(labelDataNasc);
-        janela.add(fieldDataNasc);
-        janela.add(labelDataVenc);
-        janela.add(labelMesVenc);
-        janela.add(labelAnoVenc);
-        janela.add(fieldMesVenc);
-        janela.add(fieldAnoVenc);
-
-    }
-
-    public void cadastrarCliente() {
-        CadastroCliente cadastrocliente = new CadastroCliente();
-        cadastrar.addActionListener(cadastrocliente);
-    }
-
-    public static void main(String[] args) {
-        CadastroCliente cadastrocliente = new CadastroCliente();
-        cadastrar.addActionListener(cadastrocliente);
-    }
-
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        // TODO Auto-generated method stub
-        Object src = e.getSource();
-        if (src == cadastrar) {
-            JOptionPane.showMessageDialog(null, "Cadastro efetivado com sucesso!", null,
-                    JOptionPane.INFORMATION_MESSAGE);
-        }
+        janela.setSize(750, 750);
+        janela.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        janela.setVisible(true);
     }
 }
