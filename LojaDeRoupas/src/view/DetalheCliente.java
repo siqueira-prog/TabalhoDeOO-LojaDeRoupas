@@ -283,6 +283,8 @@ public class DetalheCliente implements ActionListener {
     public void detalharCliente() {
         DetalheCliente detalharcliente = new DetalheCliente();
         editar.addActionListener(detalharcliente);
+        cancelar.addActionListener(detalharcliente);
+
     }
 
     public static void main(String[] args) {
@@ -301,9 +303,5 @@ public class DetalheCliente implements ActionListener {
         if (src == cancelar) {
             janela.dispose();
         }
-        // if (src == cadastrar) {
-        // JOptionPane.showMessageDialog(null, "Cadastro efetivado com sucesso!", null,
-        // JOptionPane.INFORMATION_MESSAGE);
-        // }
     }
 }

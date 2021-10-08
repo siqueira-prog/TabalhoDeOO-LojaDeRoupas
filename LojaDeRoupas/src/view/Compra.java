@@ -7,13 +7,15 @@ import java.util.*;
 import javax.swing.*;
 
 public class Compra implements ActionListener {
-    // listaDeProdutos = new JList<String>(listaNomes);
+
+    private String list[] = { "Testes", "Teste2", "Teste3" };
+
+    JList listprodutos = new JList<String>();
 
     // JANELA
     private static JFrame janela = new JFrame("Compra");
     private static JLabel titulo = new JLabel("Compra");
     // Lista de Produtos
-    // JList listaDeProdutos = new JList<string>();
 
     // Botao
     private static JButton comprar = new JButton("Comprar");
@@ -24,9 +26,10 @@ public class Compra implements ActionListener {
         titulo.setFont(new Font("Arial", Font.BOLD, 20));
         titulo.setBounds(20, 20, 250, 50);
         // listaDeProdutos.setBounds(250, 150, 250, 50);
-
+        listprodutos.setBounds(380, 200, 250, 50);
         comprar.setBounds(380, 640, 250, 50);
 
+        janela.add(listprodutos);
         janela.add(comprar);
 
         janela.add(titulo);

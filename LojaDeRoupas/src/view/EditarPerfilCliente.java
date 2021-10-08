@@ -269,21 +269,33 @@ public class EditarPerfilCliente implements ActionListener {
 
     public void editarPerfil() {
         EditarPerfilCliente editarperfilcliente = new EditarPerfilCliente();
-        // cadastrar.addActionListener(cadastrocliente);
+        cadastrar.addActionListener(editarperfilcliente);
+        cancelar.addActionListener(editarperfilcliente);
+        excluir.addActionListener(editarperfilcliente);
     }
 
     public static void main(String[] args) {
         EditarPerfilCliente editarperfilcliente = new EditarPerfilCliente();
-        // cadastrar.addActionListener(cadastrocliente);
+        cadastrar.addActionListener(editarperfilcliente);
+        cancelar.addActionListener(editarperfilcliente);
+        excluir.addActionListener(editarperfilcliente);
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         // TODO Auto-generated method stub
         Object src = e.getSource();
-        // if (src == cadastrar) {
-        // JOptionPane.showMessageDialog(null, "Cadastro efetivado com sucesso!", null,
-        // JOptionPane.INFORMATION_MESSAGE);
-        // }
+        if (src == cadastrar) {
+            JOptionPane.showMessageDialog(null, "Cadastro efetivado com sucesso!", null,
+                    JOptionPane.INFORMATION_MESSAGE);
+            janela.dispose();
+        }
+        if (src == cancelar) {
+            janela.dispose();
+        }
+        if (src == excluir) {
+            JOptionPane.showMessageDialog(null, "Perfil excluído com sucesso!", null, JOptionPane.INFORMATION_MESSAGE);
+            janela.dispose();
+        }
     }
 }
