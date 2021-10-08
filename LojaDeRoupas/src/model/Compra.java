@@ -5,161 +5,170 @@ import java.util.*;
 
 //class
 public class Compra {
-
-	//scanner
-	private Scanner sc = new Scanner(System.in);
 	
 	//attribute 
-	private int idDaCompra;
-	private String qtdSolicitada;
-	private String cliente;
-	private String produto;
-	private CartaoDeCredito cartao[];
+	private String idDaCompra;
+	private int qtdSolicitada;
+	private Cliente cliente;
+	private Camiseta camiseta;
+	private CartaoDeCredito cartao[] = new CartaoDeCredito[100];
 	
 	//constructor
 	
-	public Compra( int id, String qtd, String c, String p) { 
-		idDaCompra = id;
-		qtdSolicitada = qtd ;
-		cliente = c;
-		produto = p;
+	public Compra( String id, int qtd, Cliente c, Camiseta cm, CartaoDeCredito cdc[]) { 
+		this.idDaCompra = id;
+		this.qtdSolicitada = qtd ;
+		this.cliente = c;
+		this.camiseta = cm;
+		this.cartao = cdc;
 	}
 	
 	//toString
 	
 	public String toString() {
-		return  "id :" + idDaCompra + "\n" +
-				"quantidade solicitada :" + qtdSolicitada + "\n" +
-				"cliente :" + cliente + "\n" +
-				"produto :" + produto + "\n" ;
+		return  "ID: " + idDaCompra + "\n" +
+				"Quantidade solicitada: " + qtdSolicitada + "\n" +
+				"Cliente: " + cliente + "\n" +
+				"Produto: " + camiseta + "\n"+
+				"Cartao de Crédito: " + camiseta + "\n" ;
 
 	}
 	//method construction
 
-	public ArrayList<String>  cadastrar(ArrayList<String> data_compra, int id, String qts, String c, String p) { 
-		
-		Compra compra = new Compra(
-				id,
-				qts,
-				c,
-				p
-				);
-		
-			String id_string = Integer.toString(compra.idDaCompra);
-			data_compra.add(id_string);
-			data_compra.add(compra.qtdSolicitada);
-			data_compra.add(compra.cliente);
-			data_compra.add(compra.produto);
+	public ArrayList<String>  cadastrar(ArrayList<String> data_compra, Compra compra) {
+								
+			data_compra.add(compra.idDaCompra);
 			
-		return data_compra;
+			String qts_string = Integer.toString(compra.qtdSolicitada);
+			data_compra.add(qts_string);
+			
+			data_compra.add(compra.cliente.getNomeDoUsuario());
+			
+			data_compra.add(compra.cliente.getEmail());
+			
+			String ddd_string = Integer.toString(compra.cliente.getTelefone().getDdd());
+			String numero_string = Integer.toString(compra.cliente.getTelefone().getNumero());
+			String fullnumber = ddd_string + numero_string;
+			data_compra.add(fullnumber);
+			
+			String endereco_string = Arrays.toString(compra.cliente.getEndereco());
+			data_compra.add(endereco_string);
+			
+			String cartao_string = Arrays.toString(compra.cliente.getCartao());
+			data_compra.add(cartao_string);
+			
+			return data_compra;
 		}
 
 	
 	public void  visualizar(ArrayList<String> data_compra, String id) {
 		
-		
-		int position = data_compra.indexOf(id);
-		
-		if(data_compra.contains(id)) {
+			int position = data_compra.indexOf(id);
 			
 			System.out.println(
 					
 					"INFORMAÇÕES DA COMPRA"+"\n"+
-					"id : " + data_compra.get(position)+"\n"+
+					"id: " + data_compra.get(position)+"\n"+
 					"Quantidade Solicitada: " + data_compra.get(position+1)+"\n"+
 					"Nome do Cliente: " + data_compra.get(position+2)+"\n"+
-					"Produto : " + data_compra.get(position+3)+"\n"
+					"Email do Cliente: " + data_compra.get(position+3)+"\n"+
+					"Telefone: " + data_compra.get(position+4)+"\n"+
+					"Endereço: " + data_compra.get(position+5)+"\n"+
+					"Cartao de crédito: " + data_compra.get(position+6)
 
 					
 					);
-			}
-			
-		else {
-			
-			System.out.println("Compra não encontrada!");	}
 		
 	}
 	
-	public ArrayList<String>  atualizar(ArrayList<String> data_compra, String id) {
+	public ArrayList<String>  atualizar(ArrayList<String> data_compra, Compra newcompra) {
 			
-		int position = data_compra.indexOf(id);
+		int position = data_compra.indexOf(newcompra.getIdDaCompra());
 		
-		
+		data_compra.remove(position);
+		data_compra.remove(position);
+		data_compra.remove(position);
 		data_compra.remove(position);
 		data_compra.remove(position);
 		data_compra.remove(position);
 		data_compra.remove(position);
 
-		String identificador = id;
-		data_compra.add(identificador);
+		data_compra.add(newcompra.getIdDaCompra());
 		
-		System.out.println("Digite a nova quantidade solicitada do produto: " + "\n");
-		String new_qtd = sc.nextLine();
-		data_compra.add(new_qtd);
+		String qts_string = Integer.toString(newcompra.qtdSolicitada);
+		data_compra.add(qts_string);
 		
-		System.out.println("Informe o nome do cliente: " + "\n");
-		String new_nome_cliente = sc.nextLine();
-		data_compra.add(new_nome_cliente);
+		data_compra.add(newcompra.cliente.getNomeDoUsuario());
 		
-		System.out.println("Informe qual produto deseja comprar:" + "\n");
-		String new_nome_produto = sc.nextLine();
-		data_compra.add(new_nome_produto);
+		data_compra.add(newcompra.cliente.getEmail());
 		
-		System.out.println("Dados atualizados com sucesso!");
-					
+		String ddd_string = Integer.toString(newcompra.cliente.getTelefone().getDdd());
+		String numero_string = Integer.toString(newcompra.cliente.getTelefone().getNumero());
+		String fullnumber = ddd_string + numero_string;
+		data_compra.add(fullnumber);
+		
+		String endereco_string = Arrays.toString(newcompra.cliente.getEndereco());
+		data_compra.add(endereco_string);
+		
+		String cartao_string = Arrays.toString(newcompra.cliente.getCartao());
+		data_compra.add(cartao_string);		
+		
 		return data_compra;
 	}
 	
-	public ArrayList<String>  deletar(ArrayList<String> data_compra, String id) {
+	public ArrayList<String>  deletar(ArrayList<String> data_compra, Compra compra) {
 		
 		// deleting registration
 		
-		int position = data_compra.indexOf(id);
+		int position = data_compra.indexOf(compra.getIdDaCompra());
 		
 		data_compra.remove(position);
 		data_compra.remove(position);
 		data_compra.remove(position);
 		data_compra.remove(position);
-		
-		System.out.println("Compra canselada com sucesso!");
+		data_compra.remove(position);
+		data_compra.remove(position);
+		data_compra.remove(position);
 		
 		return data_compra;
 		}
 	
+	// se sobrar tempo eu faço esse método
 	public void  exportar(ArrayList<String> data_compra, String id) {
 	}
 	
+	//getters and setters
 
-	public int getIdDaCompra() {
+	public String getIdDaCompra() {
 		return idDaCompra;
 	}
 
-	public void setIdDaCompra(int idDaCompra) {
+	public void setIdDaCompra(String idDaCompra) {
 		this.idDaCompra = idDaCompra;
 	}
 
-	public String getQtdSolicitada() {
+	public int getQtdSolicitada() {
 		return qtdSolicitada;
 	}
 
-	public void setQtdSolicitada(String qtdSolicitada) {
+	public void setQtdSolicitada(int qtdSolicitada) {
 		this.qtdSolicitada = qtdSolicitada;
 	}
 
-	public String getCliente() {
+	public Cliente getCliente() {
 		return cliente;
 	}
 
-	public void setCliente(String cliente) {
+	public void setCliente(Cliente cliente) {
 		this.cliente = cliente;
 	}
 
-	public String getProduto() {
-		return produto;
+	public Camiseta getCamiseta() {
+		return camiseta;
 	}
 
-	public void setProduto(String produto) {
-		this.produto = produto;
+	public void setCamiseta(Camiseta camiseta) {
+		this.camiseta = camiseta;
 	}
 
 	public CartaoDeCredito[] getCartao() {
@@ -169,9 +178,6 @@ public class Compra {
 	public void setCartao(CartaoDeCredito[] cartao) {
 		this.cartao = cartao;
 	}
-	
-	//getters and setters
-
 
 }
 	

@@ -1,66 +1,93 @@
 //package
 package model;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 
 //class
 public class Cliente extends Usuario{
 	
-	// scanner
-	private Scanner sc = new Scanner(System.in);
-	
 	//attribute
 	private Telefone telefone;
-	private	Endereco endereco[];
-	private CartaoDeCredito cartao[];
+	private	Endereco endereco[] = new Endereco[1];
+	private CartaoDeCredito cartao[] = new CartaoDeCredito[100];
 	
 	//constructor
 	public Cliente( 
-			String c, 
+			int c, 
 			String nom, 
 			String e, 
 			String s, 
+			Telefone tel,
+			Endereco end[],
+			CartaoDeCredito cdc[],
 			int niv) 
 	{ 
-		nomeDoUsuario = nom;
-		cpf = c;
-		email = e;	
-		senha = s;
-		nivel = niv;
+		this.cpf = c;
+		this.nomeDoUsuario = nom;
+		this.email = e;	
+		this.senha = s;
+		this.telefone = tel;
+		this.endereco = end;
+		this.cartao = cdc;
+		this.nivel = niv;
 	}
 	
 	//toString
 	
 	public String toString() {
+		String endereco_string = Arrays.toString(endereco);
+		String cartao_string = Arrays.toString(cartao);
 		return  "cpf :" + cpf + "\n" +
 				"nome :" + nomeDoUsuario + "\n" +
 				"email :" + email + "\n" +
 				"senha :" + senha + "\n" +
 				"nivel :" + nivel + "\n" +
 				"telefone :" + telefone + "\n" +
-				"endereço :" + endereco + "\n"+
-				"CartaoDeCredito :" + cartao + "\n";
+				"endereço :" + "\n" + endereco_string + "\n"+
+				"CartaoDeCredito :" + "\n"+ cartao_string + "\n";
 	}
 	
-	
-
 	//method construction
 	
-	public ArrayList<String>  cadastrar(ArrayList<String> data_client, String c, String n, String e, String s, int niv ) { 
-								
-		Cliente cliente = new Cliente(
-				c,
-				n,
-				e, 			
-				s,
-				niv
-				);
+	public ArrayList<String>  cadastrar(
+			
+			ArrayList<String> data_client,
+			int c,
+			String n,
+			String e,
+			String s,
+			Telefone tel,
+			Endereco end[],
+			CartaoDeCredito cdc[]
+			) { 
 		
-			data_client.add(cliente.cpf);
+		
+			int niv = 1;
+		
+			Cliente cliente = new Cliente(c,n,e,s,tel,end,cdc,niv);
+		
+			String cpf_String = Integer.toString(cliente.cpf);
+			data_client.add(cpf_String);
+			
 			data_client.add(cliente.nomeDoUsuario);
+			
 			data_client.add(cliente.email);
+			
 			data_client.add(cliente.senha);
+			
+			String ddd_String = Integer.toString(cliente.telefone.getDdd());
+			String number_String = Integer.toString(cliente.telefone.getNumero());
+			String fullnumber = ddd_String + number_String;
+			data_client.add(fullnumber);  
+			
+			String endereco_string = Arrays.toString(cliente.endereco);
+			data_client.add(endereco_string);
+			
+			String cartao_string = Arrays.toString(cliente.cartao);
+			data_client.add(cartao_string);
+			
 			String cliente_nivel_String = Integer.toString(cliente.nivel);
 			data_client.add(cliente_nivel_String);
 			
@@ -81,7 +108,10 @@ public class Cliente extends Usuario{
 						"Nome: " + data_client.get(position+1)+"\n"+
 						"Email: " + data_client.get(position+2)+"\n"+
 						"Senha: " + data_client.get(position+3)+"\n"+
-						"Nível: " + data_client.get(position+4)+"\n"
+						"Telefone: " + data_client.get(position+4)+"\n"+
+						"Endereço: " + data_client.get(position+5)+"\n"+
+						"Cartão de credito: " + data_client.get(position+6)+"\n"+
+						"Nível: " + data_client.get(position+7)+"\n"
 						
 						);
 				}
@@ -93,39 +123,55 @@ public class Cliente extends Usuario{
 		}
 		
 
-		public ArrayList<String>  editar(ArrayList<String> data_client, String c) {
+	public ArrayList<String>  editar(ArrayList<String> database, String c, String n, String e, String s, Telefone tel,
+			 Endereco end[], CartaoDeCredito cdc[]){
 			
 			
-			int position = data_client.indexOf(c);
+			int position = database.indexOf(c);
 			
+			int niv = 1;
 			
-			data_client.remove(position);
-			data_client.remove(position);
-			data_client.remove(position);
-			data_client.remove(position);
-			data_client.remove(position);
+			int cpf_int = Integer.parseInt(c);
 			
-			String cpf = c;
-			data_client.add(cpf);
-			System.out.println("Digite seu novo nome: " + "\n");
-			String nome = sc.nextLine();
-			data_client.add(nome);
-			System.out.println("Digite seu novo email: " + "\n");
-			String email = sc.nextLine();
-			data_client.add(email);
-			System.out.println("Digite sua nova senha: " + "\n");
-			String senha = sc.nextLine();
-			data_client.add(senha);
+			Cliente cliente = new Cliente(cpf_int, n, e, s, tel, end, cdc, niv);
+			
+			database.remove(position);
+			database.remove(position);
+			database.remove(position);
+			database.remove(position);
+			database.remove(position);
+			database.remove(position);
+			database.remove(position);
+			database.remove(position);
+			
+			database.add(c);
+
+			database.add(n);
+
+			database.add(e);
+
+			database.add(s);
+			
+			String ddd_String = Integer.toString(cliente.telefone.getDdd());
+			String number_String = Integer.toString(cliente.telefone.getNumero());
+			String fullnumber = ddd_String + number_String;
+			database.add(fullnumber);
+			
+			String endereco_string = Arrays.toString(cliente.endereco);
+			database.add(endereco_string);
+			
+			String cartao_string = Arrays.toString(cliente.cartao);
+			database.add(cartao_string);
+			
 			String nivel = "1";
-			data_client.add(nivel);
+			database.add(nivel);
 			
-			System.out.println("Dados atualizados com sucesso!");
 						
-			return data_client;
+			return database;
 		}
 
 
-		public ArrayList<String>  deletar(ArrayList<String> data_client, String c) {
+	public ArrayList<String>  deletar(ArrayList<String> data_client, String c) {
 			
 			// deleting registration
 			
@@ -150,11 +196,11 @@ public class Cliente extends Usuario{
 		this.nomeDoUsuario = nomeDoUsuario;
 	}
 
-	public String getCpf() {
+	public int getCpf() {
 		return cpf;
 	}
 
-	public void setCpf(String cpf) {
+	public void setCpf(int cpf) {
 		this.cpf = cpf;
 	}
 
@@ -193,11 +239,11 @@ public class Cliente extends Usuario{
 	public Endereco[] getEndereco() {
 		return endereco; 
 	}
-
+	
 	public void setEndereco(Endereco[] endereco) {
 		this.endereco = endereco;
 	}
-
+	
 	public CartaoDeCredito[] getCartao() {
 		return cartao;
 	}
@@ -205,5 +251,10 @@ public class Cliente extends Usuario{
 	public void setCartao(CartaoDeCredito[] cartao) {
 		this.cartao = cartao;
 	}
+
+
+
+
+
 
 }

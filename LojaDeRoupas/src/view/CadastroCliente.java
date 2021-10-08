@@ -5,16 +5,16 @@ import java.awt.event.*;
 import javax.swing.*;
 
 public class CadastroCliente implements ActionListener {
-    // [DEFININDO VARI¡VEIS]
+    // [DEFININDO VARI√ÅVEIS]
 
     // JANELA
     private static JFrame janela = new JFrame("Cadastro de Cliente");
     private static JLabel titulo = new JLabel("Cadastro de Cliente");
-    private static JLabel subtitulo1 = new JLabel("InfomaÁıes Pessoais");
-    private static JLabel subtitulo2 = new JLabel("InfomaÁıes de EndereÁo");
-    private static JLabel subtitulo3 = new JLabel("InfomaÁıes do Cart„o de CrÈdito");
+    private static JLabel subtitulo1 = new JLabel("Infoma√ß√µes Pessoais");
+    private static JLabel subtitulo2 = new JLabel("Infoma√ß√µes de Endere√ßo");
+    private static JLabel subtitulo3 = new JLabel("Infoma√ß√µes do Cart√£o de Cr√©dito");
 
-    // INFORMA«’ES PESSOAIS
+    // INFORMA√á√ïES PESSOAIS
 
     // Input nome
     private static JLabel labelNome = new JLabel("Didigite seu nome:");
@@ -43,15 +43,25 @@ public class CadastroCliente implements ActionListener {
     // Input confirmar senha
     private static JLabel labelConfirmSenha = new JLabel("Repita sua senha:");
     JPasswordField confirmSenha = new JPasswordField();
-
-    // ENDERE«O
+    
+    // TELEFONE
+    
+    // Input DDD
+    private static JLabel labelDDD = new JLabel("Didigite seu DDD:");
+    private static JTextField fieldDDD = new JTextField();
+    
+    // Input N√∫mero
+    private static JLabel labelNumero = new JLabel("Didigite seu n√∫mero:");
+    private static JTextField fieldNumero = new JTextField();
+    
+    // ENDERE√áO
 
     // Logradouro
     private static JLabel labelLogradouro = new JLabel("Logradouro:");
     private static JTextField fieldLogradouro = new JTextField();
 
-    // Numero do EndereÁo
-    private static JLabel labelNumeroEnd = new JLabel("N∫:");
+    // Numero do Endere√ßo
+    private static JLabel labelNumeroEnd = new JLabel("N¬∫:");
     private static JTextField fieldNumeroEnd = new JTextField();
 
     // Bairro
@@ -70,33 +80,33 @@ public class CadastroCliente implements ActionListener {
     private static JLabel labelEstado = new JLabel("Estado");
     private static JTextField fieldEstado = new JTextField();
 
-    // CART√O DE CR…DITO
+    // CART√ÉO DE CR√âDITO
 
     // Bandeira
-    private static JLabel labelBand = new JLabel("Didigite a bandeira do cart„o:");
+    private static JLabel labelBand = new JLabel("Didigite a bandeira do cart√£o:");
     private static JTextField fieldBand = new JTextField();
 
-    // N˙mero do Cart„o
-    private static JLabel labelNumCart = new JLabel("Didigite o n˙mero do seu cart„o:");
+    // N√∫mero do Cart√£o
+    private static JLabel labelNumCart = new JLabel("Didigite o n√∫mero do seu cart√£o:");
     private static JTextField fieldNumCart = new JTextField();
 
-    // CÛdigo de SeguranÁa
-    private static JLabel labelCodSeg = new JLabel("Didigite o cÛdigo de seguranÁa:");
+    // C√≥digo de Seguran√ßa
+    private static JLabel labelCodSeg = new JLabel("Didigite o c√≥digo de seguran√ßa:");
     private static JTextField fieldCodSeg = new JTextField();
 
     // Input data de nascimento
     private static JLabel labelDataNasc = new JLabel("Digite a sua data de nascimento:");
     private static JTextField fieldDataNasc = new JTextField();
 
-    // Input data de vencimento do cart„o
-    private static JLabel labelDataVenc = new JLabel("Digite a data de vencimento do cart„o:");
-    private static JLabel labelMesVenc = new JLabel("MÍs:");
+    // Input data de vencimento do cart√£o
+    private static JLabel labelDataVenc = new JLabel("Digite a data de vencimento do cart√£o:");
+    private static JLabel labelMesVenc = new JLabel("M√™s:");
     private static JLabel labelAnoVenc = new JLabel("Ano:");
 
     private static JTextField fieldMesVenc = new JTextField();
     private static JTextField fieldAnoVenc = new JTextField();
 
-    // Botıes
+    // Bot√µes
 
     private static JButton cadastrar = new JButton("Cadastrar");
     private static JButton cancelar = new JButton("Cancelar");
@@ -119,7 +129,7 @@ public class CadastroCliente implements ActionListener {
         cadastrar.setBackground(Color.GREEN);
         cancelar.setBounds(512, 640, 250, 50);
 
-        // INFORMA«’ES PESSOAIS
+        // INFORMA√á√ïES PESSOAIS
 
         // Input nome
         labelNome.setBounds(20, 110, 250, 50);
@@ -149,13 +159,13 @@ public class CadastroCliente implements ActionListener {
         labelConfirmSenha.setBounds(20, 510, 250, 50);
         confirmSenha.setBounds(20, 550, 250, 50);
 
-        // ENDERE«O
+        // ENDERE√áO
 
         // Input logradouro
         labelLogradouro.setBounds(380, 110, 250, 50);
         fieldLogradouro.setBounds(380, 150, 250, 50);
 
-        // Input Numero EndereÁo
+        // Input Numero Endere√ßo
         labelNumeroEnd.setBounds(380, 190, 50, 50);
         fieldNumeroEnd.setBounds(380, 230, 50, 50);
 
@@ -175,17 +185,17 @@ public class CadastroCliente implements ActionListener {
         labelEstado.setBounds(380, 430, 250, 50);
         fieldEstado.setBounds(380, 470, 250, 50);
 
-        // CART√O DE CR…DITO
+        // CART√ÉO DE CR√âDITO
 
         // Input bandeira
         labelBand.setBounds(730, 110, 250, 50);
         fieldBand.setBounds(730, 150, 250, 50);
 
-        // Input numero do cart„o
+        // Input numero do cart√£o
         labelNumCart.setBounds(730, 190, 250, 50);
         fieldNumCart.setBounds(730, 230, 250, 50);
 
-        // Input cÛdigo de seguranÁa
+        // Input c√≥digo de seguran√ßa
         labelCodSeg.setBounds(730, 270, 250, 50);
         fieldCodSeg.setBounds(730, 310, 250, 50);
 
@@ -193,7 +203,7 @@ public class CadastroCliente implements ActionListener {
         labelDataNasc.setBounds(730, 350, 250, 50);
         fieldDataNasc.setBounds(730, 390, 250, 50);
 
-        // Input data de vencimento do cart„o
+        // Input data de vencimento do cart√£o
 
         labelDataVenc.setBounds(730, 430, 250, 50);
         labelMesVenc.setBounds(730, 450, 250, 50);
@@ -213,7 +223,7 @@ public class CadastroCliente implements ActionListener {
         janela.add(cadastrar);
         janela.add(cancelar);
 
-        // InformaÁıes pessoais
+        // Informa√ß√µes pessoais
 
         janela.add(labelNome);
         janela.add(fieldNome);
@@ -229,8 +239,16 @@ public class CadastroCliente implements ActionListener {
         janela.add(senha);
         janela.add(labelConfirmSenha);
         janela.add(confirmSenha);
-
-        // EndereÁo
+        
+        /*
+        // Telefone
+        janela.add(labelDDD);
+        janela.add(fieldDDD);
+        janela.add(labelNumero);
+        janela.add(fieldNumero);
+        */
+        
+        // Endere√ßo
 
         janela.add(labelLogradouro);
         janela.add(fieldLogradouro);
@@ -245,7 +263,7 @@ public class CadastroCliente implements ActionListener {
         janela.add(labelEstado);
         janela.add(fieldEstado);
 
-        // Cart„o de CrÈdito
+        // Cart√£o de Cr√©dito
 
         janela.add(labelBand);
         janela.add(fieldBand);

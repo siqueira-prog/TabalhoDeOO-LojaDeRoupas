@@ -9,7 +9,7 @@ public abstract class Usuario {
 	
 	//attribute
 	protected String nomeDoUsuario; 
-	protected String cpf;
+	protected int cpf;
 	protected String email;
 	protected String senha;
 	protected int nivel;
@@ -22,10 +22,11 @@ public abstract class Usuario {
 	public void setNomeDoUsuario(String nomeDoUsuario) {
 		this.nomeDoUsuario = nomeDoUsuario;
 	}
-	public String getCpf() {
+
+	public int getCpf() {
 		return cpf;
 	}
-	public void setCpf(String cpf) {
+	public void setCpf(int cpf) {
 		this.cpf = cpf;
 	}
 	public String getEmail() {
@@ -49,9 +50,25 @@ public abstract class Usuario {
 	
 	//method signature
 	
-	public abstract ArrayList<String>  cadastrar(ArrayList<String> data, String c, String n, String e, String s, int niv );
+	public abstract ArrayList<String>  cadastrar(
+			ArrayList<String> data_client,
+			int c,
+			String n,
+			String e,
+			String s,
+			Telefone tel,
+			Endereco end[],
+			CartaoDeCredito cdc[]);
 	public abstract void visualizar (ArrayList<String> data_client, String c);
-	public abstract ArrayList<String>  editar(ArrayList<String> data_client, String c);
+	public abstract ArrayList<String>  editar(
+			ArrayList<String> database,
+			String c,
+			String n,
+			String e,
+			String s,
+			Telefone tel,
+			Endereco end[],
+			CartaoDeCredito cdc[]);
 	public abstract ArrayList<String>  deletar(ArrayList<String> data_client, String c); 
 	
 	//main class - testing

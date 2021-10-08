@@ -10,6 +10,7 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
+// CRIANDO A INTERFACE INICIAL CHAMADA HOME
 public class Home implements ActionListener {
 
 	// Janela
@@ -22,6 +23,7 @@ public class Home implements ActionListener {
 	private static JButton logarAdmin = new JButton("Logar como administrador");
 	private static JButton cadastrarCliente = new JButton("Cadastrar como cliente");
 
+	// CONSTRUTOR
 	public Home() {
 
 		// Setando tamanhos
@@ -46,19 +48,27 @@ public class Home implements ActionListener {
 		janela.setVisible(true);
 	}
 
+    // MÉTODO PARA SER PUXADO POR OUTRA INTERFACE
+	public void home() {
+		Home menu = new Home();
+		logarCliente.addActionListener(menu);
+		cadastrarCliente.addActionListener(menu);
+		logarAdmin.addActionListener(menu);
+	}
+	
+    // MÉTODO MAIN PARA RODAR A INTERFACE SEPARADAMENTE
 	public static void main(String[] args) {
 		Home menu = new Home();
 		logarCliente.addActionListener(menu);
 		cadastrarCliente.addActionListener(menu);
 		logarAdmin.addActionListener(menu);
-
 	}
 
+    // ORIENTAÇÃO DAS AÇÕES 
 	public void actionPerformed(ActionEvent e) {
 		Object src = e.getSource();
 		if (src == logarCliente) {
 			new LoginCliente().loginCliente();
-			System.out.print("Logar Cliente");
 		}
 		if (src == cadastrarCliente) {
 			new CadastroCliente().cadastrarCliente();
