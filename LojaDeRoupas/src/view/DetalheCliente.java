@@ -298,7 +298,7 @@ public class DetalheCliente implements ActionListener {
         // TODO Auto-generated method stub
         Object src = e.getSource();
         if (src == editar) {
-            new EditarPerfilClient().editarPerfil();
+            new EditarPerfilCliente().editarPerfil();
         }
         if (src == cancelar) {
             janela.dispose();
