@@ -247,7 +247,7 @@ public static void testeAdministrador() {
 		
 		//metodo cadastrar - class Administrador 
 		
-		adm1.cadastrar(data_adm,1111111 , "adm1", "adm1@email.com", "111", tel, end, cdc);
+		adm1.cadastrar(data_adm,1111111 , "adm1", "adm1@email.com", "111",tel, end, cdc);
 		adm2.cadastrar(data_adm,2111111, "adm2", "adm2@email.com", "222", tel, end, cdc);
 		adm3.cadastrar(data_adm,3333333, "adm3", "adm3@email.com", "333", tel, end, cdc);
 		adm4.cadastrar(data_adm,4444444, "adm4", "adm4@email.com", "444", tel, end, cdc);
@@ -312,6 +312,7 @@ public static void testeAdministrador() {
 				);
 }
 	// refatorado
+// refatorado
 public static void testeCamiseta() {
 	
 		//criando database - data_camiseta
@@ -481,6 +482,7 @@ public static void testeLoja() {
 			);
 }
 	// refatorado - farei o método exportar se sobrar tempo, pois preciso gerar um pdf e eu não sei fazer isso 
+// refatorado
 public static void testeCompra() {
 	
 	//criando database - data_compra
@@ -584,6 +586,7 @@ public static void testeCompra() {
 
 }
 	// refatorado
+// refatorado
 public static void testeCartaoDeCredito() {
 	
 	//criando database - data_cartao
@@ -655,6 +658,7 @@ public static void testeCartaoDeCredito() {
 			);
 }
 	// refatorado
+// refatorado
 public static void testeEndereco() {
 	
 	//criando database - data_endereco
@@ -704,6 +708,7 @@ public static void testeEndereco() {
 
 }
 	// refatorado
+// refatorado
 public static void testeTelefone() {
 	
 		//criando database - data_telefone
@@ -790,6 +795,7 @@ public static void testeTelefone() {
 				);
 }
 	// criado - farei o método exportar se sobrar tempo, pois preciso gerar um pdf e eu não sei fazer isso 
+// refatorado
 public static void testeFluxoDeCaixa() {
 	//criando database para teste - data_camiseta
 	ArrayList<String> data_camiseta = new ArrayList<String>();
@@ -839,6 +845,7 @@ public static void testeFluxoDeCaixa() {
 	
 	// métodos auxiliares:
 	// metodo gerador de código numérico aleatório convertido em string
+// refatorado
 public static String generate_cod() {
 	Random random = new Random();
 	int codigo_int = random.nextInt(100000000);
@@ -846,6 +853,7 @@ public static String generate_cod() {
 	return codigo_string;
 	}	
 	// método gerador de código numérico aleatório convertido em int
+// refatorado
 public static int generate_cod_int() {
 	Random random = new Random();
 	int codigo_int = random.nextInt(100000000);

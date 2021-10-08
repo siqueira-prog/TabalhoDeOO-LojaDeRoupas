@@ -33,17 +33,12 @@ public class EditarPerfilAdm implements ActionListener {
     private static JLabel labelConfirmSenha = new JLabel("Repita sua senha:");
     private static JPasswordField confirmaSenha = new JPasswordField();
 
-    // INPUT MATRICULA
-    private static JLabel labelMatricula = new JLabel("Matricula");
-    private static JTextField fieldMatricula = new JTextField();
-
     // BOTÕES
     private static JButton editar = new JButton("Editar");
     private static JButton voltar = new JButton("Voltar");
 
     // CONSTRUTOR
     public EditarPerfilAdm() {
-
         // JANELA
 
         janela.setLayout(null);
@@ -73,10 +68,6 @@ public class EditarPerfilAdm implements ActionListener {
         labelConfirmSenha.setBounds(50, 510, 250, 50);
         confirmaSenha.setBounds(50, 550, 250, 50);
 
-        // INPUT MATRICULA
-        labelMatricula.setBounds(350, 150, 250, 50);
-        fieldMatricula.setBounds(350, 190, 250, 50);
-
         // BOTÕES
         editar.setBounds(50, 640, 250, 50);
         voltar.setBounds(350, 640, 250, 50);
@@ -98,9 +89,6 @@ public class EditarPerfilAdm implements ActionListener {
         janela.add(senha);
         janela.add(labelConfirmSenha);
         janela.add(confirmaSenha);
-
-        janela.add(labelMatricula);
-        janela.add(fieldMatricula);
         
         janela.add(voltar);
         janela.setSize(750, 750);
@@ -116,9 +104,8 @@ public class EditarPerfilAdm implements ActionListener {
         fieldEmail.addActionListener(editarperfiladm);
         senha.addActionListener(editarperfiladm);
         confirmaSenha.addActionListener(editarperfiladm);
-        fieldMatricula.addActionListener(editarperfiladm);
         editar.addActionListener(editarperfiladm);
-        voltar.addActionListener(editarperfiladm);
+        voltar.addActionListener(editarperfiladm);					
     }
     
     // MÉTODO MAIN PARA RODAR A INTERFACE SEPARADAMENTE
@@ -129,10 +116,10 @@ public class EditarPerfilAdm implements ActionListener {
         fieldEmail.addActionListener(editarperfiladm);
         senha.addActionListener(editarperfiladm);
         confirmaSenha.addActionListener(editarperfiladm);
-        fieldMatricula.addActionListener(editarperfiladm);
         editar.addActionListener(editarperfiladm);
         voltar.addActionListener(editarperfiladm);
     }
+
     // ORIENTAÇÃO DAS AÇÕES 
     public void actionPerformed(ActionEvent e) {
         Object src = e.getSource();
