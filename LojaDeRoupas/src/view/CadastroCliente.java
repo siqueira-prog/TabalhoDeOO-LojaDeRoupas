@@ -11,8 +11,8 @@ public class CadastroCliente implements ActionListener {
     private static JFrame janela = new JFrame("Cadastro de Cliente");
     private static JLabel titulo = new JLabel("Cadastro de Cliente");
     private static JLabel subtitulo1 = new JLabel("Infomações Pessoais");
-    private static JLabel subtitulo2 = new JLabel("Infomações de Endereço");
-    private static JLabel subtitulo3 = new JLabel("Infomações do Cartão de Crédito");
+    private static JLabel subtitulo2 = new JLabel("Infomações do Endereço");
+    private static JLabel subtitulo3 = new JLabel("Infomações do Cartão de crédito");
 
     // INFORMÇÕES PESSOAIS
 
@@ -89,7 +89,7 @@ public class CadastroCliente implements ActionListener {
     private static JTextField fieldDataNasc = new JTextField();
 
     // Input data de vencimento do cartão
-    private static JLabel labelDataVenc = new JLabel("Digite a data de vencimento do cartão:");
+    private static JLabel labelDataVenc = new JLabel("Digite a data de vencimento:");
     private static JLabel labelMesVenc = new JLabel("Mês:");
     private static JLabel labelAnoVenc = new JLabel("Ano:");
 
@@ -99,112 +99,167 @@ public class CadastroCliente implements ActionListener {
     // Botões
 
     private static JButton cadastrar = new JButton("Cadastrar");
+    
     private static JButton cancelar = new JButton("Cancelar");
 
+    // DIMENSÕES
+    
     public CadastroCliente() {
-
+    	
         // JANELA
-
         janela.setLayout(null);
-
-        titulo.setFont(new Font("Arial", Font.BOLD, 20));
-        titulo.setBounds(20, 20, 250, 50);
-        subtitulo1.setFont(new Font("Arial", Font.BOLD, 14));
+        
+        titulo.setBounds(300, 20, 600, 50);
+        titulo.setFont(new Font("Algerian", Font.BOLD, 50));
+        
         subtitulo1.setBounds(20, 80, 250, 50);
-        subtitulo2.setFont(new Font("Arial", Font.BOLD, 14));
-        subtitulo2.setBounds(380, 80, 250, 50);
-        subtitulo3.setFont(new Font("Arial", Font.BOLD, 14));
-        subtitulo3.setBounds(730, 80, 250, 50);
-        cadastrar.setBounds(256, 640, 250, 50);
-        cadastrar.setBackground(Color.GREEN);
-        cancelar.setBounds(512, 640, 250, 50);
+        subtitulo1.setFont(new Font("Algerian", Font.BOLD, 20));
+
+        subtitulo2.setBounds(380, 80, 280, 50);
+        subtitulo2.setFont(new Font("Algerian", Font.BOLD, 20));
+
+        subtitulo3.setBounds(730, 80, 500, 50);
+        subtitulo3.setFont(new Font("Algerian", Font.BOLD, 20));
 
         // INFORMAÇÕES PESSOAIS
 
         // Input nome
         labelNome.setBounds(20, 110, 250, 50);
         fieldNome.setBounds(20, 150, 250, 50);
-
+        labelNome.setFont(new Font("Algerian", Font.BOLD, 20));
+        fieldNome.setFont(new Font("Kristen ITC", Font.BOLD, 20));
         // Input CPF
         labelCPF.setBounds(20, 190, 250, 50);
         fieldCPF.setBounds(20, 230, 250, 50);
-
+        labelCPF.setFont(new Font("Algerian", Font.BOLD, 20));
+        fieldCPF.setFont(new Font("Kristen ITC", Font.BOLD, 20));
+        
         // Input email
         labelEmail.setBounds(20, 270, 250, 50);
         fieldEmail.setBounds(20, 310, 250, 50);
-
+        labelEmail.setFont(new Font("Algerian", Font.BOLD, 20));
+        fieldEmail.setFont(new Font("Kristen ITC", Font.BOLD, 20));
+        
         // Input DDD
         labelDDD.setBounds(20, 350, 50, 50);
         fieldDDD.setBounds(20, 390, 50, 50);
-
+        labelDDD.setFont(new Font("Algerian", Font.BOLD, 20));
+        fieldDDD.setFont(new Font("Kristen ITC", Font.BOLD, 20));
+        
         // Input telefone
         labelTele.setBounds(90, 350, 250, 50);
         fieldTele.setBounds(90, 390, 180, 50);
-
+        labelTele.setFont(new Font("Algerian", Font.BOLD, 20));
+        fieldTele.setFont(new Font("Kristen ITC", Font.BOLD, 20));
+        
         // Iput senha
         labelSenha.setBounds(20, 430, 250, 50);
         senha.setBounds(20, 470, 250, 50);
-
+        labelSenha.setFont(new Font("Algerian", Font.BOLD, 20));
+        senha.setFont(new Font("Kristen ITC", Font.BOLD, 20));
+        
         // Input confirmar senha
         labelConfirmSenha.setBounds(20, 510, 250, 50);
         confirmSenha.setBounds(20, 550, 250, 50);
+        labelConfirmSenha.setFont(new Font("Algerian", Font.BOLD, 20));
+        confirmSenha.setFont(new Font("Kristen ITC", Font.BOLD, 20));
 
         // ENDEREÇO
 
         // Input logradouro
         labelLogradouro.setBounds(380, 110, 250, 50);
         fieldLogradouro.setBounds(380, 150, 250, 50);
-
+        labelLogradouro.setFont(new Font("Algerian", Font.BOLD, 20));
+        fieldLogradouro.setFont(new Font("Kristen ITC", Font.BOLD, 20));
+        
         // Input Numero Endereço
         labelNumeroEnd.setBounds(380, 190, 50, 50);
         fieldNumeroEnd.setBounds(380, 230, 50, 50);
-
+        labelNumeroEnd.setFont(new Font("Algerian", Font.BOLD, 20));
+        fieldNumeroEnd.setFont(new Font("Kristen ITC", Font.BOLD, 20));
+        
         // Input bairro
         labelBairro.setBounds(450, 190, 200, 50);
         fieldBairro.setBounds(450, 230, 180, 50);
-
+        labelBairro.setFont(new Font("Algerian", Font.BOLD, 20));
+        fieldBairro.setFont(new Font("Kristen ITC", Font.BOLD, 20));
+        
         // Iput cep
         labelCep.setBounds(380, 270, 250, 50);
         fieldCep.setBounds(380, 310, 250, 50);
-
+        labelCep.setFont(new Font("Algerian", Font.BOLD, 20));
+        fieldCep.setFont(new Font("Kristen ITC", Font.BOLD, 20));
+        
         // Input cidade
         labelCidade.setBounds(380, 350, 250, 50);
         fieldCidade.setBounds(380, 390, 250, 50);
-
+        labelCidade.setFont(new Font("Algerian", Font.BOLD, 20));
+        fieldCidade.setFont(new Font("Kristen ITC", Font.BOLD, 20));
+        
         // Input estado
         labelEstado.setBounds(380, 430, 250, 50);
         fieldEstado.setBounds(380, 470, 250, 50);
-
+        labelEstado.setFont(new Font("Algerian", Font.BOLD, 20));
+        fieldEstado.setFont(new Font("Kristen ITC", Font.BOLD, 20));
+        
         // CARTÃƒO DE CRÉDITO
 
         // Input bandeira
-        labelBand.setBounds(730, 110, 250, 50);
-        fieldBand.setBounds(730, 150, 250, 50);
-
+        labelBand.setBounds(730, 110, 600, 50);
+        fieldBand.setBounds(730, 150, 370, 50);
+        labelBand.setFont(new Font("Algerian", Font.BOLD, 20));
+        fieldBand.setFont(new Font("Kristen ITC", Font.BOLD, 20));
+        
         // Input numero do cartão
-        labelNumCart.setBounds(730, 190, 250, 50);
-        fieldNumCart.setBounds(730, 230, 250, 50);
-
+        labelNumCart.setBounds(730, 190, 600, 50);
+        fieldNumCart.setBounds(730, 230, 370, 50);
+        labelNumCart.setFont(new Font("Algerian", Font.BOLD, 20));
+        fieldNumCart.setFont(new Font("Kristen ITC", Font.BOLD, 20));
+        
         // Input código de segurança
-        labelCodSeg.setBounds(730, 270, 250, 50);
-        fieldCodSeg.setBounds(730, 310, 250, 50);
-
+        labelCodSeg.setBounds(730, 270, 600, 50);
+        fieldCodSeg.setBounds(730, 310, 370, 50);
+        labelCodSeg.setFont(new Font("Algerian", Font.BOLD, 20));
+        fieldCodSeg.setFont(new Font("Kristen ITC", Font.BOLD, 20));
+        
         // Iput data de nascimento
-        labelDataNasc.setBounds(730, 350, 250, 50);
-        fieldDataNasc.setBounds(730, 390, 250, 50);
-
+        labelDataNasc.setBounds(730, 350, 650, 50);
+        fieldDataNasc.setBounds(730, 390, 370, 50);
+        labelDataNasc.setFont(new Font("Algerian", Font.BOLD, 20));
+        fieldDataNasc.setFont(new Font("Kristen ITC", Font.BOLD, 20));
+        
         // Input data de vencimento do cartão
 
-        labelDataVenc.setBounds(730, 430, 250, 50);
+        labelDataVenc.setBounds(730, 430, 600, 50);
         labelMesVenc.setBounds(730, 450, 250, 50);
-        labelAnoVenc.setBounds(880, 450, 250, 50);
+        labelAnoVenc.setBounds(950, 450, 250, 50);
         fieldMesVenc.setBounds(730, 490, 100, 50);
-        fieldAnoVenc.setBounds(880, 490, 100, 50);
+        fieldAnoVenc.setBounds(950, 490, 100, 50);
+      
+        labelDataVenc.setFont(new Font("Algerian", Font.BOLD, 20));
+        labelMesVenc.setFont(new Font("Algerian", Font.BOLD, 20));
+        labelAnoVenc.setFont(new Font("Algerian", Font.BOLD, 20));
 
+        fieldMesVenc.setFont(new Font("Kristen ITC", Font.BOLD, 20));
+        fieldAnoVenc.setFont(new Font("Kristen ITC", Font.BOLD, 20));
+
+        //BUTTONS 
+        cadastrar.setBounds(306, 640, 250, 50);
+        cadastrar.setBorder(BorderFactory.createLineBorder(new Color(212,175,55), 4));
+        cadastrar.setFont(new Font("Algerian", Font.BOLD, 20));
+        cadastrar.setBackground(Color.BLACK);
+        cadastrar.setForeground(Color.WHITE);
+        
+        cancelar.setBounds(650, 640, 250, 50);
+        cancelar.setBorder(BorderFactory.createLineBorder(new Color(212,175,55), 4));
+        cancelar.setFont(new Font("Algerian", Font.BOLD, 20));
+        cancelar.setBackground(Color.BLACK);
+        cancelar.setForeground(Color.WHITE);
+        
         // [ADICIONANDO A JANELA]
         janela.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         janela.setVisible(true);
-        janela.setSize(1024, 768);
+        janela.setSize(1200, 768);
         janela.add(titulo);
         janela.add(subtitulo1);
         janela.add(subtitulo2);
@@ -276,7 +331,6 @@ public class CadastroCliente implements ActionListener {
         cancelar.addActionListener(cadastrocliente);
     }
 
-    @Override
     public void actionPerformed(ActionEvent e) {
         // TODO Auto-generated method stub
         Object src = e.getSource();
@@ -286,7 +340,10 @@ public class CadastroCliente implements ActionListener {
             janela.dispose();
         }
         if (src == cancelar) {
+        	new	Home().home();
             janela.dispose();
+
         }
     }
+
 }

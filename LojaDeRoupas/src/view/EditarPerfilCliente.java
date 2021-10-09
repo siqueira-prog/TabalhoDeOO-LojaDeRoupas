@@ -9,7 +9,7 @@ public class EditarPerfilCliente implements ActionListener {
 
     // JANELA
     private static JFrame janela = new JFrame("Cliente");
-    private static JLabel titulo = new JLabel("Cliente - Editar Perfil ");
+    private static JLabel titulo = new JLabel("      Editar Perfil ");
     private static JLabel subtitulo1 = new JLabel("Infomações Pessoais");
     private static JLabel subtitulo2 = new JLabel("Infomações de Endereço");
     private static JLabel subtitulo3 = new JLabel("Infomações do Cartão de Crédito");
@@ -99,7 +99,7 @@ public class EditarPerfilCliente implements ActionListener {
     // Botões
 
     private static JButton cadastrar = new JButton("Cadastrar");
-    private static JButton cancelar = new JButton("Cancelar");
+    private static JButton voltar = new JButton("Voltar");
     private static JButton excluir = new JButton("Excluir");
 
     public EditarPerfilCliente() {
@@ -108,113 +108,196 @@ public class EditarPerfilCliente implements ActionListener {
 
         janela.setLayout(null);
 
-        titulo.setFont(new Font("Arial", Font.BOLD, 20));
-        titulo.setBounds(20, 20, 250, 50);
-        subtitulo1.setFont(new Font("Arial", Font.BOLD, 14));
+        janela.setLayout(null);
+
+        titulo.setFont(new Font("Algerian", Font.BOLD, 50));
+        titulo.setBounds(220, 20, 600, 50);
+        
+        subtitulo1.setFont(new Font("Algerian", Font.BOLD, 14));
         subtitulo1.setBounds(20, 80, 250, 50);
-        subtitulo2.setFont(new Font("Arial", Font.BOLD, 14));
+        subtitulo2.setFont(new Font("Algerian", Font.BOLD, 14));
         subtitulo2.setBounds(380, 80, 250, 50);
-        subtitulo3.setFont(new Font("Arial", Font.BOLD, 14));
+        subtitulo3.setFont(new Font("Algerian", Font.BOLD, 14));
         subtitulo3.setBounds(730, 80, 250, 50);
+        
         cadastrar.setBounds(20, 640, 250, 50);
-        cadastrar.setBackground(Color.GREEN);
-        cancelar.setBounds(380, 640, 250, 50);
+        cadastrar.setBorder(BorderFactory.createLineBorder(new Color(212,175,55), 4));
+        cadastrar.setFont(new Font("Algerian", Font.BOLD, 20));
+        cadastrar.setBackground(Color.BLACK);
+        cadastrar.setForeground(Color.WHITE);
+        
+        voltar.setBounds(380, 640, 250, 50);
+        voltar.setBorder(BorderFactory.createLineBorder(new Color(212,175,55), 4));
+        voltar.setFont(new Font("Algerian", Font.BOLD, 20));
+        voltar.setBackground(Color.BLACK);
+        voltar.setForeground(Color.WHITE);
+        
         excluir.setBounds(730, 640, 250, 50);
-        excluir.setBackground(Color.RED);
+        excluir.setBorder(BorderFactory.createLineBorder(new Color(212,175,55), 4));
+        excluir.setFont(new Font("Algerian", Font.BOLD, 20));
+        excluir.setBackground(Color.BLACK);
+        excluir.setForeground(Color.WHITE);;
 
         // INFORMAÇÕES PESSOAIS
 
         // Input nome
         labelNome.setBounds(20, 110, 250, 50);
         fieldNome.setBounds(20, 150, 250, 50);
-
+        fieldNome.setEditable(true);
+        labelNome.setFont(new Font("Algerian", Font.BOLD, 20));
+        fieldNome.setFont(new Font("Algerian", Font.BOLD, 20));
+        fieldNome.setForeground(new Color(212,175,55));
         // Input CPF
         labelCPF.setBounds(20, 190, 250, 50);
         fieldCPF.setBounds(20, 230, 250, 50);
-
+        fieldCPF.setEditable(true);
+        labelCPF.setFont(new Font("Algerian", Font.BOLD, 20));
+        fieldCPF.setFont(new Font("Algerian", Font.BOLD, 20));
+        fieldCPF.setForeground(new Color(212,175,55));
         // Input email
         labelEmail.setBounds(20, 270, 250, 50);
         fieldEmail.setBounds(20, 310, 250, 50);
-
+        fieldEmail.setEditable(true);
+        labelEmail.setFont(new Font("Algerian", Font.BOLD, 20));
+        fieldEmail.setFont(new Font("Algerian", Font.BOLD, 20));
+        fieldEmail.setForeground(new Color(212,175,55));
         // Input DDD
         labelDDD.setBounds(20, 350, 50, 50);
         fieldDDD.setBounds(20, 390, 50, 50);
-
+        fieldDDD.setEditable(true);
+        labelDDD.setFont(new Font("Algerian", Font.BOLD, 20));
+        fieldDDD.setFont(new Font("Algerian", Font.BOLD, 20));
+        fieldDDD.setForeground(new Color(212,175,55));
         // Input telefone
         labelTele.setBounds(90, 350, 250, 50);
         fieldTele.setBounds(90, 390, 180, 50);
-
+        fieldTele.setEditable(true);
+        labelTele.setFont(new Font("Algerian", Font.BOLD, 20));
+        fieldTele.setFont(new Font("Algerian", Font.BOLD, 20));
+        fieldTele.setForeground(new Color(212,175,55));
         // Iput senha
         labelSenha.setBounds(20, 430, 250, 50);
         senha.setBounds(20, 470, 250, 50);
-
+        senha.setEditable(true);
+        labelSenha.setFont(new Font("Algerian", Font.BOLD, 20));
+        senha.setFont(new Font("Algerian", Font.BOLD, 20));
+        senha.setForeground(new Color(212,175,55));
         // Input confirmar senha
         labelConfirmSenha.setBounds(20, 510, 250, 50);
         confirmSenha.setBounds(20, 550, 250, 50);
+        confirmSenha.setEditable(true);
+        labelConfirmSenha.setFont(new Font("Algerian", Font.BOLD, 20));
+        confirmSenha.setFont(new Font("Algerian", Font.BOLD, 20));
+        confirmSenha.setForeground(new Color(212,175,55)); 
 
         // ENDEREÇO
 
         // Input logradouro
         labelLogradouro.setBounds(380, 110, 250, 50);
         fieldLogradouro.setBounds(380, 150, 250, 50);
-
+        fieldLogradouro.setEditable(true);
+        labelLogradouro.setFont(new Font("Algerian", Font.BOLD, 20));
+        fieldLogradouro.setFont(new Font("Algerian", Font.BOLD, 20));
+        fieldLogradouro.setForeground(new Color(212,175,55)); 
         // Input Numero Endereço
         labelNumeroEnd.setBounds(380, 190, 50, 50);
         fieldNumeroEnd.setBounds(380, 230, 50, 50);
-
+        fieldNumeroEnd.setEditable(true);
+        labelNumeroEnd.setFont(new Font("Algerian", Font.BOLD, 20));
+        fieldNumeroEnd.setFont(new Font("Algerian", Font.BOLD, 20));
+        fieldNumeroEnd.setForeground(new Color(212,175,55)); 
         // Input bairro
         labelBairro.setBounds(450, 190, 200, 50);
         fieldBairro.setBounds(450, 230, 180, 50);
-
+        fieldBairro.setEditable(true);
+        labelBairro.setFont(new Font("Algerian", Font.BOLD, 20));
+        fieldBairro.setFont(new Font("Algerian", Font.BOLD, 20));
+        fieldBairro.setForeground(new Color(212,175,55)); 
         // Iput cep
         labelCep.setBounds(380, 270, 250, 50);
         fieldCep.setBounds(380, 310, 250, 50);
-
+        fieldCep.setEditable(true);
+        labelCep.setFont(new Font("Algerian", Font.BOLD, 20));
+        fieldCep.setFont(new Font("Algerian", Font.BOLD, 20));
+        fieldCep.setForeground(new Color(212,175,55)); 
         // Input cidade
         labelCidade.setBounds(380, 350, 250, 50);
         fieldCidade.setBounds(380, 390, 250, 50);
-
+        fieldCidade.setEditable(true);
+        labelCidade.setFont(new Font("Algerian", Font.BOLD, 20));
+        fieldCidade.setFont(new Font("Algerian", Font.BOLD, 20));
+        fieldCidade.setForeground(new Color(212,175,55)); 
         // Input estado
         labelEstado.setBounds(380, 430, 250, 50);
         fieldEstado.setBounds(380, 470, 250, 50);
-
+        fieldEstado.setEditable(true);
+        labelEstado.setFont(new Font("Algerian", Font.BOLD, 20));
+        fieldEstado.setFont(new Font("Algerian", Font.BOLD, 20));
+        fieldEstado.setForeground(new Color(212,175,55)); 
+        
         // CARTÃO DE CRÉDITO
 
         // Input bandeira
-        labelBand.setBounds(730, 110, 250, 50);
-        fieldBand.setBounds(730, 150, 250, 50);
-
+        labelCodSeg.setBounds(730, 110, 400, 50);//cod seg	
+        fieldCodSeg.setBounds(730, 150, 350, 50);
+        fieldCodSeg.setEditable(true);
+        labelCodSeg.setFont(new Font("Algerian", Font.BOLD, 20));
+        fieldCodSeg.setFont(new Font("Algerian", Font.BOLD, 20));
+        fieldCodSeg.setForeground(new Color(212,175,55)); 
         // Input numero do cartão
-        labelNumCart.setBounds(730, 190, 250, 50);
-        fieldNumCart.setBounds(730, 230, 250, 50);
-
+        labelNumCart.setBounds(730, 190, 400, 50);//numero cart
+        fieldNumCart.setBounds(730, 230, 365, 50);
+        fieldNumCart.setEditable(true);
+        labelNumCart.setFont(new Font("Algerian", Font.BOLD, 20));
+        fieldNumCart.setFont(new Font("Algerian", Font.BOLD, 20));
+        fieldNumCart.setForeground(new Color(212,175,55)); 
         // Input código de segurança
-        labelCodSeg.setBounds(730, 270, 250, 50);
-        fieldCodSeg.setBounds(730, 310, 250, 50);
-
+        labelBand.setBounds(730, 270, 350, 50);
+        fieldBand.setBounds(730, 310, 350, 50); //bandeira
+        fieldBand.setEditable(true);
+        labelBand.setFont(new Font("Algerian", Font.BOLD, 20));
+        fieldBand.setFont(new Font("Algerian", Font.BOLD, 20));
+        fieldBand.setForeground(new Color(212,175,55)); 
         // Iput data de nascimento
-        labelDataNasc.setBounds(730, 350, 250, 50);
-        fieldDataNasc.setBounds(730, 390, 250, 50);
-
+        labelDataNasc.setBounds(730, 350, 400, 50);	
+        fieldDataNasc.setBounds(730, 390, 370, 50);
+        fieldDataNasc.setEditable(true);
+        labelDataNasc.setFont(new Font("Algerian", Font.BOLD, 20));
+        fieldDataNasc.setFont(new Font("Algerian", Font.BOLD, 20));
+        fieldDataNasc.setForeground(new Color(212,175,55)); 
         // Input data de vencimento do cartão
 
-        labelDataVenc.setBounds(730, 430, 250, 50);
-        labelMesVenc.setBounds(730, 450, 250, 50);
-        labelAnoVenc.setBounds(880, 450, 250, 50);
-        fieldMesVenc.setBounds(730, 490, 100, 50);
-        fieldAnoVenc.setBounds(880, 490, 100, 50);
+        labelDataVenc.setBounds(730, 430, 400, 50);
+        labelDataVenc.setFont(new Font("Algerian", Font.BOLD, 20));
+        
+        labelMesVenc.setBounds(730, 470, 250, 50);
+        labelMesVenc.setFont(new Font("Algerian", Font.BOLD, 20));
+        
+        labelAnoVenc.setBounds(730, 520, 250, 50);
+        labelAnoVenc.setFont(new Font("Algerian", Font.BOLD, 20));
+        
+        fieldMesVenc.setBounds(780, 470, 100, 50);
+        fieldMesVenc.setFont(new Font("Algerian", Font.BOLD, 20));
+        fieldMesVenc.setForeground(new Color(212,175,55)); 
+        fieldMesVenc.setEditable(true);
+        
+        fieldAnoVenc.setBounds(780, 520, 100, 50);
+        fieldAnoVenc.setFont(new Font("Algerian", Font.BOLD, 20));
+        fieldAnoVenc.setForeground(new Color(212,175,55)); 
+        fieldAnoVenc.setEditable(true);
+        
 
         // [ADICIONANDO A JANELA]
         janela.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         janela.setVisible(true);
-        janela.setSize(1024, 768);
+        janela.setSize(1135, 768);
         janela.add(titulo);
         janela.add(subtitulo1);
         janela.add(subtitulo2);
         janela.add(subtitulo3);
 
         janela.add(cadastrar);
-        janela.add(cancelar);
+        janela.add(voltar);
         janela.add(excluir);
 
         // Informações pessoais
@@ -270,27 +353,27 @@ public class EditarPerfilCliente implements ActionListener {
     public void editarPerfil() {
         EditarPerfilCliente editarperfilcliente = new EditarPerfilCliente();
         cadastrar.addActionListener(editarperfilcliente);
-        cancelar.addActionListener(editarperfilcliente);
+        voltar.addActionListener(editarperfilcliente);
         excluir.addActionListener(editarperfilcliente);
     }
 
     public static void main(String[] args) {
         EditarPerfilCliente editarperfilcliente = new EditarPerfilCliente();
         cadastrar.addActionListener(editarperfilcliente);
-        cancelar.addActionListener(editarperfilcliente);
+        voltar.addActionListener(editarperfilcliente);
         excluir.addActionListener(editarperfilcliente);
     }
 
-    @Override
+ 
     public void actionPerformed(ActionEvent e) {
-        // TODO Auto-generated method stub
+
         Object src = e.getSource();
         if (src == cadastrar) {
             JOptionPane.showMessageDialog(null, "Cadastro efetivado com sucesso!", null,
                     JOptionPane.INFORMATION_MESSAGE);
             janela.dispose();
         }
-        if (src == cancelar) {
+        if (src == voltar) {
             janela.dispose();
         }
         if (src == excluir) {

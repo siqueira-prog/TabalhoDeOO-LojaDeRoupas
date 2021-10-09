@@ -8,11 +8,12 @@ public class CadastroProduto implements ActionListener {
     // [DEFININDO VARIÁVEIS]
 
     // JANELA
-    private static JFrame janela = new JFrame("Cadastro de Cliente");
-    private static JLabel titulo = new JLabel("Cadastro de Produto");
+    private static JFrame janela = new JFrame("Cadastrar produto");
+    private static JLabel titulo = new JLabel("Cadastro Produto");
 
     // INFORMAÇÕES DO PRODUTO
 
+    
     // INPUT NOME
     private static JLabel labelNome = new JLabel("Didigite o nome:");
     private static JTextField fieldNome = new JTextField();
@@ -64,54 +65,82 @@ public class CadastroProduto implements ActionListener {
 
         janela.setLayout(null);
 
-        titulo.setFont(new Font("Arial", Font.BOLD, 20));
-        titulo.setBounds(20, 20, 250, 50);
-
+        titulo.setBounds(85, 20, 600, 50);
+        titulo.setFont(new Font("Algerian", Font.BOLD, 50));
         // INFORMAÇÕES DO PRODUTO
 
         // INPUT NOME
         labelNome.setBounds(50, 150, 250, 50);
         fieldNome.setBounds(50, 190, 250, 50);
-
+        labelNome.setFont(new Font("Algerian", Font.BOLD, 20));
+        fieldNome.setFont(new Font("Kristen ITC", Font.BOLD, 20));
+        
         // INPUT COR
         labelCor.setBounds(50, 240, 250, 50);
         fieldCor.setBounds(50, 280, 250, 50);
-
+        labelCor.setFont(new Font("Algerian", Font.BOLD, 20));
+        fieldCor.setFont(new Font("Kristen ITC", Font.BOLD, 20));
+        
         // INPUT TAMANHO
         labelTamanho.setBounds(50, 330, 250, 50);
         fieldTamanho.setBounds(50, 370, 250, 50);
-
+        labelTamanho.setFont(new Font("Algerian", Font.BOLD, 20));
+        fieldTamanho.setFont(new Font("Kristen ITC", Font.BOLD, 20));
+        
         // INPUT COMPOSIÇÃO
         labelComp.setBounds(50, 420, 250, 50);
         fieldComp.setBounds(50, 460, 250, 50);
-
+        labelComp.setFont(new Font("Algerian", Font.BOLD, 20));
+        fieldComp.setFont(new Font("Kristen ITC", Font.BOLD, 20));
+        
         // INPUT TIPO
         labelTipo.setBounds(50, 510, 250, 50);
         fieldTipo.setBounds(50, 550, 250, 50);
+        labelTipo.setFont(new Font("Algerian", Font.BOLD, 20));
+        fieldTipo.setFont(new Font("Kristen ITC", Font.BOLD, 20));
         
         // INPUT PREÇO DE VENDA
         labelPrecoVenda.setBounds(400, 150, 250, 50);
         fieldPrecoVenda.setBounds(400, 190, 250, 50);
+        labelPrecoVenda.setFont(new Font("Algerian", Font.BOLD, 20));
+        fieldPrecoVenda.setFont(new Font("Kristen ITC", Font.BOLD, 20));
         
         // INPUT PREÇO DE FABRICA
         labelPrecoFabrica.setBounds(400, 240, 250, 50);
         fieldPrecoFabrica.setBounds(400, 280, 250, 50);
+        labelPrecoFabrica.setFont(new Font("Algerian", Font.BOLD, 20));
+        fieldPrecoFabrica.setFont(new Font("Kristen ITC", Font.BOLD, 20));
         
         // INPUT ESTOQUE 
         labelEstoque.setBounds(400, 330, 250, 50);
         fieldEstoque.setBounds(400, 370, 250, 50);
+        labelEstoque.setFont(new Font("Algerian", Font.BOLD, 20));
+        fieldEstoque.setFont(new Font("Kristen ITC", Font.BOLD, 20));
         
         // INPUT DESCRIÇÃO
         labelDescricao.setBounds(400, 420, 250, 50);
         fieldDescricao.setBounds(400, 460, 250, 50);
+        labelDescricao.setFont(new Font("Algerian", Font.BOLD, 20));
+        fieldDescricao.setFont(new Font("Kristen ITC", Font.BOLD, 20));
         
         // INPUT CATEGORIA 
         labelCategoria.setBounds(400, 510, 250, 50);
         fieldCategoria.setBounds(400, 550, 250, 50);
+        labelCategoria.setFont(new Font("Algerian", Font.BOLD, 20));
+        fieldCategoria.setFont(new Font("Kristen ITC", Font.BOLD, 20));
         
         // BOTÕES
         cadastrar.setBounds(50, 640, 250, 50);
+        cadastrar.setBorder(BorderFactory.createLineBorder(new Color(212,175,55), 4));
+        cadastrar.setFont(new Font("Algerian", Font.BOLD, 20));
+        cadastrar.setBackground(Color.BLACK);
+        cadastrar.setForeground(Color.WHITE);
+
         voltar.setBounds(400, 640, 250, 50);
+        voltar.setBorder(BorderFactory.createLineBorder(new Color(212,175,55), 4));
+        voltar.setFont(new Font("Algerian", Font.BOLD, 20));
+        voltar.setBackground(Color.BLACK);
+        voltar.setForeground(Color.WHITE);
         
         janela.add(titulo);
         

@@ -156,7 +156,7 @@ public class Dados {
 		
 		//DATA-CLIENTS
 		
-		Cliente cliente1 = new Cliente(1111111, "cliente1", "cliente1@email.com", "1234GG", telefone1, end1, cdc1,0);
+		Cliente cliente1 = new Cliente(1111111, "cliente1", "cliente1@email.com", "1", telefone1, end1, cdc1,0);
 		Cliente cliente2 = new Cliente(2111111, "cliente2", "cliente2@email.com", "123ff1", telefone2, end2, cdc2,0);
 		Cliente cliente3 = new Cliente(3333333, "cliente3", "cliente3@email.com", "DDS1DD", telefone3, end3, cdc3,0);
 		Cliente cliente4 = new Cliente(4444444, "cliente4", "cliente4@email.com", "ASDASF", telefone4, end4, cdc4,0);

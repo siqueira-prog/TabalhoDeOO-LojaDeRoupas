@@ -43,34 +43,56 @@ public class EditarPerfilAdm implements ActionListener {
 
         janela.setLayout(null);
 
-        titulo.setFont(new Font("Arial", Font.BOLD, 20));
-        titulo.setBounds(20, 20, 250, 50);
-
+        titulo.setFont(new Font("Algerian", Font.BOLD, 50));
+        titulo.setBounds(185, 20, 600, 50);
+		
+     
         // INFORMAÇÕES PESSOAIS
 
         // INPUT CPF
-        labelCPF.setBounds(50, 150, 250, 50);
-        fieldCPF.setBounds(50, 190, 250, 50);
+        labelCPF.setBounds(255, 150, 250, 50);
+        fieldCPF.setBounds(235, 190, 250, 50);
+        labelCPF.setFont(new Font("Algerian", Font.BOLD, 20));
+        fieldCPF.setFont(new Font("Kristen ITC", Font.BOLD, 20));
+
+        
 
         // INPUT NOME
-        labelNome.setBounds(50, 240, 250, 50);
-        fieldNome.setBounds(50, 280, 250, 50);
+        labelNome.setBounds(255, 240, 250, 50);
+        fieldNome.setBounds(235, 280, 250, 50);
+        labelNome.setFont(new Font("Algerian", Font.BOLD, 20));
+        fieldNome.setFont(new Font("Kristen ITC", Font.BOLD, 20));
         
         // INPUT EMAIL
-        labelEmail.setBounds(50, 330, 250, 50);
-        fieldEmail.setBounds(50, 370, 250, 50);
-
+        labelEmail.setBounds(255, 330, 250, 50);
+        fieldEmail.setBounds(235, 370, 250, 50);
+        labelEmail.setFont(new Font("Algerian", Font.BOLD, 20));
+        fieldEmail.setFont(new Font("Kristen ITC", Font.BOLD, 20));
+        
         // INPUT SENHA
-        labelSenha.setBounds(50, 420, 250, 50);
-        senha.setBounds(50, 460, 250, 50);
+        labelSenha.setBounds(255, 420, 250, 50);
+        senha.setBounds(235, 460, 250, 50);
+        labelSenha.setFont(new Font("Algerian", Font.BOLD, 20));
+        senha.setFont(new Font("Kristen ITC", Font.BOLD, 20));
 
         // INPUT CONFIRMAR SENHA
-        labelConfirmSenha.setBounds(50, 510, 250, 50);
-        confirmaSenha.setBounds(50, 550, 250, 50);
-
+        labelConfirmSenha.setBounds(255, 510, 250, 50);
+        confirmaSenha.setBounds(235, 550, 250, 50);
+        labelConfirmSenha.setFont(new Font("Algerian", Font.BOLD, 20));
+        confirmaSenha.setFont(new Font("Kristen ITC", Font.BOLD, 20));
+        
         // BOTÕES
         editar.setBounds(50, 640, 250, 50);
-        voltar.setBounds(350, 640, 250, 50);
+        editar.setBorder(BorderFactory.createLineBorder(new Color(212,175,55), 4));
+        editar.setFont(new Font("Algerian", Font.BOLD, 20));
+        editar.setBackground(Color.BLACK);
+        editar.setForeground(Color.WHITE);
+        
+        voltar.setBounds(420, 640, 250, 50);
+        voltar.setBorder(BorderFactory.createLineBorder(new Color(212,175,55), 4));
+        voltar.setFont(new Font("Algerian", Font.BOLD, 20));
+        voltar.setBackground(Color.BLACK);
+        voltar.setForeground(Color.WHITE);
         
         // [ADICIONANDO A JANELA]
 
@@ -78,7 +100,7 @@ public class EditarPerfilAdm implements ActionListener {
         janela.add(editar);
 
         // Informações pessoais
-
+        
         janela.add(labelCPF);
         janela.add(fieldCPF);
         janela.add(labelNome);

@@ -11,7 +11,7 @@ public class DetalhesProduto implements ActionListener {
 
     // JANELA
     private static JFrame janela = new JFrame("Cliente");
-    private static JLabel titulo = new JLabel("Produto - Detalhes");
+    private static JLabel titulo = new JLabel("Detalhes do Produto");
     private static JLabel subtitulo1 = new JLabel("Infomações do Produto");
 
     // INFORMAÇÕES PESSOAIS
@@ -63,14 +63,24 @@ public class DetalhesProduto implements ActionListener {
 
         janela.setLayout(null);
 
-        titulo.setFont(new Font("Arial", Font.BOLD, 20));
-        titulo.setBounds(20, 20, 250, 50);
-        subtitulo1.setFont(new Font("Arial", Font.BOLD, 14));
+        titulo.setFont(new Font("Algerian", Font.BOLD, 50));
+        titulo.setBounds(220, 20, 1000, 50);
+        
+        subtitulo1.setFont(new Font("Algerian", Font.BOLD, 10));
         subtitulo1.setBounds(20, 80, 250, 50);
+        
         comprar.setBounds(256, 640, 250, 50);
-        comprar.setBackground(Color.GREEN);
+        comprar.setBorder(BorderFactory.createLineBorder(new Color(212,175,55), 4));
+        comprar.setFont(new Font("Algerian", Font.BOLD, 20));
+        comprar.setBackground(Color.BLACK);
+        comprar.setForeground(Color.WHITE);
+        
         cancelar.setBounds(512, 640, 250, 50);
-
+        cancelar.setBorder(BorderFactory.createLineBorder(new Color(212,175,55), 4));
+        cancelar.setFont(new Font("Algerian", Font.BOLD, 20));
+        cancelar.setBackground(Color.BLACK);
+        cancelar.setForeground(Color.WHITE);
+        
         // INFORMAÇÕES PESSOAIS
 
         // Input nome
@@ -78,53 +88,70 @@ public class DetalhesProduto implements ActionListener {
         fieldNome.setBounds(20, 150, 250, 50);
         fieldNome.setEditable(false);
         fieldNome.setText(Dados.databaseprecadastrado().getData_camiseta().get(index+1));
+        labelNome.setFont(new Font("Algerian", Font.BOLD, 20));
+        fieldNome.setFont(new Font("Algerian", Font.BOLD, 20));
         
         // Tamano
         labelTamanho.setBounds(20, 190, 100, 50);
         fieldTamanho.setBounds(20, 230, 100, 50);
         fieldTamanho.setEditable(false);
         fieldTamanho.setText(Dados.databaseprecadastrado().getData_camiseta().get(index+3));
+        labelTamanho.setFont(new Font("Algerian", Font.BOLD, 20));
+        fieldTamanho.setFont(new Font("Algerian", Font.BOLD, 20));
         
         // Cor
         labelCor.setBounds(170, 190, 100, 50);
         fieldCor.setBounds(170, 230, 100, 50);
         fieldCor.setEditable(false);
         fieldCor.setText(Dados.databaseprecadastrado().getData_camiseta().get(index+2));
-        
+        labelCor.setFont(new Font("Algerian", Font.BOLD, 20));
+        fieldCor.setFont(new Font("Algerian", Font.BOLD, 20));
         // Iput descrição
         labelDesc.setBounds(20, 270, 250, 50);
         fieldDesc.setBounds(20, 310, 250, 80);
         fieldDesc.setEditable(false);
         fieldDesc.setText(Dados.databaseprecadastrado().getData_camiseta().get(index+9));
+        labelDesc.setFont(new Font("Algerian", Font.BOLD, 20));
+        fieldDesc.setFont(new Font("Algerian", Font.BOLD, 20));
         
         // Input categoria
         labelCategoria.setBounds(380, 110, 250, 50);
         fieldCategoria.setBounds(380, 150, 250, 50);
         fieldCategoria.setEditable(false);
         fieldCategoria.setText(Dados.databaseprecadastrado().getData_camiseta().get(index+10));
+        labelCategoria.setFont(new Font("Algerian", Font.BOLD, 20));
+        fieldCategoria.setFont(new Font("Algerian", Font.BOLD, 20));
         
         // Input estado
         labelComp.setBounds(380, 190, 250, 50);
         fieldComp.setBounds(380, 230, 250, 50);
         fieldComp.setEditable(false);
         fieldComp.setText(Dados.databaseprecadastrado().getData_camiseta().get(index+4));
+        labelComp.setFont(new Font("Algerian", Font.BOLD, 20));
+        fieldComp.setFont(new Font("Algerian", Font.BOLD, 20));
         
         // Ipnpu Tipo
         labelTipo.setBounds(380, 270, 250, 50);
         fieldTipo.setBounds(380, 310, 250, 50);
         fieldTipo.setEditable(false);
         fieldTipo.setText(Dados.databaseprecadastrado().getData_camiseta().get(index+5));
+        labelTipo.setFont(new Font("Algerian", Font.BOLD, 20));
+        fieldTipo.setFont(new Font("Algerian", Font.BOLD, 20));
         
         // Input preço
         labelPreco.setBounds(730, 110, 100, 50);
         fieldPreco.setBounds(730, 150, 100, 50);
         fieldPreco.setEditable(false);
         fieldPreco.setText(Dados.databaseprecadastrado().getData_camiseta().get(index+6));
-       
+        labelPreco.setFont(new Font("Algerian", Font.BOLD, 20));
+        fieldPreco.setFont(new Font("Algerian", Font.BOLD, 20));
+        
         // Input quantidade
         labelQtd.setBounds(880, 110, 100, 50);
         fieldQtd.setBounds(880, 150, 100, 50);
         fieldQtd.setText(Dados.databaseprecadastrado().getData_camiseta().get(index+8));
+        labelQtd.setFont(new Font("Algerian", Font.BOLD, 20));
+        fieldQtd.setFont(new Font("Algerian", Font.BOLD, 20));
         
         // [ADICIONANDO A JANELA]
 

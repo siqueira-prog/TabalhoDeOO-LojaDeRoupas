@@ -9,7 +9,8 @@ public class MenuAdmin implements ActionListener {
     // JANELA
     private static JFrame janela = new JFrame("Menu Administrador");
     private static JLabel titulo = new JLabel("Menu Administrador");
-
+	private static JLabel texto = new JLabel("OU");
+    
     private static JButton botaoCadProd = new JButton("Cadastrar Produto");
     private static JButton botaoEditPerfil = new JButton("Editar Perfil");
     private static JButton botaovoltar = new JButton("Voltar");
@@ -18,19 +19,33 @@ public class MenuAdmin implements ActionListener {
     public  MenuAdmin() {
 
         // JANELA
-        titulo.setFont(new Font("Arial", Font.BOLD, 20));
-        titulo.setBounds(20, 20, 250, 50);
+        titulo.setFont(new Font("Algerian", Font.BOLD, 50));
+        titulo.setBounds(85, 20, 600, 50);
         janela.setLayout(null);
-
+        texto.setFont(new Font("Algerian", Font.BOLD, 20));
+        texto.setBounds(360, 320, 250, 50);
+        
         // INFORMAÇÕES PESSOAIS
 
         // Input email
         botaoCadProd.setBounds(250, 150, 250, 50);
-
+        botaoCadProd.setBorder(BorderFactory.createLineBorder(new Color(212,175,55), 4));
+        botaoCadProd.setFont(new Font("Algerian", Font.BOLD, 20));
+        botaoCadProd.setBackground(Color.BLACK);
+        botaoCadProd.setForeground(Color.WHITE);
+        
         botaoEditPerfil.setBounds(250, 240, 250, 50);
+        botaoEditPerfil.setBorder(BorderFactory.createLineBorder(new Color(212,175,55), 4));
+        botaoEditPerfil.setFont(new Font("Algerian", Font.BOLD, 20));
+        botaoEditPerfil.setBackground(Color.BLACK);
+        botaoEditPerfil.setForeground(Color.WHITE);
         
         botaovoltar.setBounds(250, 400, 250, 50);
-
+        botaovoltar.setBorder(BorderFactory.createLineBorder(new Color(212,175,55), 4));
+        botaovoltar.setFont(new Font("Algerian", Font.BOLD, 20));
+        botaovoltar.setBackground(Color.BLACK);
+        botaovoltar.setForeground(Color.WHITE);
+        
         // [ADICIONANDO A JANELA]
 
         janela.add(titulo);
@@ -39,7 +54,7 @@ public class MenuAdmin implements ActionListener {
         janela.add(botaoCadProd);
         janela.add(botaoEditPerfil);
         janela.add(botaovoltar);
-        
+        janela.add(texto);
         janela.setSize(750, 550);
         janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         janela.setVisible(true);
