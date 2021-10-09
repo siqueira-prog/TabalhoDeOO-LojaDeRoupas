@@ -15,18 +15,22 @@ public class ControleAdministrador{
 	private String matricula_adm;
 	private static ArrayList<String> data_adm = Dados.databaseprecadastrado().getData_adm();
 	
+	
+	public ControleAdministrador(int cpf_adm, String nome_adm, String email_adm, String senha_adm,
+			String matricula_adm) {
+		super();
+		this.cpf_adm = cpf_adm;
+		this.nome_adm = nome_adm;
+		this.email_adm = email_adm;
+		this.senha_adm = senha_adm;
+		this.matricula_adm = matricula_adm;
+	}
+	
 	public static void main(String[] args) {
 		
 		
 		//System.out.println(data_adm);		
 		//System.out.println(Dados.databaseprecadastrado().getData_camiseta());
-		nomeCamisetas();
-	}
-	public static void nomeCamisetas() {
-		ArrayList<String> nomes_camisetas = new ArrayList<String>();
-		for (int i = 1; i<Dados.databaseprecadastrado().getData_camiseta().size()-1; i = i+11){;
-			   nomes_camisetas.add( Dados.databaseprecadastrado().getData_camiseta().get(i));
-			}
-		System.out.println(nomes_camisetas);
+
 	}
 }

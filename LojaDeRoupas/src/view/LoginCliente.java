@@ -4,6 +4,8 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
+import model.Dados;
+
 public class LoginCliente implements ActionListener {
     // JANELA
     private static JFrame janela = new JFrame("Login Cliente");
@@ -82,16 +84,40 @@ public class LoginCliente implements ActionListener {
         senha.addActionListener(logincliente);
         Logar.addActionListener(logincliente);
         Voltar.addActionListener(logincliente);
-
+        
     }
 
     // ORIENTAÇÃO DAS AÇÕES
     public void actionPerformed(ActionEvent e) {
+    	
         Object src = e.getSource();
+        String textolido_email  = this.fieldEmail.getText();
+        String textolido_senha  = this.senha.getText();
+        System.out.println(textolido_email);
+        System.out.println(textolido_senha);
+        
         if (src == Logar) {
-            // new MenuCliente().menuCliente();;
+        	if (Dados.databaseprecadastrado().getData_cliente().contains(textolido_email) 
+        		&Dados.databaseprecadastrado().getData_cliente().contains(textolido_senha)) {
+                JOptionPane.showMessageDialog(
+               		   null,
+               		   "Login efetivado com sucesso!",
+               		   null,
+               		   JOptionPane.INFORMATION_MESSAGE);
+                janela.dispose(); 
+        		new MenuCliente().menu();
+        	}
+        	else {
+                JOptionPane.showMessageDialog(
+             		   null,
+             		   "Cadastro não encontrado! Digite novamente.",
+             		   null,
+             		   JOptionPane.INFORMATION_MESSAGE
+             		   );
+        	}
         }
         if (src == Voltar) {
+
             new Home().home();
         }
 

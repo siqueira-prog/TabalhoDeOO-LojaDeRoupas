@@ -25,7 +25,7 @@ public class Home implements ActionListener {
 
 	// CONSTRUTOR
 	public Home() {
-
+		
 		// Setando tamanhos
 		titulo.setFont(new Font("Arial", Font.BOLD, 20));
 		titulo.setBounds(20, 20, 250, 50);

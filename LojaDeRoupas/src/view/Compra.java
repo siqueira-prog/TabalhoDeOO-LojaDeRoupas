@@ -6,11 +6,15 @@ import java.util.*;
 
 import javax.swing.*;
 
+import controller.ControleCamiseta;
+import controller.ControleCompra;
+
 public class Compra implements ActionListener {
 
-    private String list[] = { "Testes", "Teste2", "Teste3" };
+    private ArrayList<String> nomeCamisetas_arraylist = ControleCamiseta.nomeCamisetas();
+    private String[] lista = nomeCamisetas_arraylist.toArray(new String [nomeCamisetas_arraylist.size()]); 
 
-    JList listprodutos = new JList<String>(list);
+    JList listprodutos = new JList<String>(lista);
 
     // JANELA
     private static JFrame janela = new JFrame("Compra");
@@ -49,12 +53,15 @@ public class Compra implements ActionListener {
         detalhesDoProduto.addActionListener(compraproduto);
     }
 
-    @Override
     public void actionPerformed(ActionEvent e) {
-        // TODO Auto-generated method stub
-        Object src = e.getSource();
+    	Object src = e.getSource();
+
         if (src == detalhesDoProduto) {
-            new DetalhesProduto().detalharProduto();
+        	int index = listprodutos.getSelectedIndex();
+        	String camiseta_escolhida_string = lista[index];
+        	System.out.print(camiseta_escolhida_string);
+        	janela.dispose();
+            new DetalhesProduto(index).detalharProduto(index);
         }
     }
 }

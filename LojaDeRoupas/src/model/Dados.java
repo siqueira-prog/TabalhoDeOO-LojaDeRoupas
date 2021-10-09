@@ -209,7 +209,7 @@ public class Dados {
 		cliente8.cadastrar(data_client,8888888, "cliente8", "cliente8@email.com", "A3A1A54", telefone8, end8, cdc8);
 		cliente9.cadastrar(data_client,9999999, "cliente9", "cliente9@email.com", "12312Q4", telefone9, end9, cdc9);
 		cliente10.cadastrar(data_client,1010101,"cliente10","cliente10@email.com","1032SAF", telefone10, end10, cdc10);
-	
+		
 		//CADASTRANDO TELEFONES 
 		telefone1.cadastrar(data_tell, telefone1);
 		telefone2.cadastrar(data_tell, telefone2);

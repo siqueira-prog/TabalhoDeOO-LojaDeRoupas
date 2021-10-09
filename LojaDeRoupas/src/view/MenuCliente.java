@@ -57,10 +57,11 @@ public class MenuCliente implements ActionListener {
         // TODO Auto-generated method stub
         Object src = e.getSource();
         if (src == botaoComprar) {
-            new Compra();
+            new Compra().comprarProduto();;
         }
         if (src == botaoEditPerfil) {
             new DetalheCliente().detalharCliente();
+           
         }
 
     }
