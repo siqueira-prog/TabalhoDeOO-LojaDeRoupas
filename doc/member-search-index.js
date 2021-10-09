@@ -1,0 +1,1 @@
+memberSearchIndex = [{"p":"controller","c":"ControleCamiseta","l":"ControleCamiseta()","url":"%3Cinit%3E()"},{"p":"controller","c":"ControleCamiseta","l":"nomeCamisetas()"}]
