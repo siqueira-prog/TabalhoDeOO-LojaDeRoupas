@@ -1,2 +1,5 @@
 # TabalhoDeOO-LojaDeRoupas
-Professora, o frontend ainda n„o est· integrado com o backend, sugiro visualizar os arquivos isoladamente, os CRUD'S est„o todos prontos, porÈm ainda est· na pasta model vamos pass·-los para a controller quando formos fazer a integraÁ„o a frontend.
+Professora, o frontend ainda n√£o est√° integrado com o backend, sugiro visualizar os arquivos isoladamente, os CRUD'S est√£o todos prontos, por√©m ainda est√° na pasta model vamos pass√°-los para a controller quando formos fazer a integra√ß√£o a frontend.
+
+LINK PARA O FIGMA: https://www.figma.com/file/vd92rqOPUAblRxEr5Q3OBn/Untitled?node-id=0%3A1
+Obs.: neste figma encontra-se as interfaces com uma rota relativa √† interface principal denominada "HOME".
