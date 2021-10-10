@@ -95,10 +95,10 @@ public class Cliente extends Usuario{
 		}
 
 	public void  visualizar(ArrayList<String> data_client, String c) {
-			
-			
+		
 			int position = data_client.indexOf(c);
-			
+		
+
 			if(data_client.contains(c)) {
 				
 				System.out.println(
@@ -119,7 +119,7 @@ public class Cliente extends Usuario{
 			else {
 				
 				System.out.println("Cliente não encontrado!");	}
-			
+
 		}
 		
 

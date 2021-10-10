@@ -4,11 +4,15 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
+import controller.Data_control;
 import model.Dados;
 
 public class DetalhesProduto implements ActionListener {
     // [DEFININDO VARIÁVEIS]
 
+	// EMAIL POSITION - INPUT AT LOGIN CLIENT 
+    static int index;
+    
     // JANELA
     private static JFrame janela = new JFrame("Cliente");
     private static JLabel titulo = new JLabel("Detalhes do Produto");
@@ -57,10 +61,17 @@ public class DetalhesProduto implements ActionListener {
     private static JButton comprar = new JButton("Comprar");
     private static JButton cancelar = new JButton("Cancelar");
 
-    public DetalhesProduto(int index) {
-
+    public DetalhesProduto(String camiseta_escolhida_string, int index) {
+    	
+    	System.out.println(index);
+    	
+    	int position = Data_control.getDatabase_camiseta().indexOf(camiseta_escolhida_string);
+    	
         // JANELA
 
+    	// PASSANDO O VALOR DE INDEX PARA SER USADO NAS PROXIMAS PAGINAS
+    	DetalhesProduto.index= index;
+    	
         janela.setLayout(null);
 
         titulo.setFont(new Font("Algerian", Font.BOLD, 50));
@@ -87,7 +98,7 @@ public class DetalhesProduto implements ActionListener {
         labelNome.setBounds(20, 110, 250, 50);
         fieldNome.setBounds(20, 150, 250, 50);
         fieldNome.setEditable(false);
-        fieldNome.setText(Dados.databaseprecadastrado().getData_camiseta().get(index+1));
+        fieldNome.setText(Dados.databaseprecadastrado().getData_camiseta().get(position));
         labelNome.setFont(new Font("Algerian", Font.BOLD, 20));
         fieldNome.setFont(new Font("Algerian", Font.BOLD, 20));
         
@@ -95,7 +106,7 @@ public class DetalhesProduto implements ActionListener {
         labelTamanho.setBounds(20, 190, 100, 50);
         fieldTamanho.setBounds(20, 230, 100, 50);
         fieldTamanho.setEditable(false);
-        fieldTamanho.setText(Dados.databaseprecadastrado().getData_camiseta().get(index+3));
+        fieldTamanho.setText(Dados.databaseprecadastrado().getData_camiseta().get(position+2));
         labelTamanho.setFont(new Font("Algerian", Font.BOLD, 20));
         fieldTamanho.setFont(new Font("Algerian", Font.BOLD, 20));
         
@@ -103,14 +114,14 @@ public class DetalhesProduto implements ActionListener {
         labelCor.setBounds(170, 190, 100, 50);
         fieldCor.setBounds(170, 230, 100, 50);
         fieldCor.setEditable(false);
-        fieldCor.setText(Dados.databaseprecadastrado().getData_camiseta().get(index+2));
+        fieldCor.setText(Dados.databaseprecadastrado().getData_camiseta().get(position+1));
         labelCor.setFont(new Font("Algerian", Font.BOLD, 20));
         fieldCor.setFont(new Font("Algerian", Font.BOLD, 20));
         // Iput descrição
         labelDesc.setBounds(20, 270, 250, 50);
         fieldDesc.setBounds(20, 310, 250, 80);
         fieldDesc.setEditable(false);
-        fieldDesc.setText(Dados.databaseprecadastrado().getData_camiseta().get(index+9));
+        fieldDesc.setText(Dados.databaseprecadastrado().getData_camiseta().get(position+8));
         labelDesc.setFont(new Font("Algerian", Font.BOLD, 20));
         fieldDesc.setFont(new Font("Algerian", Font.BOLD, 20));
         
@@ -118,7 +129,7 @@ public class DetalhesProduto implements ActionListener {
         labelCategoria.setBounds(380, 110, 250, 50);
         fieldCategoria.setBounds(380, 150, 250, 50);
         fieldCategoria.setEditable(false);
-        fieldCategoria.setText(Dados.databaseprecadastrado().getData_camiseta().get(index+10));
+        fieldCategoria.setText(Dados.databaseprecadastrado().getData_camiseta().get(position+9));
         labelCategoria.setFont(new Font("Algerian", Font.BOLD, 20));
         fieldCategoria.setFont(new Font("Algerian", Font.BOLD, 20));
         
@@ -126,7 +137,7 @@ public class DetalhesProduto implements ActionListener {
         labelComp.setBounds(380, 190, 250, 50);
         fieldComp.setBounds(380, 230, 250, 50);
         fieldComp.setEditable(false);
-        fieldComp.setText(Dados.databaseprecadastrado().getData_camiseta().get(index+4));
+        fieldComp.setText(Dados.databaseprecadastrado().getData_camiseta().get(position+3));
         labelComp.setFont(new Font("Algerian", Font.BOLD, 20));
         fieldComp.setFont(new Font("Algerian", Font.BOLD, 20));
         
@@ -134,7 +145,7 @@ public class DetalhesProduto implements ActionListener {
         labelTipo.setBounds(380, 270, 250, 50);
         fieldTipo.setBounds(380, 310, 250, 50);
         fieldTipo.setEditable(false);
-        fieldTipo.setText(Dados.databaseprecadastrado().getData_camiseta().get(index+5));
+        fieldTipo.setText(Dados.databaseprecadastrado().getData_camiseta().get(position+4));
         labelTipo.setFont(new Font("Algerian", Font.BOLD, 20));
         fieldTipo.setFont(new Font("Algerian", Font.BOLD, 20));
         
@@ -142,14 +153,14 @@ public class DetalhesProduto implements ActionListener {
         labelPreco.setBounds(730, 110, 100, 50);
         fieldPreco.setBounds(730, 150, 100, 50);
         fieldPreco.setEditable(false);
-        fieldPreco.setText(Dados.databaseprecadastrado().getData_camiseta().get(index+6));
+        fieldPreco.setText(Dados.databaseprecadastrado().getData_camiseta().get(position+5));
         labelPreco.setFont(new Font("Algerian", Font.BOLD, 20));
         fieldPreco.setFont(new Font("Algerian", Font.BOLD, 20));
         
         // Input quantidade
         labelQtd.setBounds(880, 110, 100, 50);
         fieldQtd.setBounds(880, 150, 100, 50);
-        fieldQtd.setText(Dados.databaseprecadastrado().getData_camiseta().get(index+8));
+        fieldQtd.setText(Dados.databaseprecadastrado().getData_camiseta().get(position+7));
         labelQtd.setFont(new Font("Algerian", Font.BOLD, 20));
         fieldQtd.setFont(new Font("Algerian", Font.BOLD, 20));
         
@@ -193,28 +204,29 @@ public class DetalhesProduto implements ActionListener {
         janela.setVisible(true);
     }
 
-    public void detalharProduto(int index) {
-        DetalhesProduto detalharproduto = new DetalhesProduto(0);
-        // editar.addActionListener(detalharcliente);
-        // cancelar.addActionListener(detalharcliente);
-
+    public void detalharProduto(String camiseta_escolhida_string, int index) {
+        DetalhesProduto detalhesproduto = new DetalhesProduto(camiseta_escolhida_string, index);
+         comprar.addActionListener(detalhesproduto);
+         cancelar.addActionListener(detalhesproduto);
     }
 
     public static void main(String[] args) {
-        DetalhesProduto detalharproduto = new DetalhesProduto(0);
-        // editar.addActionListener(detalharcliente);
-        // cancelar.addActionListener(detalharcliente);
+    	String camiseta_escolhida_string = "KongCamiseta1";
+        DetalhesProduto detalhesproduto = new DetalhesProduto(camiseta_escolhida_string, index);
+         comprar.addActionListener(detalhesproduto);
+         cancelar.addActionListener(detalhesproduto);
     }
 
-    @Override
     public void actionPerformed(ActionEvent e) {
-        // TODO Auto-generated method stub
+
         Object src = e.getSource();
-        // if (src == editar) {
-        // new EditarPerfilCliente().editarPerfil();
-        // }
-        // if (src == cancelar) {
-        // janela.dispose();
-        // }
+        	if (src == comprar) {
+        		new MenuCliente(index).menu(index);
+        		janela.dispose();
+        	}
+        	if (src == cancelar) {
+        		new MenuCliente(index).menu(index);
+        		janela.dispose();
+        	}
     }
 }

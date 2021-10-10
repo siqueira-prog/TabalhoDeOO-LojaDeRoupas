@@ -4,14 +4,16 @@ import java.awt.*;
 import java.awt.event.*;
 import java.util.*;
 import javax.swing.*;
+import controller.Product_control;
 
-
-import controller.ControleCamiseta;
 //import controller.ControleCompra;
 
 public class Compra implements ActionListener {
 
-    private ArrayList<String> nomeCamisetas_arraylist = ControleCamiseta.nomeCamisetas();
+	// EMAIL POSITION - INPUT AT LOGIN CLIENT 
+    static int index = 2;
+    
+    private ArrayList<String> nomeCamisetas_arraylist = Product_control.nomeCamisetas();
     private String[] lista = nomeCamisetas_arraylist.toArray(new String [nomeCamisetas_arraylist.size()]); 
 
     JList<String> listprodutos = new JList<String>(lista);
@@ -26,7 +28,10 @@ public class Compra implements ActionListener {
     private static JButton detalhesDoProduto = new JButton("Detalhes do Produto");
     private static JButton voltar = new JButton("Voltar");
 
-    public Compra() {
+    public Compra(int index) {
+    	
+    	// PASSANDO O VALOR DE INDEX PARA SER USADO NAS PROXIMAS PAGINAS
+    	Compra.index= index;
     	
         janela.setLayout(null);
         //Cria uma instância do renderizador de células da lista.
@@ -76,26 +81,37 @@ public class Compra implements ActionListener {
 
     }
 
-    public void comprarProduto() {
-        Compra compraproduto = new Compra();
+    public void comprarProduto(int index) {
+        Compra compraproduto = new Compra(index);
         detalhesDoProduto.addActionListener(compraproduto);
-        
+        voltar.addActionListener(compraproduto);
     }
 
     public static void main(String[] args) {
-        Compra compraproduto = new Compra();
+        Compra compraproduto = new Compra(index);
         detalhesDoProduto.addActionListener(compraproduto);
+        voltar.addActionListener(compraproduto);
     }
 
     public void actionPerformed(ActionEvent e) {
+    	System.out.println(index);
     	Object src = e.getSource();
-
+      	int position = listprodutos.getSelectedIndex();
+    	String camiseta_escolhida_string = lista[position];
+    	
         if (src == detalhesDoProduto) {
-        	int index = listprodutos.getSelectedIndex();
-        	String camiseta_escolhida_string = lista[index];
+           	
         	System.out.print(camiseta_escolhida_string);
+            new DetalhesProduto(camiseta_escolhida_string, index).detalharProduto(camiseta_escolhida_string, index);
         	janela.dispose();
-            new DetalhesProduto(index).detalharProduto(index);
+        	
         }
+        
+        if (src == voltar) {
+        	new MenuCliente(2).menu(2);
+        	janela.dispose();
+        	
+        }	
+        
     }
 }

@@ -41,13 +41,15 @@ public class LoginAdmin implements ActionListener{
         labelEmail.setFont(new Font("Algerian", Font.BOLD, 20));
         fieldEmail.setBounds(250, 190, 250, 50);
         fieldEmail.setFont(new Font("Kristen ITC", Font.BOLD, 20));
+        fieldEmail.setForeground(new Color(212,175,55));
         
         // Iput senha
         labelSenha.setBounds(250, 240, 250, 50);
         labelSenha.setFont(new Font("Algerian", Font.BOLD, 20));
         senha.setBounds(250, 280, 250, 50);
         senha.setFont(new Font("Kristen ITC", Font.BOLD, 20));
-        
+        senha.setForeground(new Color(212,175,55));
+
         // BOTÃO LOGAR
         Logar.setBounds(250, 360, 250, 50);
         Logar.setBorder(BorderFactory.createLineBorder(new Color(212,175,55), 4));
@@ -99,15 +101,21 @@ public class LoginAdmin implements ActionListener{
     
     // ORIENTAÇÃO DAS AÇÕES 
 	public void actionPerformed(ActionEvent e) {
+		
 		Object src = e.getSource();
+		
         String textolido_email  = LoginAdmin.fieldEmail.getText();
+        
         char[] textolido_senha  = LoginAdmin.senha.getPassword();
+        
         System.out.println(textolido_email);
         System.out.println(textolido_senha);
+        
 		 if (src == Logar) {
+			 
 	        	if (Dados.databaseprecadastrado().getData_adm().contains(textolido_email) 
 	        		& Dados.databaseprecadastrado().getData_adm().contains(String.valueOf(textolido_senha))) {
-	        		System.exit(0);
+	        		
 	                JOptionPane.showMessageDialog(
 	               		   null,
 	               		   "Login efetivado com sucesso!",
@@ -115,26 +123,36 @@ public class LoginAdmin implements ActionListener{
 	               		   JOptionPane.INFORMATION_MESSAGE);
 	                
 	                int index = Dados.databaseprecadastrado().getData_adm().indexOf(textolido_email);
+	                
+	                new MenuAdmin().menuAdmin();
+	                
 	                janela.dispose();
-	                new MenuCliente(index).menu(index);
 	              
 	        	}
+	        	
 	        	else {
+	        		
 	                JOptionPane.showMessageDialog(
 	             		   null,
 	             		   "Cadastro não encontrado! Digite novamente.",
 	             		   null,
 	             		   JOptionPane.INFORMATION_MESSAGE
 	             		   );
+	                
 	                janela.dispose();
+	                
 	                new LoginAdmin().loginAdmin();
-	        	}
+	                
+	        	}	
 	        }
+	        
+		 
 		if (src == Voltar) {
-			janela.dispose();
+			
 			new Home();
+			
+			janela.dispose();
+			
 		}
-
 	}
-
 }

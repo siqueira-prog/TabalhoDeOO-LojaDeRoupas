@@ -3,8 +3,7 @@ package view;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
-
-import model.Dados;
+import controller.Client_control;
 
 public class LoginCliente implements ActionListener {
     // JANELA
@@ -40,13 +39,15 @@ public class LoginCliente implements ActionListener {
         labelEmail.setFont(new Font("Algerian", Font.BOLD, 20));
         fieldEmail.setBounds(250, 190, 250, 50);
         fieldEmail.setFont(new Font("Kristen ITC", Font.BOLD, 20));
-
+        fieldEmail.setForeground(new Color(212,175,55));
+        
         // Iput senha
         labelSenha.setBounds(250, 240, 250, 50);
         labelSenha.setFont(new Font("Algerian", Font.BOLD, 20));
         senha.setBounds(250, 280, 250, 50);
         senha.setFont(new Font("Kristen ITC", Font.BOLD, 20));
-
+        senha.setForeground(new Color(212,175,55));
+        
         // BOTÃO LOGAR
         Logar.setBounds(250, 360, 250, 50);
         Logar.setBorder(BorderFactory.createLineBorder(new Color(212,175,55), 4));
@@ -99,31 +100,32 @@ public class LoginCliente implements ActionListener {
 
     // ORIENTAÇÃO DAS AÇÕES
     public void actionPerformed(ActionEvent e) {
+    	
         Object src = e.getSource();
+        
         String textolido_email  = LoginCliente.fieldEmail.getText();
+        
         char[] textolido_senha  = LoginCliente.senha.getPassword();
-        System.out.println(textolido_email);
-        System.out.println(textolido_senha);
+        
+        System.out.println("email digitado: " + textolido_email);
+        System.out.println("senha digitada: " + String.valueOf(textolido_senha));
+        
         if (src == Logar) {
-        	if (Dados.databaseprecadastrado().getData_cliente().contains(textolido_email) 
-        		& Dados.databaseprecadastrado().getData_cliente().contains(String.valueOf(textolido_senha))) {
-        		System.exit(0);
-                JOptionPane.showMessageDialog(
-               		   null,
-               		   "Login efetivado com sucesso!",
-               		   null,
-               		   JOptionPane.INFORMATION_MESSAGE);
-                int index = Dados.databaseprecadastrado().getData_cliente().indexOf(textolido_email); 
+        	if (Client_control.getDatabase_client().contains(textolido_email) 
+        		& Client_control.getDatabase_client().contains(String.valueOf(textolido_senha))) {
+                
+                int index = Client_control.getDatabase_client().indexOf(textolido_email); 
+                
+                System.out.println("position of index= "+ index);
+                System.out.println("value of index= " + Client_control.getDatabase_client().get(index));
+                
                 new MenuCliente(index).menu(index);
+                
                 janela.dispose();
+                
         	}
         	else {
-                JOptionPane.showMessageDialog(
-             		   null,
-             		   "Cadastro não encontrado! Digite novamente.",
-             		   null,
-             		   JOptionPane.INFORMATION_MESSAGE
-             		   );
+
                 janela.dispose();
             	new LoginCliente().loginCliente();
                 

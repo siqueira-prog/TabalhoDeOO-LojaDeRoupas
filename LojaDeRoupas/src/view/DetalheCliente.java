@@ -4,9 +4,15 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-public class DetalheCliente implements ActionListener {
-    // [DEFININDO VARIÁVEIS]
+import controller.Client_control;
 
+public class DetalheCliente implements ActionListener {
+  
+	// [DEFININDO VARIÁVEIS]
+	
+	// EMAIL POSITION - INPUT AT LOGIN CLIENT 
+    static int index;
+    
     // JANELA
     private static JFrame janela = new JFrame("Detalhes do Cliente");
     private static JLabel titulo = new JLabel("Detalhes do Cliente");
@@ -17,15 +23,15 @@ public class DetalheCliente implements ActionListener {
     // INFORMAÇÕES PESSOAIS
 
     // Input nome
-    private static JLabel labelNome = new JLabel("Didigite seu nome:");
+    private static JLabel labelNome = new JLabel("Seu nome:");
     private static JTextField fieldNome = new JTextField("Ronaldo Fenômeno");
 
     // Input CPF
-    private static JLabel labelCPF = new JLabel("Didigite seu CPF:");
+    private static JLabel labelCPF = new JLabel("Seu CPF:");
     private static JTextField fieldCPF = new JTextField("777.777.777-77");
 
     // Input email
-    private static JLabel labelEmail = new JLabel("Didigite seu email:");
+    private static JLabel labelEmail = new JLabel("Seu email:");
     private static JTextField fieldEmail = new JTextField();
 
     // Input DDD
@@ -37,12 +43,8 @@ public class DetalheCliente implements ActionListener {
     private static JTextField fieldTele = new JTextField();
 
     // Input senha
-    private static JLabel labelSenha = new JLabel("Didigite sua senha:");
-    JPasswordField senha = new JPasswordField();
-
-    // Input confirmar senha
-    private static JLabel labelConfirmSenha = new JLabel("Repita sua senha:");
-    JPasswordField confirmSenha = new JPasswordField();
+    private static JLabel labelSenha = new JLabel("Sua senha:");
+    private static JTextField senha = new JTextField();
 
     // ENDEREÇO
 
@@ -73,23 +75,23 @@ public class DetalheCliente implements ActionListener {
     // CARTÃO DE CRÉDITO
 
     // Bandeira
-    private static JLabel labelBand = new JLabel("Didigite a bandeira do cartão:");
+    private static JLabel labelBand = new JLabel("Bandeira do cartão:");
     private static JTextField fieldBand = new JTextField();
 
     // Número do Cartão
-    private static JLabel labelNumCart = new JLabel("Didigite o número do seu cartão:");
+    private static JLabel labelNumCart = new JLabel("Número do seu cartão:");
     private static JTextField fieldNumCart = new JTextField();
 
     // Código de Segurança
-    private static JLabel labelCodSeg = new JLabel("Didigite o código de segurança:");
+    private static JLabel labelCodSeg = new JLabel("Código de segurança:");
     private static JTextField fieldCodSeg = new JTextField();
 
     // Input data de nascimento
-    private static JLabel labelDataNasc = new JLabel("Digite a sua data de nascimento:");
+    private static JLabel labelDataNasc = new JLabel("Data de nascimento:");
     private static JTextField fieldDataNasc = new JTextField();
 
     // Input data de vencimento do cartão
-    private static JLabel labelDataVenc = new JLabel("Digite a data de vencimento:");
+    private static JLabel labelDataVenc = new JLabel("Data de vencimento:");
     private static JLabel labelMesVenc = new JLabel("Mês:");
     private static JLabel labelAnoVenc = new JLabel("Ano:");
 
@@ -98,11 +100,14 @@ public class DetalheCliente implements ActionListener {
 
     // Botao
     private static JButton editar = new JButton("Editar");
-    private static JButton cancelar = new JButton("Cancelar");
+    private static JButton voltar = new JButton("Voltar");
 
-    public DetalheCliente() {
-
-        // JANELA
+    public DetalheCliente(int index) {
+    	System.out.println(index);
+    	// PASSANDO O VALOR DE INDEX PARA SER USADO NAS PROXIMAS PAGINAS
+    	DetalheCliente.index= index;
+        
+    	// JANELA
 
         janela.setLayout(null);
 
@@ -114,7 +119,7 @@ public class DetalheCliente implements ActionListener {
         subtitulo2.setFont(new Font("Algerian", Font.BOLD, 14));
         subtitulo2.setBounds(380, 80, 250, 50);
         subtitulo3.setFont(new Font("Algerian", Font.BOLD, 14));
-        subtitulo3.setBounds(730, 80, 250, 50);
+        subtitulo3.setBounds(730, 80, 300, 50);
         
         // INFORMAÇÕES PESSOAIS
 
@@ -125,6 +130,8 @@ public class DetalheCliente implements ActionListener {
         labelNome.setFont(new Font("Algerian", Font.BOLD, 20));
         fieldNome.setFont(new Font("Algerian", Font.BOLD, 20));
         fieldNome.setForeground(new Color(212,175,55));
+        fieldNome.setText(Client_control.getDatabase_client().get(index-1));
+        
         // Input CPF
         labelCPF.setBounds(20, 190, 250, 50);
         fieldCPF.setBounds(20, 230, 250, 50);
@@ -132,6 +139,8 @@ public class DetalheCliente implements ActionListener {
         labelCPF.setFont(new Font("Algerian", Font.BOLD, 20));
         fieldCPF.setFont(new Font("Algerian", Font.BOLD, 20));
         fieldCPF.setForeground(new Color(212,175,55));
+        fieldCPF.setText(Client_control.getDatabase_client().get(index-2));
+
         // Input email
         labelEmail.setBounds(20, 270, 250, 50);
         fieldEmail.setBounds(20, 310, 250, 50);
@@ -139,6 +148,17 @@ public class DetalheCliente implements ActionListener {
         labelEmail.setFont(new Font("Algerian", Font.BOLD, 20));
         fieldEmail.setFont(new Font("Algerian", Font.BOLD, 20));
         fieldEmail.setForeground(new Color(212,175,55));
+        fieldEmail.setText(Client_control.getDatabase_client().get(index));
+
+        // Iput senha
+        labelSenha.setBounds(20, 430, 250, 50);
+        senha.setBounds(20, 470, 250, 50);
+        senha.setEditable(false);
+        labelSenha.setFont(new Font("Algerian", Font.BOLD, 20));
+        senha.setFont(new Font("Algerian", Font.BOLD, 20));
+        senha.setForeground(new Color(212,175,55));
+        senha.setText(Client_control.getDatabase_client().get(index+1));
+        
         // Input DDD
         labelDDD.setBounds(20, 350, 50, 50);
         fieldDDD.setBounds(20, 390, 50, 50);
@@ -153,20 +173,7 @@ public class DetalheCliente implements ActionListener {
         labelTele.setFont(new Font("Algerian", Font.BOLD, 20));
         fieldTele.setFont(new Font("Algerian", Font.BOLD, 20));
         fieldTele.setForeground(new Color(212,175,55));
-        // Iput senha
-        labelSenha.setBounds(20, 430, 250, 50);
-        senha.setBounds(20, 470, 250, 50);
-        senha.setEditable(false);
-        labelSenha.setFont(new Font("Algerian", Font.BOLD, 20));
-        senha.setFont(new Font("Algerian", Font.BOLD, 20));
-        senha.setForeground(new Color(212,175,55));
-        // Input confirmar senha
-        labelConfirmSenha.setBounds(20, 510, 250, 50);
-        confirmSenha.setBounds(20, 550, 250, 50);
-        confirmSenha.setEditable(false);
-        labelConfirmSenha.setFont(new Font("Algerian", Font.BOLD, 20));
-        confirmSenha.setFont(new Font("Algerian", Font.BOLD, 20));
-        confirmSenha.setForeground(new Color(212,175,55)); 
+
         // ENDEREÇO
 
         // Input logradouro
@@ -269,11 +276,11 @@ public class DetalheCliente implements ActionListener {
         editar.setBackground(Color.BLACK);
         editar.setForeground(Color.WHITE);
         
-        cancelar.setBounds(512, 640, 250, 50);
-        cancelar.setBorder(BorderFactory.createLineBorder(new Color(212,175,55), 4));
-        cancelar.setFont(new Font("Algerian", Font.BOLD, 20));
-        cancelar.setBackground(Color.BLACK);
-        cancelar.setForeground(Color.WHITE);
+        voltar.setBounds(512, 640, 250, 50);
+        voltar.setBorder(BorderFactory.createLineBorder(new Color(212,175,55), 4));
+        voltar.setFont(new Font("Algerian", Font.BOLD, 20));
+        voltar.setBackground(Color.BLACK);
+        voltar.setForeground(Color.WHITE);
         
         // [ADICIONANDO A JANELA]
 
@@ -283,7 +290,7 @@ public class DetalheCliente implements ActionListener {
         janela.add(subtitulo3);
 
         janela.add(editar);
-        janela.add(cancelar);
+        janela.add(voltar);
 
         // Informações pessoais
 
@@ -299,8 +306,6 @@ public class DetalheCliente implements ActionListener {
         janela.add(fieldTele);
         janela.add(labelSenha);
         janela.add(senha);
-        janela.add(labelConfirmSenha);
-        janela.add(confirmSenha);
 
         // Endereço
 
@@ -339,28 +344,31 @@ public class DetalheCliente implements ActionListener {
     }
     
 
-    public void detalharCliente() {
-        DetalheCliente detalharcliente = new DetalheCliente();
+    public void detalharCliente(int index) {
+        DetalheCliente detalharcliente = new DetalheCliente(index);
         editar.addActionListener(detalharcliente);
-        cancelar.addActionListener(detalharcliente);
+        voltar.addActionListener(detalharcliente);
 
     }
 
     
     public static void main(String[] args) {
-    	DetalheCliente detalharcliente = new DetalheCliente();
+    	DetalheCliente detalharcliente = new DetalheCliente(index);
         editar.addActionListener(detalharcliente);
-        cancelar.addActionListener(detalharcliente);
+        voltar.addActionListener(detalharcliente);
     }
 
     public void actionPerformed(ActionEvent e) {
-        // TODO Auto-generated method stub
         Object src = e.getSource();
         if (src == editar) {
-            new EditarPerfilCliente().editarPerfil();
+            new EditarPerfilCliente(index).editarPerfil(index);
+            janela.dispose();
         }
-        if (src == cancelar) {
+        if (src == voltar) {
+        	new MenuCliente(index).menu(index);
             janela.dispose();
         }
     }
+
 }
+

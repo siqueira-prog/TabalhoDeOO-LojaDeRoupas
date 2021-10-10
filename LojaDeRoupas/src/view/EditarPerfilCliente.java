@@ -6,7 +6,10 @@ import javax.swing.*;
 
 public class EditarPerfilCliente implements ActionListener {
     // [DEFININDO VARIÁVEIS]
-
+	
+	// EMAIL POSITION - INPUT AT LOGIN CLIENT 
+    static int index;
+    
     // JANELA
     private static JFrame janela = new JFrame("Cliente");
     private static JLabel titulo = new JLabel("      Editar Perfil ");
@@ -98,12 +101,15 @@ public class EditarPerfilCliente implements ActionListener {
 
     // Botões
 
-    private static JButton cadastrar = new JButton("Cadastrar");
+    private static JButton salvar = new JButton("Salvar");
     private static JButton voltar = new JButton("Voltar");
     private static JButton excluir = new JButton("Excluir");
 
-    public EditarPerfilCliente() {
-
+    public EditarPerfilCliente(int index) {
+    	System.out.println(index);
+    	// PASSANDO O VALOR DE INDEX PARA SER USADO NAS PROXIMAS PAGINAS
+    	EditarPerfilCliente.index= index;
+    	
         // JANELA
 
         janela.setLayout(null);
@@ -120,11 +126,11 @@ public class EditarPerfilCliente implements ActionListener {
         subtitulo3.setFont(new Font("Algerian", Font.BOLD, 14));
         subtitulo3.setBounds(730, 80, 250, 50);
         
-        cadastrar.setBounds(20, 640, 250, 50);
-        cadastrar.setBorder(BorderFactory.createLineBorder(new Color(212,175,55), 4));
-        cadastrar.setFont(new Font("Algerian", Font.BOLD, 20));
-        cadastrar.setBackground(Color.BLACK);
-        cadastrar.setForeground(Color.WHITE);
+        salvar.setBounds(20, 640, 250, 50);
+        salvar.setBorder(BorderFactory.createLineBorder(new Color(212,175,55), 4));
+        salvar.setFont(new Font("Algerian", Font.BOLD, 20));
+        salvar.setBackground(Color.BLACK);
+        salvar.setForeground(Color.WHITE);
         
         voltar.setBounds(380, 640, 250, 50);
         voltar.setBorder(BorderFactory.createLineBorder(new Color(212,175,55), 4));
@@ -296,7 +302,7 @@ public class EditarPerfilCliente implements ActionListener {
         janela.add(subtitulo2);
         janela.add(subtitulo3);
 
-        janela.add(cadastrar);
+        janela.add(salvar);
         janela.add(voltar);
         janela.add(excluir);
 
@@ -350,34 +356,33 @@ public class EditarPerfilCliente implements ActionListener {
 
     }
 
-    public void editarPerfil() {
-        EditarPerfilCliente editarperfilcliente = new EditarPerfilCliente();
-        cadastrar.addActionListener(editarperfilcliente);
+    public void editarPerfil(int index) {
+        EditarPerfilCliente editarperfilcliente = new EditarPerfilCliente(index);
+        salvar.addActionListener(editarperfilcliente);
         voltar.addActionListener(editarperfilcliente);
         excluir.addActionListener(editarperfilcliente);
     }
 
     public static void main(String[] args) {
-        EditarPerfilCliente editarperfilcliente = new EditarPerfilCliente();
-        cadastrar.addActionListener(editarperfilcliente);
+        EditarPerfilCliente editarperfilcliente = new EditarPerfilCliente(index);
+        salvar.addActionListener(editarperfilcliente);
         voltar.addActionListener(editarperfilcliente);
         excluir.addActionListener(editarperfilcliente);
     }
 
- 
     public void actionPerformed(ActionEvent e) {
 
         Object src = e.getSource();
-        if (src == cadastrar) {
-            JOptionPane.showMessageDialog(null, "Cadastro efetivado com sucesso!", null,
-                    JOptionPane.INFORMATION_MESSAGE);
+        if (src == salvar) {
+            new MenuCliente(index).menu(index);
             janela.dispose();
         }
         if (src == voltar) {
+        	new MenuCliente(index).menu(index);
             janela.dispose();
         }
         if (src == excluir) {
-            JOptionPane.showMessageDialog(null, "Perfil excluído com sucesso!", null, JOptionPane.INFORMATION_MESSAGE);
+            new Home().home();
             janela.dispose();
         }
     }

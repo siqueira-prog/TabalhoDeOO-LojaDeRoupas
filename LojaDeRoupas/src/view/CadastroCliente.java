@@ -128,42 +128,50 @@ public class CadastroCliente implements ActionListener {
         fieldNome.setBounds(20, 150, 250, 50);
         labelNome.setFont(new Font("Algerian", Font.BOLD, 20));
         fieldNome.setFont(new Font("Kristen ITC", Font.BOLD, 20));
+        fieldNome.setForeground(new Color(212,175,55));
+        
         // Input CPF
         labelCPF.setBounds(20, 190, 250, 50);
         fieldCPF.setBounds(20, 230, 250, 50);
         labelCPF.setFont(new Font("Algerian", Font.BOLD, 20));
         fieldCPF.setFont(new Font("Kristen ITC", Font.BOLD, 20));
+        fieldCPF.setForeground(new Color(212,175,55));
         
         // Input email
         labelEmail.setBounds(20, 270, 250, 50);
         fieldEmail.setBounds(20, 310, 250, 50);
         labelEmail.setFont(new Font("Algerian", Font.BOLD, 20));
         fieldEmail.setFont(new Font("Kristen ITC", Font.BOLD, 20));
-        
+        fieldEmail.setForeground(new Color(212,175,55));
+
         // Input DDD
         labelDDD.setBounds(20, 350, 50, 50);
         fieldDDD.setBounds(20, 390, 50, 50);
         labelDDD.setFont(new Font("Algerian", Font.BOLD, 20));
         fieldDDD.setFont(new Font("Kristen ITC", Font.BOLD, 20));
-        
+        fieldDDD.setForeground(new Color(212,175,55));
+
         // Input telefone
         labelTele.setBounds(90, 350, 250, 50);
         fieldTele.setBounds(90, 390, 180, 50);
         labelTele.setFont(new Font("Algerian", Font.BOLD, 20));
         fieldTele.setFont(new Font("Kristen ITC", Font.BOLD, 20));
-        
+        fieldTele.setForeground(new Color(212,175,55));
+
         // Iput senha
         labelSenha.setBounds(20, 430, 250, 50);
         senha.setBounds(20, 470, 250, 50);
         labelSenha.setFont(new Font("Algerian", Font.BOLD, 20));
         senha.setFont(new Font("Kristen ITC", Font.BOLD, 20));
+        senha.setForeground(new Color(212,175,55));
         
         // Input confirmar senha
         labelConfirmSenha.setBounds(20, 510, 250, 50);
         confirmSenha.setBounds(20, 550, 250, 50);
         labelConfirmSenha.setFont(new Font("Algerian", Font.BOLD, 20));
         confirmSenha.setFont(new Font("Kristen ITC", Font.BOLD, 20));
-
+        confirmSenha.setForeground(new Color(212,175,55));
+        
         // ENDEREÇO
 
         // Input logradouro
@@ -171,37 +179,43 @@ public class CadastroCliente implements ActionListener {
         fieldLogradouro.setBounds(380, 150, 250, 50);
         labelLogradouro.setFont(new Font("Algerian", Font.BOLD, 20));
         fieldLogradouro.setFont(new Font("Kristen ITC", Font.BOLD, 20));
-        
+        fieldLogradouro.setForeground(new Color(212,175,55));
+
         // Input Numero Endereço
         labelNumeroEnd.setBounds(380, 190, 50, 50);
         fieldNumeroEnd.setBounds(380, 230, 50, 50);
         labelNumeroEnd.setFont(new Font("Algerian", Font.BOLD, 20));
         fieldNumeroEnd.setFont(new Font("Kristen ITC", Font.BOLD, 20));
+        fieldNumeroEnd.setForeground(new Color(212,175,55));
         
         // Input bairro
         labelBairro.setBounds(450, 190, 200, 50);
         fieldBairro.setBounds(450, 230, 180, 50);
         labelBairro.setFont(new Font("Algerian", Font.BOLD, 20));
         fieldBairro.setFont(new Font("Kristen ITC", Font.BOLD, 20));
-        
+        fieldBairro.setForeground(new Color(212,175,55));
+
         // Iput cep
         labelCep.setBounds(380, 270, 250, 50);
         fieldCep.setBounds(380, 310, 250, 50);
         labelCep.setFont(new Font("Algerian", Font.BOLD, 20));
         fieldCep.setFont(new Font("Kristen ITC", Font.BOLD, 20));
-        
+        fieldCep.setForeground(new Color(212,175,55));
+
         // Input cidade
         labelCidade.setBounds(380, 350, 250, 50);
         fieldCidade.setBounds(380, 390, 250, 50);
         labelCidade.setFont(new Font("Algerian", Font.BOLD, 20));
         fieldCidade.setFont(new Font("Kristen ITC", Font.BOLD, 20));
-        
+        fieldCidade.setForeground(new Color(212,175,55));
+
         // Input estado
         labelEstado.setBounds(380, 430, 250, 50);
         fieldEstado.setBounds(380, 470, 250, 50);
         labelEstado.setFont(new Font("Algerian", Font.BOLD, 20));
         fieldEstado.setFont(new Font("Kristen ITC", Font.BOLD, 20));
-        
+        fieldEstado.setForeground(new Color(212,175,55));
+
         // CARTÃƒO DE CRÉDITO
 
         // Input bandeira
@@ -209,36 +223,44 @@ public class CadastroCliente implements ActionListener {
         fieldBand.setBounds(730, 150, 370, 50);
         labelBand.setFont(new Font("Algerian", Font.BOLD, 20));
         fieldBand.setFont(new Font("Kristen ITC", Font.BOLD, 20));
-        
+        fieldBand.setForeground(new Color(212,175,55));
+
         // Input numero do cartão
         labelNumCart.setBounds(730, 190, 600, 50);
         fieldNumCart.setBounds(730, 230, 370, 50);
         labelNumCart.setFont(new Font("Algerian", Font.BOLD, 20));
         fieldNumCart.setFont(new Font("Kristen ITC", Font.BOLD, 20));
-        
+        fieldNumCart.setForeground(new Color(212,175,55));
+
         // Input código de segurança
         labelCodSeg.setBounds(730, 270, 600, 50);
         fieldCodSeg.setBounds(730, 310, 370, 50);
         labelCodSeg.setFont(new Font("Algerian", Font.BOLD, 20));
         fieldCodSeg.setFont(new Font("Kristen ITC", Font.BOLD, 20));
-        
+        fieldCodSeg.setForeground(new Color(212,175,55));
+
         // Iput data de nascimento
         labelDataNasc.setBounds(730, 350, 650, 50);
         fieldDataNasc.setBounds(730, 390, 370, 50);
         labelDataNasc.setFont(new Font("Algerian", Font.BOLD, 20));
         fieldDataNasc.setFont(new Font("Kristen ITC", Font.BOLD, 20));
-        
+        fieldDataNasc.setForeground(new Color(212,175,55));
+
         // Input data de vencimento do cartão
 
         labelDataVenc.setBounds(730, 430, 600, 50);
         labelMesVenc.setBounds(730, 450, 250, 50);
         labelAnoVenc.setBounds(950, 450, 250, 50);
-        fieldMesVenc.setBounds(730, 490, 100, 50);
-        fieldAnoVenc.setBounds(950, 490, 100, 50);
-      
+        
         labelDataVenc.setFont(new Font("Algerian", Font.BOLD, 20));
         labelMesVenc.setFont(new Font("Algerian", Font.BOLD, 20));
         labelAnoVenc.setFont(new Font("Algerian", Font.BOLD, 20));
+
+        fieldMesVenc.setBounds(730, 490, 100, 50);
+        fieldAnoVenc.setBounds(950, 490, 100, 50);
+      
+        fieldMesVenc.setForeground(new Color(212,175,55));
+        fieldAnoVenc.setForeground(new Color(212,175,55));
 
         fieldMesVenc.setFont(new Font("Kristen ITC", Font.BOLD, 20));
         fieldAnoVenc.setFont(new Font("Kristen ITC", Font.BOLD, 20));

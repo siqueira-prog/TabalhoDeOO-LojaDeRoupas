@@ -18,17 +18,28 @@ public class Dados {
 	private  ArrayList<String> data_compra= dados().get(4);
 	private  ArrayList<String> data_loja= dados().get(6);
 	
-
+	/*
+	 @POSIÇÕES NO ARRAYLIST DATA_GLOBAL@
+	 0 - data_client
+	 1 - data_tell
+	 2 - data_end
+	 3 - data_cdc
+	 4 - data_compra
+	 5 - data_camiseta
+	 6 - data_loja
+	 7 - data_adm
+	 */
+	
 	//constructor
 	public Dados(
 			ArrayList<String> data_cliente,
-			ArrayList<String> data_adm,
 			ArrayList<String> data_tell,
 			ArrayList<String> data_end,
 			ArrayList<String> data_cdc,
-			ArrayList<String> data_camiseta,
 			ArrayList<String> data_compra,
-			ArrayList<String> data_loja) {
+			ArrayList<String> data_camiseta,
+			ArrayList<String> data_loja,
+			ArrayList<String> data_adm) {
 		this.data_cliente = data_cliente;
 		this.data_adm = data_adm;
 		this.data_tell = data_tell;
@@ -208,7 +219,7 @@ public class Dados {
 		cliente7.cadastrar(data_client,7777777, "cliente7", "cliente7@email.com", "GGG123", telefone7, end7, cdc7);
 		cliente8.cadastrar(data_client,8888888, "cliente8", "cliente8@email.com", "A3A1A54", telefone8, end8, cdc8);
 		cliente9.cadastrar(data_client,9999999, "cliente9", "cliente9@email.com", "12312Q4", telefone9, end9, cdc9);
-		cliente10.cadastrar(data_client,1010101,"cliente10","cliente10@email.com","1032SAF", telefone10, end10, cdc10);
+		cliente10.cadastrar(data_client,1010101,"cliente10","cliente10@email.com","10", telefone10, end10, cdc10);
 		
 		//CADASTRANDO TELEFONES 
 		telefone1.cadastrar(data_tell, telefone1);

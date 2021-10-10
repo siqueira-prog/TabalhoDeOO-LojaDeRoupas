@@ -3,22 +3,19 @@
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
-
-import model.Dados;
+import controller.Client_control;
 
 public class MenuCliente implements ActionListener {
-	// NAME POSITION 
-    static int position;
-    
+	
+	// EMAIL POSITION - INPUT AT LOGIN CLIENT 
+    static int index;
+
     // JANELA
     private static JFrame janela = new JFrame("Menu Cliente");
     private static JLabel titulo = new JLabel("Menu Cliente");
 
     // LABELS
-    private static JLabel client_name = new JLabel(
-    		"Bem vindo(a) "+
-    		Dados.databaseprecadastrado().getData_cliente().get(position+1) +"!"
-    		);
+    private static JLabel client_name = new JLabel();
     
     // BUTTONS
     private static JButton botaoComprar = new JButton("Comprar");
@@ -26,6 +23,10 @@ public class MenuCliente implements ActionListener {
     private static JButton botaoVisualizarPerfil = new JButton("Visualizar Perfil");
 
     public MenuCliente(int index) {
+    	System.out.println(index);
+    	// PASSANDO O VALOR DE INDEX PARA SER USADO NAS PROXIMAS PAGINAS
+    	MenuCliente.index= index;
+    	
         // JANELA
         titulo.setFont(new Font("Algerian", Font.BOLD, 50));
         titulo.setBounds(190, 20, 600, 50);
@@ -34,6 +35,7 @@ public class MenuCliente implements ActionListener {
         // LABEL COM NOME DO CLIENTE
         client_name.setBounds(230, 120, 400, 50);
         client_name.setFont(new Font("Algerian", Font.BOLD, 20));
+        client_name.setText("Bem vindo(a) " + Client_control.database_client.get(index-1));
         
         // BOTÕES
         botaoComprar.setBounds(230, 200, 250, 50);
@@ -70,6 +72,7 @@ public class MenuCliente implements ActionListener {
         MenuCliente menucliente = new MenuCliente(index);
         botaoComprar.addActionListener(menucliente);
         botaoEditPerfil.addActionListener(menucliente);
+        botaoVisualizarPerfil.addActionListener(menucliente);
     }
 
     public static void main(String[] args) {
@@ -77,16 +80,23 @@ public class MenuCliente implements ActionListener {
     	MenuCliente menucliente = new MenuCliente(0);
         botaoComprar.addActionListener(menucliente);
         botaoEditPerfil.addActionListener(menucliente);
+        botaoVisualizarPerfil.addActionListener(menucliente);
+
     }
 
     public void actionPerformed(ActionEvent e) {
         Object src = e.getSource();
         if (src == botaoComprar) {
-            new Compra().comprarProduto();;
+            new Compra(index).comprarProduto(index);;
+            janela.dispose();
         }
         if (src == botaoEditPerfil) {
-            new DetalheCliente().detalharCliente();
-           
+            new EditarPerfilCliente(index).editarPerfil(index);
+            janela.dispose();
+        }
+        if (src == botaoVisualizarPerfil) {
+            new DetalheCliente(index).detalharCliente(index);
+            janela.dispose();
         }
 
     }
