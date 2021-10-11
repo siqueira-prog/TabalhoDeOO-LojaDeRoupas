@@ -269,14 +269,14 @@ public class CadastroCliente implements ActionListener {
         cadastrar.setBounds(306, 640, 250, 50);
         cadastrar.setBorder(BorderFactory.createLineBorder(new Color(212,175,55), 4));
         cadastrar.setFont(new Font("Algerian", Font.BOLD, 20));
-        cadastrar.setBackground(Color.BLACK);
-        cadastrar.setForeground(Color.WHITE);
+        cadastrar.setBackground(Color.GREEN);
+        cadastrar.setForeground(Color.BLACK);
         
         cancelar.setBounds(650, 640, 250, 50);
         cancelar.setBorder(BorderFactory.createLineBorder(new Color(212,175,55), 4));
         cancelar.setFont(new Font("Algerian", Font.BOLD, 20));
-        cancelar.setBackground(Color.BLACK);
-        cancelar.setForeground(Color.WHITE);
+        cancelar.setBackground(Color.RED);
+        cancelar.setForeground(Color.BLACK);
         
         // [ADICIONANDO A JANELA]
         janela.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);

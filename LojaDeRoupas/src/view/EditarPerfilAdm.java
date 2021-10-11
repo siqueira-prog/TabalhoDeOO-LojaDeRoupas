@@ -38,7 +38,7 @@ public class EditarPerfilAdm implements ActionListener {
     private static JPasswordField confirmaSenha = new JPasswordField();
 
     // BOTÕES
-    private static JButton editar = new JButton("Editar");
+    private static JButton salvar = new JButton("Salvar");
     private static JButton voltar = new JButton("Voltar");
 
     // CONSTRUTOR
@@ -90,11 +90,11 @@ public class EditarPerfilAdm implements ActionListener {
         confirmaSenha.setFont(new Font("Kristen ITC", Font.BOLD, 20));
         
         // BOTÕES
-        editar.setBounds(50, 640, 250, 50);
-        editar.setBorder(BorderFactory.createLineBorder(new Color(212,175,55), 4));
-        editar.setFont(new Font("Algerian", Font.BOLD, 20));
-        editar.setBackground(Color.BLACK);
-        editar.setForeground(Color.WHITE);
+        salvar.setBounds(50, 640, 250, 50);
+        salvar.setBorder(BorderFactory.createLineBorder(new Color(212,175,55), 4));
+        salvar.setFont(new Font("Algerian", Font.BOLD, 20));
+        salvar.setBackground(Color.GREEN);
+        salvar.setForeground(Color.BLACK);
         
         voltar.setBounds(420, 640, 250, 50);
         voltar.setBorder(BorderFactory.createLineBorder(new Color(212,175,55), 4));
@@ -105,7 +105,7 @@ public class EditarPerfilAdm implements ActionListener {
         // [ADICIONANDO A JANELA]
 
         janela.add(titulo);
-        janela.add(editar);
+        janela.add(salvar);
 
         // Informações pessoais
         
@@ -134,7 +134,7 @@ public class EditarPerfilAdm implements ActionListener {
         fieldEmail.addActionListener(editarperfiladm);
         senha.addActionListener(editarperfiladm);
         confirmaSenha.addActionListener(editarperfiladm);
-        editar.addActionListener(editarperfiladm);
+        salvar.addActionListener(editarperfiladm);
         voltar.addActionListener(editarperfiladm);					
     }
     
@@ -146,14 +146,14 @@ public class EditarPerfilAdm implements ActionListener {
         fieldEmail.addActionListener(editarperfiladm);
         senha.addActionListener(editarperfiladm);
         confirmaSenha.addActionListener(editarperfiladm);
-        editar.addActionListener(editarperfiladm);
+        salvar.addActionListener(editarperfiladm);
         voltar.addActionListener(editarperfiladm);
     }
 
     // ORIENTAÇÃO DAS AÇÕES 
     public void actionPerformed(ActionEvent e) {
         Object src = e.getSource();
-        if (src == editar) {
+        if (src == salvar) {
         	new MenuAdmin(index).menuAdmin(index);
         	janela.dispose();
         }

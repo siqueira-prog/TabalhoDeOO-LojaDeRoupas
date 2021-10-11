@@ -131,8 +131,8 @@ public class EditarPerfilCliente implements ActionListener {
         salvar.setBounds(20, 640, 250, 50);
         salvar.setBorder(BorderFactory.createLineBorder(new Color(212,175,55), 4));
         salvar.setFont(new Font("Algerian", Font.BOLD, 20));
-        salvar.setBackground(Color.BLACK);
-        salvar.setForeground(Color.WHITE);
+        salvar.setBackground(Color.GREEN);
+        salvar.setForeground(Color.BLACK);
         
         voltar.setBounds(380, 640, 250, 50);
         voltar.setBorder(BorderFactory.createLineBorder(new Color(212,175,55), 4));
@@ -143,8 +143,8 @@ public class EditarPerfilCliente implements ActionListener {
         excluir.setBounds(730, 640, 250, 50);
         excluir.setBorder(BorderFactory.createLineBorder(new Color(212,175,55), 4));
         excluir.setFont(new Font("Algerian", Font.BOLD, 20));
-        excluir.setBackground(Color.BLACK);
-        excluir.setForeground(Color.WHITE);;
+        excluir.setBackground(Color.RED);
+        excluir.setForeground(Color.BLACK);;
 
         // INFORMAÇÕES PESSOAIS
 
