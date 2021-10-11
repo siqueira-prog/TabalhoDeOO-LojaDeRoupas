@@ -16,7 +16,7 @@ public class DetalhesProduto implements ActionListener {
     // JANELA
     private static JFrame janela = new JFrame("Cliente");
     private static JLabel titulo = new JLabel("Detalhes do Produto");
-    private static JLabel subtitulo1 = new JLabel("Infomações do Produto");
+    private static JLabel subtitulo1 = new JLabel("Infomações do+ Produto");
 
     // INFORMAÇÕES PESSOAIS
 
@@ -101,6 +101,7 @@ public class DetalhesProduto implements ActionListener {
         fieldNome.setText(Dados.databaseprecadastrado().getData_camiseta().get(position));
         labelNome.setFont(new Font("Algerian", Font.BOLD, 20));
         fieldNome.setFont(new Font("Algerian", Font.BOLD, 20));
+        fieldNome.setForeground(new Color(212,175,55));
         
         // Tamano
         labelTamanho.setBounds(20, 190, 100, 50);
@@ -109,6 +110,7 @@ public class DetalhesProduto implements ActionListener {
         fieldTamanho.setText(Dados.databaseprecadastrado().getData_camiseta().get(position+2));
         labelTamanho.setFont(new Font("Algerian", Font.BOLD, 20));
         fieldTamanho.setFont(new Font("Algerian", Font.BOLD, 20));
+        fieldTamanho.setForeground(new Color(212,175,55));
         
         // Cor
         labelCor.setBounds(170, 190, 100, 50);
@@ -117,6 +119,8 @@ public class DetalhesProduto implements ActionListener {
         fieldCor.setText(Dados.databaseprecadastrado().getData_camiseta().get(position+1));
         labelCor.setFont(new Font("Algerian", Font.BOLD, 20));
         fieldCor.setFont(new Font("Algerian", Font.BOLD, 20));
+        fieldCor.setForeground(new Color(212,175,55));
+        
         // Iput descrição
         labelDesc.setBounds(20, 270, 250, 50);
         fieldDesc.setBounds(20, 310, 250, 80);
@@ -124,6 +128,7 @@ public class DetalhesProduto implements ActionListener {
         fieldDesc.setText(Dados.databaseprecadastrado().getData_camiseta().get(position+8));
         labelDesc.setFont(new Font("Algerian", Font.BOLD, 20));
         fieldDesc.setFont(new Font("Algerian", Font.BOLD, 20));
+        fieldDesc.setForeground(new Color(212,175,55));
         
         // Input categoria
         labelCategoria.setBounds(380, 110, 250, 50);
@@ -132,6 +137,7 @@ public class DetalhesProduto implements ActionListener {
         fieldCategoria.setText(Dados.databaseprecadastrado().getData_camiseta().get(position+9));
         labelCategoria.setFont(new Font("Algerian", Font.BOLD, 20));
         fieldCategoria.setFont(new Font("Algerian", Font.BOLD, 20));
+        fieldCategoria.setForeground(new Color(212,175,55));
         
         // Input estado
         labelComp.setBounds(380, 190, 250, 50);
@@ -140,6 +146,7 @@ public class DetalhesProduto implements ActionListener {
         fieldComp.setText(Dados.databaseprecadastrado().getData_camiseta().get(position+3));
         labelComp.setFont(new Font("Algerian", Font.BOLD, 20));
         fieldComp.setFont(new Font("Algerian", Font.BOLD, 20));
+        fieldComp.setForeground(new Color(212,175,55));
         
         // Ipnpu Tipo
         labelTipo.setBounds(380, 270, 250, 50);
@@ -148,6 +155,7 @@ public class DetalhesProduto implements ActionListener {
         fieldTipo.setText(Dados.databaseprecadastrado().getData_camiseta().get(position+4));
         labelTipo.setFont(new Font("Algerian", Font.BOLD, 20));
         fieldTipo.setFont(new Font("Algerian", Font.BOLD, 20));
+        fieldTipo.setForeground(new Color(212,175,55));
         
         // Input preço
         labelPreco.setBounds(730, 110, 100, 50);
@@ -156,13 +164,15 @@ public class DetalhesProduto implements ActionListener {
         fieldPreco.setText(Dados.databaseprecadastrado().getData_camiseta().get(position+5));
         labelPreco.setFont(new Font("Algerian", Font.BOLD, 20));
         fieldPreco.setFont(new Font("Algerian", Font.BOLD, 20));
+        fieldPreco.setForeground(new Color(212,175,55));
         
         // Input quantidade
-        labelQtd.setBounds(880, 110, 100, 50);
-        fieldQtd.setBounds(880, 150, 100, 50);
+        labelQtd.setBounds(880, 110, 150, 50);
+        fieldQtd.setBounds(900, 150, 100, 50);
         fieldQtd.setText(Dados.databaseprecadastrado().getData_camiseta().get(position+7));
         labelQtd.setFont(new Font("Algerian", Font.BOLD, 20));
         fieldQtd.setFont(new Font("Algerian", Font.BOLD, 20));
+        fieldQtd.setForeground(new Color(212,175,55));
         
         // [ADICIONANDO A JANELA]
 
@@ -199,7 +209,7 @@ public class DetalhesProduto implements ActionListener {
 
         // Cartão de Crédito
 
-        janela.setSize(1024, 768);
+        janela.setSize(1074, 768);
         janela.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         janela.setVisible(true);
     }

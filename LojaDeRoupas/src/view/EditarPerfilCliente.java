@@ -106,9 +106,11 @@ public class EditarPerfilCliente implements ActionListener {
     private static JButton excluir = new JButton("Excluir");
 
     public EditarPerfilCliente(int index) {
+    	
     	System.out.println(index);
+    	
     	// PASSANDO O VALOR DE INDEX PARA SER USADO NAS PROXIMAS PAGINAS
-    	EditarPerfilCliente.index= index;
+    	EditarPerfilCliente.index = index;
     	
         // JANELA
 

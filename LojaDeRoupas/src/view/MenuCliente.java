@@ -23,9 +23,11 @@ public class MenuCliente implements ActionListener {
     private static JButton botaoVisualizarPerfil = new JButton("Visualizar Perfil");
 
     public MenuCliente(int index) {
+    	
     	System.out.println(index);
+    	
     	// PASSANDO O VALOR DE INDEX PARA SER USADO NAS PROXIMAS PAGINAS
-    	MenuCliente.index= index;
+    	MenuCliente.index = index;
     	
         // JANELA
         titulo.setFont(new Font("Algerian", Font.BOLD, 50));
@@ -76,8 +78,8 @@ public class MenuCliente implements ActionListener {
     }
 
     public static void main(String[] args) {
-
-    	MenuCliente menucliente = new MenuCliente(0);
+    	int index = 2;
+    	MenuCliente menucliente = new MenuCliente(index);
         botaoComprar.addActionListener(menucliente);
         botaoEditPerfil.addActionListener(menucliente);
         botaoVisualizarPerfil.addActionListener(menucliente);
@@ -87,7 +89,7 @@ public class MenuCliente implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         Object src = e.getSource();
         if (src == botaoComprar) {
-            new Compra(index).comprarProduto(index);;
+            new Compra(index).comprarProduto(index);
             janela.dispose();
         }
         if (src == botaoEditPerfil) {

@@ -124,7 +124,7 @@ public class LoginAdmin implements ActionListener{
 	                
 	                int index = Dados.databaseprecadastrado().getData_adm().indexOf(textolido_email);
 	                
-	                new MenuAdmin().menuAdmin();
+	                new MenuAdmin(index).menuAdmin(index);
 	                
 	                janela.dispose();
 	              

@@ -16,7 +16,7 @@ public class Home implements ActionListener {
 	// Janela
 	private static JFrame janela = new JFrame("Home");
 	private static JLabel titulo = new JLabel("Menu principal");
-	private static JLabel texto = new JLabel("OU");
+	private static JLabel texto = new JLabel("OU");	
 	   
     // KONG TEAM T-SHIRTs
     private static JLabel K = new JLabel("K");
@@ -37,7 +37,7 @@ public class Home implements ActionListener {
 
 	// CONSTRUTOR
 	public Home() {
-		
+			
 		// KONG TEAM T-SHIRT
         K.setBounds(50, 50, 100, 100);
         K.setFont(new Font("Algerian", Font.BOLD, 100));
@@ -158,5 +158,7 @@ public class Home implements ActionListener {
 		}
 	}
 
+	
+	
 }
 

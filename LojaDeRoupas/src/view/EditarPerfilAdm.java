@@ -4,9 +4,13 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
+
 public class EditarPerfilAdm implements ActionListener {
     // [DEFININDO VARIÁVEIS]
 
+	// EMAIL POSITION - INPUT AT LOGIN CLIENT 
+    static int index;
+    
     // JANELA
     private static JFrame janela = new JFrame("Editar Perfil");
     private static JLabel titulo = new JLabel("Editar Perfil");
@@ -38,8 +42,12 @@ public class EditarPerfilAdm implements ActionListener {
     private static JButton voltar = new JButton("Voltar");
 
     // CONSTRUTOR
-    public EditarPerfilAdm() {
-        // JANELA
+    public EditarPerfilAdm(int index) {
+
+    	// PASSANDO O VALOR DE INDEX PARA SER USADO NAS PROXIMAS PAGINAS
+    	EditarPerfilAdm.index = index;
+    	
+    	// JANELA
 
         janela.setLayout(null);
 
@@ -119,8 +127,8 @@ public class EditarPerfilAdm implements ActionListener {
     }
     
     // MÉTODO PARA SER PUXADO POR OUTRA INTERFACE
-    public void editarPerfilAdm() {
-    	EditarPerfilAdm editarperfiladm = new EditarPerfilAdm();
+    public void editarPerfilAdm(int index) {
+    	EditarPerfilAdm editarperfiladm = new EditarPerfilAdm(index);
         fieldCPF.addActionListener(editarperfiladm);
         fieldNome.addActionListener(editarperfiladm);
         fieldEmail.addActionListener(editarperfiladm);
@@ -132,7 +140,7 @@ public class EditarPerfilAdm implements ActionListener {
     
     // MÉTODO MAIN PARA RODAR A INTERFACE SEPARADAMENTE
     public static void main(String[] args) {
-    	EditarPerfilAdm editarperfiladm = new EditarPerfilAdm();
+    	EditarPerfilAdm editarperfiladm = new EditarPerfilAdm(index);
         fieldCPF.addActionListener(editarperfiladm);
         fieldNome.addActionListener(editarperfiladm);
         fieldEmail.addActionListener(editarperfiladm);
@@ -146,15 +154,10 @@ public class EditarPerfilAdm implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         Object src = e.getSource();
         if (src == editar) {
-           JOptionPane.showMessageDialog(
-        		   null,
-        		   "Informações atualizadas com sucesso!",
-        		   null,
-        		   JOptionPane.INFORMATION_MESSAGE
-        		   );
+        	new MenuAdmin(index).menuAdmin(index);
         }
         if (src == voltar) {
-            new MenuAdmin().menuAdmin();
+            new MenuAdmin(index).menuAdmin(index);
         }
 
     }
