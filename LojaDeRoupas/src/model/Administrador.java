@@ -27,7 +27,6 @@ public class Administrador extends Usuario {
 	}
 	
 	//toString
-	
 	public String toString() {
 		return  "cpf :" + cpf + "\n" +
 				"nome :" + nomeDoUsuario + "\n" +

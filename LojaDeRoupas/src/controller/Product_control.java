@@ -16,6 +16,4 @@ public class Product_control {
 	
 	public static void main (String[] args) {
 		System.out.println(nomeCamisetas());
-	}
-	
-}
+	}}

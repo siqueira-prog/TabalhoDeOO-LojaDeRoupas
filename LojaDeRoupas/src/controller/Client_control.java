@@ -1,9 +1,6 @@
 package controller;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class Client_control {
 	
@@ -18,7 +15,7 @@ public class Client_control {
 	public  String cartao;	
 	
 	//CONSTRUCTOR
-	public Client_control(int index) {
+	public Client_control(int index) {	
 		   super();
 		   this.cpf 	= Data_control.getDatabase_client().get(index+0);
 		   this.nome	= Data_control.getDatabase_client().get(index+1);
@@ -27,7 +24,7 @@ public class Client_control {
 		   this.telefone= Data_control.getDatabase_client().get(index+4);
 		   this.endereco= Data_control.getDatabase_client().get(index+5);
 		   this.cartao	= Data_control.getDatabase_client().get(index+6);
-	}
+	}	
 	
 	
 	//ARRAYLIST - TELEFONE

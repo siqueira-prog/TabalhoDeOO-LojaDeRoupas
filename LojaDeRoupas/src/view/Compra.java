@@ -12,6 +12,7 @@ public class Compra implements ActionListener {
 
 	// EMAIL POSITION - INPUT AT LOGIN CLIENT 
     static int index;
+     String camiseta_escolhida;
 
     private ArrayList<String> nomeCamisetas_arraylist = Product_control.nomeCamisetas();
     private String[] lista = nomeCamisetas_arraylist.toArray(new String [nomeCamisetas_arraylist.size()]); 
@@ -86,8 +87,7 @@ public class Compra implements ActionListener {
     public void comprarProduto(int index) {
         Compra compraproduto = new Compra(index);
         detalhesDoProduto.addActionListener(compraproduto);
-        voltar.addActionListener(compraproduto);
-        
+        voltar.addActionListener(compraproduto);        
     }
 
     public static void main(String[] args) {
@@ -95,15 +95,15 @@ public class Compra implements ActionListener {
         Compra compraproduto = new Compra(index);
         detalhesDoProduto.addActionListener(compraproduto);
         voltar.addActionListener(compraproduto);
-        
     }
-
+    
     public void actionPerformed(ActionEvent e) {  	
     	Object src = e.getSource();
-
+    	System.out.println("Valor: " + listprodutos.getSelectedValue());
+    	
     	if (src == detalhesDoProduto) {
     		
-    		new DetalhesProduto("KongCamiseta2", index).detalharProduto("KongCamiseta2", index);
+    		new DetalhesProduto(camiseta_escolhida, index).detalharProduto(camiseta_escolhida, index);
     	
     		janela.dispose();
         	

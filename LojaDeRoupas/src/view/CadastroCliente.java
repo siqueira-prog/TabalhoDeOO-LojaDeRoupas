@@ -359,6 +359,7 @@ public class CadastroCliente implements ActionListener {
         if (src == cadastrar) {
             JOptionPane.showMessageDialog(null, "Cadastro efetivado com sucesso!", null,
                     JOptionPane.INFORMATION_MESSAGE);
+            		new Home().home();
             janela.dispose();
         }
         if (src == cancelar) {

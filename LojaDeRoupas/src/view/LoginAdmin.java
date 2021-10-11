@@ -54,8 +54,8 @@ public class LoginAdmin implements ActionListener{
         Logar.setBounds(250, 360, 250, 50);
         Logar.setBorder(BorderFactory.createLineBorder(new Color(212,175,55), 4));
         Logar.setFont(new Font("Algerian", Font.BOLD, 20));
-        Logar.setBackground(Color.BLACK);
-        Logar.setForeground(Color.WHITE);
+        Logar.setBackground(Color.GREEN);
+        Logar.setForeground(Color.BLACK);
         
         // BOTÃO VOLTAR
         Voltar.setBounds(250, 420, 250, 50);

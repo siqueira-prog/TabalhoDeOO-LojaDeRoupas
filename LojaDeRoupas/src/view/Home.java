@@ -9,10 +9,10 @@ package view;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
-
+	
 // CRIANDO A INTERFACE INICIAL CHAMADA HOME
 public class Home implements ActionListener {
-
+	
 	// Janela
 	private static JFrame janela = new JFrame("Home");
 	private static JLabel titulo = new JLabel("Menu principal");
