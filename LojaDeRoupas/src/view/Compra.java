@@ -4,6 +4,9 @@ import java.awt.*;
 import java.awt.event.*;
 import java.util.*;
 import javax.swing.*;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
+
 import controller.Product_control;
 
 //import controller.ControleCompra;
@@ -12,7 +15,7 @@ public class Compra implements ActionListener {
 
 	// EMAIL POSITION - INPUT AT LOGIN CLIENT 
     static int index;
-     String camiseta_escolhida;
+    static String camiseta_escolhida;
 
     private ArrayList<String> nomeCamisetas_arraylist = Product_control.nomeCamisetas();
     private String[] lista = nomeCamisetas_arraylist.toArray(new String [nomeCamisetas_arraylist.size()]); 
@@ -81,13 +84,17 @@ public class Compra implements ActionListener {
         janela.setSize(1024, 768);
         janela.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         janela.setVisible(true);
-        
+
     }
 
     public void comprarProduto(int index) {
         Compra compraproduto = new Compra(index);
         detalhesDoProduto.addActionListener(compraproduto);
-        voltar.addActionListener(compraproduto);        
+        voltar.addActionListener(compraproduto);      
+        listprodutos.addListSelectionListener(new ListSelectionListener(){
+        	public void valueChanged(ListSelectionEvent e) {
+        	Compra.camiseta_escolhida = listprodutos.getSelectedValue();
+        	}});
     }
 
     public static void main(String[] args) {
