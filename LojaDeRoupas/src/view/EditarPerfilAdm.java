@@ -155,9 +155,11 @@ public class EditarPerfilAdm implements ActionListener {
         Object src = e.getSource();
         if (src == editar) {
         	new MenuAdmin(index).menuAdmin(index);
+        	janela.dispose();
         }
         if (src == voltar) {
             new MenuAdmin(index).menuAdmin(index);
+        	janela.dispose();
         }
 
     }

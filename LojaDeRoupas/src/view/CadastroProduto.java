@@ -7,12 +7,14 @@ import javax.swing.*;
 public class CadastroProduto implements ActionListener {
     // [DEFININDO VARIÁVEIS]
 
+	// EMAIL POSITION - INPUT AT LOGIN CLIENT 
+    static int index;
+    
     // JANELA
     private static JFrame janela = new JFrame("Cadastrar produto");
     private static JLabel titulo = new JLabel("Cadastro Produto");
 
     // INFORMAÇÕES DO PRODUTO
-
     
     // INPUT NOME
     private static JLabel labelNome = new JLabel("Didigite o nome:");
@@ -59,8 +61,11 @@ public class CadastroProduto implements ActionListener {
     private static JButton voltar = new JButton("Voltar");
 
     // CONSTRUTOR
-    public CadastroProduto() {
-
+    public CadastroProduto(int index) {
+    	
+    	// PASSANDO O VALOR DE INDEX PARA SER USADO NAS PROXIMAS PAGINAS
+    	CadastroProduto.index = index;
+    	
         // JANELA
 
         janela.setLayout(null);
@@ -174,8 +179,8 @@ public class CadastroProduto implements ActionListener {
     }
     
     // MÉTODO PARA SER PUXADO POR OUTRA INTERFACE
-    public void cadastroProduto() {
-    	CadastroProduto cadastroproduto = new CadastroProduto();
+    public void cadastroProduto(int index) {
+    	CadastroProduto cadastroproduto = new CadastroProduto(index);
     	fieldNome.addActionListener(cadastroproduto);
     	fieldCor.addActionListener(cadastroproduto);
     	fieldTamanho.addActionListener(cadastroproduto);
@@ -192,7 +197,7 @@ public class CadastroProduto implements ActionListener {
     
     // MÉTODO MAIN PARA RODAR A INTERFACE SEPARADAMENTE
     public static void main(String[] args) {
-    	CadastroProduto cadastroproduto = new CadastroProduto();
+    	CadastroProduto cadastroproduto = new CadastroProduto(index);
     	fieldNome.addActionListener(cadastroproduto);
     	fieldCor.addActionListener(cadastroproduto);
     	fieldTamanho.addActionListener(cadastroproduto);
@@ -211,15 +216,12 @@ public class CadastroProduto implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         Object src = e.getSource();
         if (src == cadastrar) {
-           JOptionPane.showMessageDialog(
-        		   null,
-        		   "Cadastro efetivado com sucesso!",
-        		   null,
-        		   JOptionPane.INFORMATION_MESSAGE
-        		   );
+        	new MenuAdmin(index).menuAdmin(index);
+        	janela.dispose();
         }
         if (src == voltar) {
-            new MenuAdmin().menuAdmin();
+            new MenuAdmin(index).menuAdmin(index);
+        	janela.dispose();
         }
     }
 }
