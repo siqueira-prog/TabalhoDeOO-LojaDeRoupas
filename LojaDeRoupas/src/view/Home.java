@@ -140,7 +140,7 @@ public class Home implements ActionListener {
 		cadastrarCliente.addActionListener(menu);
 		logarAdmin.addActionListener(menu);
 	}
-
+	
 	// ORIENTAÇÃO DAS AÇÕES
 	public void actionPerformed(ActionEvent e) {
 		Object src = e.getSource();

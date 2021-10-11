@@ -15,8 +15,10 @@ public class Compra implements ActionListener {
 
 	// EMAIL POSITION - INPUT AT LOGIN CLIENT 
     static int index;
+    
+    // NOME DA CAMISETA ESCOLHIDA
     static String camiseta_escolhida;
-
+    
     private ArrayList<String> nomeCamisetas_arraylist = Product_control.nomeCamisetas();
     private String[] lista = nomeCamisetas_arraylist.toArray(new String [nomeCamisetas_arraylist.size()]); 
 
@@ -111,7 +113,7 @@ public class Compra implements ActionListener {
     	if (src == detalhesDoProduto) {
     		
     		new DetalhesProduto(camiseta_escolhida, index).detalharProduto(camiseta_escolhida, index);
-    	
+    		
     		janela.dispose();
         	
         }

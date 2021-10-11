@@ -13,6 +13,12 @@ public class DetalhesProduto implements ActionListener {
 	// EMAIL POSITION - INPUT AT LOGIN CLIENT 
     static int index;
     
+    /* IMAGEM
+    String camiseta;
+    ImageIcon imagem = new ImageIcon(getClass().getResource(camiseta+"jpg"));
+    JLabel img = new JLabel(imagem);
+    */
+    
     // JANELA
     private static JFrame janela = new JFrame("Cliente");
     private static JLabel titulo = new JLabel("Detalhes do Produto");
@@ -63,15 +69,19 @@ public class DetalhesProduto implements ActionListener {
 
     public DetalhesProduto(String camiseta_escolhida_string, int index) {
     	
-    	System.out.println(index);
+    	/* IMAGEM
+    	camiseta = camiseta_escolhida_string;
+    	img.setBounds(900, 150, 100, 50);
+    	janela.add(img);
+    	*/
     	
+    	// PEGANDO A POSIÇÃO DA CAMISETA ESCOLHIDA NO DATABASE
     	int position = Data_control.getDatabase_camiseta().indexOf(camiseta_escolhida_string);
     	
-        // JANELA
-
     	// PASSANDO O VALOR DE INDEX PARA SER USADO NAS PROXIMAS PAGINAS
     	DetalhesProduto.index= index;
     	
+    	// JANELA
         janela.setLayout(null);
 
         titulo.setFont(new Font("Algerian", Font.BOLD, 50));
@@ -206,7 +216,7 @@ public class DetalhesProduto implements ActionListener {
 
         janela.add(labelQtd);
         janela.add(fieldQtd);
-
+        
         // Cartão de Crédito
 
         janela.setSize(1074, 768);
@@ -221,10 +231,11 @@ public class DetalhesProduto implements ActionListener {
     }
 
     public static void main(String[] args) {
-    	String camiseta_escolhida_string = "KongCamiseta1";
-        DetalhesProduto detalhesproduto = new DetalhesProduto(camiseta_escolhida_string, index);
-         comprar.addActionListener(detalhesproduto);
-         cancelar.addActionListener(detalhesproduto);
+    	//index = 2;
+    	//String camiseta_escolhida_string = "KongCamiseta1";
+    	//DetalhesProduto detalhesproduto = new DetalhesProduto(camiseta_escolhida_string, index);
+    	//comprar.addActionListener(detalhesproduto);
+    	//cancelar.addActionListener(detalhesproduto);
     }
 
     public void actionPerformed(ActionEvent e) {
