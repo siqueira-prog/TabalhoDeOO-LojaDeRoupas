@@ -76,7 +76,7 @@ public class DetalheCliente implements ActionListener {
     	// VISUALIZANDO O INDEX PARA CONTROLER DE BUGS 
     	System.out.println("Valor da posição do email no construtor de DetalheCliente= "+index);
     	// PASSANDO O DATABASE PARA SER USADO NAS PROXIMAS PAGINAS 
-    	MenuCliente.database = database;
+    	DetalheCliente.database = database;
     	// PASSANDO O VALOR DE INDEX PARA SER USADO NAS PROXIMAS PAGINAS
     	DetalheCliente.index= index;  
     	// JANELA
