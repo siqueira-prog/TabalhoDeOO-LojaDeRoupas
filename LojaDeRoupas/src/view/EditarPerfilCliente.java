@@ -325,7 +325,46 @@ public class EditarPerfilCliente implements ActionListener {
     // MÉTODO PARA INSTRUIR AS AÇÕES
     public void actionPerformed(ActionEvent e) {
         Object src = e.getSource();
+        char[] senhaChar  = senha.getPassword();
+        String senhaString = String.valueOf(senhaChar);
         if (src == salvar) {
+        	database.getDatabase_client().remove(index-2);
+        	database.getDatabase_client().remove(index-2);
+        	database.getDatabase_client().remove(index-2);
+        	database.getDatabase_client().remove(index-2);
+        	database.getDatabase_client().remove(index-2);
+        	database.getDatabase_client().remove(index-2);
+        	database.getDatabase_client().remove(index-2);
+        	database.getDatabase_client().remove(index-2);
+        	database.getDatabase_client().remove(index-2);
+        	database.getDatabase_client().remove(index-2);
+        	database.getDatabase_client().remove(index-2);
+        	database.getDatabase_client().remove(index-2);
+        	database.getDatabase_client().remove(index-2);
+        	database.getDatabase_client().remove(index-2);
+        	database.getDatabase_client().remove(index-2);
+        	database.getDatabase_client().remove(index-2);
+        	database.getDatabase_client().remove(index-2);
+        	database.getDatabase_client().remove(index-2);
+          	database.getDatabase_client().add(fieldCPF.getText());
+        	database.getDatabase_client().add(fieldNome.getText());
+        	database.getDatabase_client().add(fieldEmail.getText());
+        	database.getDatabase_client().add(senhaString);
+        	database.getDatabase_client().add(fieldDDD.getText()+fieldTele.getText());
+        	database.getDatabase_client().add(fieldCep.getText());
+        	database.getDatabase_client().add(fieldLogradouro.getText());
+        	database.getDatabase_client().add(fieldNumeroEnd.getText());
+        	database.getDatabase_client().add(fieldBairro.getText());
+        	database.getDatabase_client().add(fieldCidade.getText());
+        	database.getDatabase_client().add(fieldEstado.getText());
+        	database.getDatabase_client().add(fieldCodSeg.getText());
+        	database.getDatabase_client().add(fieldBand.getText());
+        	database.getDatabase_client().add(fieldNumCart.getText());
+        	database.getDatabase_client().add(fieldDataNasc.getText());
+        	database.getDatabase_client().add(fieldMesVenc.getText());
+        	database.getDatabase_client().add(fieldAnoVenc.getText());
+        	database.getDatabase_client().add("1");
+        	int index = database.getDatabase_client().indexOf(fieldEmail.getText());
             new MenuCliente(index,database).menu(index,database);
             janela.dispose();
         }

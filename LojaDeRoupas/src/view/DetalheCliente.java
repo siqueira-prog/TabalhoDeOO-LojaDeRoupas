@@ -181,7 +181,7 @@ public class DetalheCliente implements ActionListener {
         fieldEstado.setText(database.getDatabase_client().get(index+8));
         // CARTAO DE CREDITO
         // CODIGO DE SEGURANCA
-        labelCodSeg.setBounds(730, 110, 400, 50);//cod seg	
+        labelCodSeg.setBounds(730, 110, 400, 50);
         fieldCodSeg.setBounds(730, 150, 350, 50);
         fieldCodSeg.setEditable(false);
         labelCodSeg.setFont(new Font("Algerian", Font.BOLD, 20));
@@ -189,7 +189,7 @@ public class DetalheCliente implements ActionListener {
         fieldCodSeg.setForeground(new Color(212,175,55)); 
         fieldCodSeg.setText(database.getDatabase_client().get(index+9));
         // NUMERO DO CARTAO
-        labelNumCart.setBounds(730, 190, 400, 50);//numero cart
+        labelNumCart.setBounds(730, 190, 400, 50);
         fieldNumCart.setBounds(730, 230, 365, 50);
         fieldNumCart.setEditable(false);
         labelNumCart.setFont(new Font("Algerian", Font.BOLD, 20));
@@ -198,7 +198,7 @@ public class DetalheCliente implements ActionListener {
         fieldNumCart.setText(database.getDatabase_client().get(index+11));
         // BANDEIRA
         labelBand.setBounds(730, 270, 350, 50);
-        fieldBand.setBounds(730, 310, 350, 50); //bandeira
+        fieldBand.setBounds(730, 310, 350, 50); 
         fieldBand.setEditable(false);
         labelBand.setFont(new Font("Algerian", Font.BOLD, 20));
         fieldBand.setFont(new Font("Algerian", Font.BOLD, 20));
