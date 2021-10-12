@@ -2,7 +2,7 @@ package view;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
-
+import java.util.Random;
 import controller.Data_control;
 public class CadastroProduto implements ActionListener {
 	// DATABASE 
@@ -197,6 +197,17 @@ public class CadastroProduto implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         Object src = e.getSource();
         if (src == cadastrar) {
+        	database.getDatabase_camiseta().add(String.valueOf(new Random().nextInt(10000)));
+        	database.getDatabase_camiseta().add(fieldNome.getText());
+        	database.getDatabase_camiseta().add(fieldCor.getText());
+        	database.getDatabase_camiseta().add(fieldTamanho.getText());
+        	database.getDatabase_camiseta().add(fieldComp.getText());
+        	database.getDatabase_camiseta().add(fieldTipo.getText());
+        	database.getDatabase_camiseta().add(fieldPrecoVenda.getText());
+        	database.getDatabase_camiseta().add(fieldPrecoFabrica.getText());
+        	database.getDatabase_camiseta().add(fieldEstoque.getText());
+        	database.getDatabase_camiseta().add(fieldDescricao.getText());
+        	database.getDatabase_camiseta().add(fieldCategoria.getText());
         	new MenuAdmin(index, database).menuAdmin(index, database);
         	janela.dispose();
         }
@@ -204,5 +215,4 @@ public class CadastroProduto implements ActionListener {
             new MenuAdmin(index, database).menuAdmin(index, database);
         	janela.dispose();
         }
-    }
-}
+    }}

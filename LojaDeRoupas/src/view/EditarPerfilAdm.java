@@ -125,7 +125,21 @@ public class EditarPerfilAdm implements ActionListener {
     // ORIENTAÇÃO DAS AÇÕES 
     public void actionPerformed(ActionEvent e) {
         Object src = e.getSource();
+        char[] senhaChar  = senha.getPassword();
+        String senhaString = String.valueOf(senhaChar);
         if (src == salvar) {
+        	database.getDatabase_adm().remove(index-2);
+        	database.getDatabase_adm().remove(index-2);
+        	database.getDatabase_adm().remove(index-2);
+        	database.getDatabase_adm().remove(index-2);
+        	database.getDatabase_adm().remove(index-2);
+        	database.getDatabase_adm().remove(index-2);
+        	database.getDatabase_adm().add(fieldCPF.getText());
+        	database.getDatabase_adm().add(fieldNome.getText());
+        	database.getDatabase_adm().add(fieldEmail.getText());
+        	database.getDatabase_adm().add(senhaString);
+        	database.getDatabase_adm().add("0");
+        	int index = database.getDatabase_adm().indexOf(fieldEmail.getText());
         	new MenuAdmin(index, database).menuAdmin(index, database);
         	janela.dispose();
         }
