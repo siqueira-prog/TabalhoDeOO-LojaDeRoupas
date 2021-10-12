@@ -5,7 +5,8 @@ import java.util.ArrayList;
 public class Client_control {
 	
 	//ATTRIBUTES
-	public static ArrayList<String> database_client = Data_control.getDatabase_client();
+	private static Data_control database = new Data_control();
+	static ArrayList<String> database_client = database.getDatabase_camiseta();
 	public  String cpf;
 	public  String nome;
 	public  String email;	
@@ -17,13 +18,13 @@ public class Client_control {
 	//CONSTRUCTOR
 	public Client_control(int index) {	
 		   super();
-		   this.cpf 	= Data_control.getDatabase_client().get(index+0);
-		   this.nome	= Data_control.getDatabase_client().get(index+1);
-		   this.email	= Data_control.getDatabase_client().get(index+2);
-		   this.senha	= Data_control.getDatabase_client().get(index+3);
-		   this.telefone= Data_control.getDatabase_client().get(index+4);
-		   this.endereco= Data_control.getDatabase_client().get(index+5);
-		   this.cartao	= Data_control.getDatabase_client().get(index+6);
+		   this.cpf 	= database_client.get(index+0);
+		   this.nome	= database_client.get(index+1);
+		   this.email	= database_client.get(index+2);
+		   this.senha	= database_client.get(index+3);
+		   this.telefone= database_client.get(index+4);
+		   this.endereco= database_client.get(index+5);
+		   this.cartao	= database_client.get(index+6);
 	}	
 	
 	

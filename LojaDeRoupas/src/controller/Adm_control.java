@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public class Adm_control {
 	
-	public static ArrayList<String> database_adm = Data_control.getDatabase_adm();
+	private static Data_control database = new Data_control();
+	static ArrayList<String> database_adm = database.getDatabase_camiseta();
 
 }
