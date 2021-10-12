@@ -82,11 +82,19 @@ public class Cliente extends Usuario{
 			String fullnumber = ddd_String + number_String;
 			data_client.add(fullnumber);  
 			
-			String endereco_string = Arrays.toString(cliente.endereco);
-			data_client.add(endereco_string);
+			data_client.add(cliente.endereco[0].getCep());
+			data_client.add(cliente.endereco[0].getLogradouro());
+			data_client.add(Integer.toString(endereco[0].getNumeroEnd()));
+			data_client.add(cliente.endereco[0].getBairro());
+			data_client.add(cliente.endereco[0].getCidade());
+			data_client.add(cliente.endereco[0].getEstado());
 			
-			String cartao_string = Arrays.toString(cliente.cartao);
-			data_client.add(cartao_string);
+			data_client.add(cliente.cartao[0].getCodigoDeSeguranca());
+			data_client.add(cliente.cartao[0].getBandeira());
+			data_client.add(cliente.cartao[0].getNumeroDoCartao());
+			data_client.add(cliente.cartao[0].getDataNasc());
+			data_client.add(Integer.toString(cliente.cartao[0].getMesDataVenc()));
+			data_client.add(Integer.toString(cliente.cartao[0].getAnoDataVenc()));
 			
 			String cliente_nivel_String = Integer.toString(cliente.nivel);
 			data_client.add(cliente_nivel_String);

@@ -138,6 +138,7 @@ public class DetalheCliente implements ActionListener {
         labelLogradouro.setFont(new Font("Algerian", Font.BOLD, 20));
         fieldLogradouro.setFont(new Font("Algerian", Font.BOLD, 20));
         fieldLogradouro.setForeground(new Color(212,175,55)); 
+        fieldLogradouro.setText(database.getDatabase_client().get(index+4));
         // NUMERO DO ENDEREÇO
         labelNumeroEnd.setBounds(380, 190, 50, 50);
         fieldNumeroEnd.setBounds(380, 230, 50, 50);
@@ -145,6 +146,7 @@ public class DetalheCliente implements ActionListener {
         labelNumeroEnd.setFont(new Font("Algerian", Font.BOLD, 20));
         fieldNumeroEnd.setFont(new Font("Algerian", Font.BOLD, 20));
         fieldNumeroEnd.setForeground(new Color(212,175,55)); 
+        fieldNumeroEnd.setText(database.getDatabase_client().get(index+5));
         // BAIRRO
         labelBairro.setBounds(450, 190, 200, 50);
         fieldBairro.setBounds(450, 230, 180, 50);
@@ -152,13 +154,15 @@ public class DetalheCliente implements ActionListener {
         labelBairro.setFont(new Font("Algerian", Font.BOLD, 20));
         fieldBairro.setFont(new Font("Algerian", Font.BOLD, 20));
         fieldBairro.setForeground(new Color(212,175,55)); 
+        fieldBairro.setText(database.getDatabase_client().get(index+6));
         // CEP
         labelCep.setBounds(380, 270, 250, 50);
         fieldCep.setBounds(380, 310, 250, 50);
         fieldCep.setEditable(false);
         labelCep.setFont(new Font("Algerian", Font.BOLD, 20));
         fieldCep.setFont(new Font("Algerian", Font.BOLD, 20));
-        fieldCep.setForeground(new Color(212,175,55)); 
+        fieldCep.setForeground(new Color(212,175,55));
+        fieldCep.setText(database.getDatabase_client().get(index+3));
         // CIDADE
         labelCidade.setBounds(380, 350, 250, 50);
         fieldCidade.setBounds(380, 390, 250, 50);
@@ -166,6 +170,7 @@ public class DetalheCliente implements ActionListener {
         labelCidade.setFont(new Font("Algerian", Font.BOLD, 20));
         fieldCidade.setFont(new Font("Algerian", Font.BOLD, 20));
         fieldCidade.setForeground(new Color(212,175,55)); 
+        fieldCidade.setText(database.getDatabase_client().get(index+7));
         // ESTADO
         labelEstado.setBounds(380, 430, 250, 50);
         fieldEstado.setBounds(380, 470, 250, 50);
@@ -173,14 +178,16 @@ public class DetalheCliente implements ActionListener {
         labelEstado.setFont(new Font("Algerian", Font.BOLD, 20));
         fieldEstado.setFont(new Font("Algerian", Font.BOLD, 20));
         fieldEstado.setForeground(new Color(212,175,55)); 
+        fieldEstado.setText(database.getDatabase_client().get(index+8));
         // CARTAO DE CREDITO
-        // BANDEIRA
+        // CODIGO DE SEGURANCA
         labelCodSeg.setBounds(730, 110, 400, 50);//cod seg	
         fieldCodSeg.setBounds(730, 150, 350, 50);
         fieldCodSeg.setEditable(false);
         labelCodSeg.setFont(new Font("Algerian", Font.BOLD, 20));
         fieldCodSeg.setFont(new Font("Algerian", Font.BOLD, 20));
         fieldCodSeg.setForeground(new Color(212,175,55)); 
+        fieldCodSeg.setText(database.getDatabase_client().get(index+9));
         // NUMERO DO CARTAO
         labelNumCart.setBounds(730, 190, 400, 50);//numero cart
         fieldNumCart.setBounds(730, 230, 365, 50);
@@ -188,13 +195,15 @@ public class DetalheCliente implements ActionListener {
         labelNumCart.setFont(new Font("Algerian", Font.BOLD, 20));
         fieldNumCart.setFont(new Font("Algerian", Font.BOLD, 20));
         fieldNumCart.setForeground(new Color(212,175,55)); 
-        // CODIGO DE SEGURANCA
+        fieldNumCart.setText(database.getDatabase_client().get(index+11));
+        // BANDEIRA
         labelBand.setBounds(730, 270, 350, 50);
         fieldBand.setBounds(730, 310, 350, 50); //bandeira
         fieldBand.setEditable(false);
         labelBand.setFont(new Font("Algerian", Font.BOLD, 20));
         fieldBand.setFont(new Font("Algerian", Font.BOLD, 20));
         fieldBand.setForeground(new Color(212,175,55)); 
+        fieldBand.setText(database.getDatabase_client().get(index+10));
         // DATA DE NASCIMENTO DO CARTAO
         labelDataNasc.setBounds(730, 350, 400, 50);	
         fieldDataNasc.setBounds(730, 390, 370, 50);
@@ -202,6 +211,7 @@ public class DetalheCliente implements ActionListener {
         labelDataNasc.setFont(new Font("Algerian", Font.BOLD, 20));
         fieldDataNasc.setFont(new Font("Algerian", Font.BOLD, 20));
         fieldDataNasc.setForeground(new Color(212,175,55)); 
+        fieldDataNasc.setText(database.getDatabase_client().get(index+12));
         // VENCIMENTO DO CARTAO
         labelDataVenc.setBounds(730, 430, 400, 50);
         labelDataVenc.setFont(new Font("Algerian", Font.BOLD, 20));
@@ -212,6 +222,7 @@ public class DetalheCliente implements ActionListener {
         fieldMesVenc.setFont(new Font("Algerian", Font.BOLD, 20));
         fieldMesVenc.setForeground(new Color(212,175,55)); 
         fieldMesVenc.setEditable(false);
+        fieldMesVenc.setText(database.getDatabase_client().get(index+13));
         // ANO DE VENCIMENTO
         labelAnoVenc.setBounds(730, 520, 250, 50);
         labelAnoVenc.setFont(new Font("Algerian", Font.BOLD, 20));    
@@ -219,6 +230,7 @@ public class DetalheCliente implements ActionListener {
         fieldAnoVenc.setFont(new Font("Algerian", Font.BOLD, 20));
         fieldAnoVenc.setForeground(new Color(212,175,55)); 
         fieldAnoVenc.setEditable(false);
+        fieldAnoVenc.setText(database.getDatabase_client().get(index+14));
         // BUTTONS
         // BOTÃO EDITAR
         editar.setBounds(256, 640, 250, 50);
