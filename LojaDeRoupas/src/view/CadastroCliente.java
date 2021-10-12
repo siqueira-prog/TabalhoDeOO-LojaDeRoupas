@@ -305,6 +305,7 @@ public class CadastroCliente implements ActionListener {
             	database.getDatabase_client().add(fieldDataNasc.getText());
             	database.getDatabase_client().add(fieldMesVenc.getText());
             	database.getDatabase_client().add(fieldAnoVenc.getText());
+            	database.getDatabase_client().add("1");
             	int index = database.getDatabase_client().indexOf(fieldEmail.getText());
                 System.out.println("INDEX : "+index);
             	System.out.println("database após a adição dos itens: "+database.getDatabase_client());

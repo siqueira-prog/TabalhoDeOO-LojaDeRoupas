@@ -212,7 +212,7 @@ public class EditarPerfilCliente implements ActionListener {
         fieldEstado.setForeground(new Color(212,175,55)); 
         // CARTÃO DE CRÉDITO
         // BANDEIRA
-        labelCodSeg.setBounds(730, 110, 400, 50);//cod seg	
+        labelCodSeg.setBounds(730, 110, 400, 50);
         fieldCodSeg.setBounds(730, 150, 350, 50);
         fieldCodSeg.setEditable(true);
         labelCodSeg.setFont(new Font("Algerian", Font.BOLD, 20));
@@ -227,7 +227,7 @@ public class EditarPerfilCliente implements ActionListener {
         fieldNumCart.setForeground(new Color(212,175,55)); 
         // CODIGO DE SEGURANCA
         labelBand.setBounds(730, 270, 350, 50);
-        fieldBand.setBounds(730, 310, 350, 50); //bandeira
+        fieldBand.setBounds(730, 310, 350, 50);
         fieldBand.setEditable(true);
         labelBand.setFont(new Font("Algerian", Font.BOLD, 20));
         fieldBand.setFont(new Font("Algerian", Font.BOLD, 20));
