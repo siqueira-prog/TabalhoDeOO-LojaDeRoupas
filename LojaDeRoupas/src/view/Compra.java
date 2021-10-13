@@ -95,6 +95,7 @@ public class Compra implements ActionListener {
         Compra compraproduto = new Compra(index,database);
         detalhesDoProduto.addActionListener(compraproduto);
         voltar.addActionListener(compraproduto);
+        
     }
     // MÉTODO PARA INSTRUIR AS AÇÕES
     public void actionPerformed(ActionEvent e) {  	

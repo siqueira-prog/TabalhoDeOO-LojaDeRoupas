@@ -2,8 +2,8 @@ package view;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
-import java.util.Random;
 import controller.Data_control;
+import controller.Product_control;
 public class CadastroProduto implements ActionListener {
 	// DATABASE 
 	static Data_control database = new Data_control();
@@ -197,6 +197,7 @@ public class CadastroProduto implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         Object src = e.getSource();
         if (src == cadastrar) {
+        	/*
         	database.getDatabase_camiseta().add(String.valueOf(new Random().nextInt(10000)));
         	database.getDatabase_camiseta().add(fieldNome.getText());
         	database.getDatabase_camiseta().add(fieldCor.getText());
@@ -208,6 +209,19 @@ public class CadastroProduto implements ActionListener {
         	database.getDatabase_camiseta().add(fieldEstoque.getText());
         	database.getDatabase_camiseta().add(fieldDescricao.getText());
         	database.getDatabase_camiseta().add(fieldCategoria.getText());
+        	*/
+        	database.setDatabase_camiseta(Product_control.cadastrar_produto(
+        			database.getDatabase_camiseta(),
+        			fieldNome,
+        			fieldCor,
+        			fieldTamanho,
+        			fieldComp, 
+        			fieldTipo,
+        			fieldPrecoVenda,
+        			fieldPrecoFabrica,
+        			fieldEstoque,
+        			fieldDescricao, 
+        			fieldCategoria));
         	new MenuAdmin(index, database).menuAdmin(index, database);
         	janela.dispose();
         }

@@ -2,6 +2,8 @@ package view;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
+
+import controller.Adm_control;
 import controller.Data_control;
 public class EditarPerfilAdm implements ActionListener {
 	// DATABASE 
@@ -48,26 +50,31 @@ public class EditarPerfilAdm implements ActionListener {
         fieldCPF.setBounds(235, 190, 250, 50);
         labelCPF.setFont(new Font("Algerian", Font.BOLD, 20));
         fieldCPF.setFont(new Font("Kristen ITC", Font.BOLD, 20));
+        fieldCPF.setForeground(new Color(212,175,55));
         // NOME
         labelNome.setBounds(255, 240, 250, 50);
         fieldNome.setBounds(235, 280, 250, 50);
         labelNome.setFont(new Font("Algerian", Font.BOLD, 20));
         fieldNome.setFont(new Font("Kristen ITC", Font.BOLD, 20));
+        fieldNome.setForeground(new Color(212,175,55));
         // EMAIL
         labelEmail.setBounds(255, 330, 250, 50);
         fieldEmail.setBounds(235, 370, 250, 50);
         labelEmail.setFont(new Font("Algerian", Font.BOLD, 20));
         fieldEmail.setFont(new Font("Kristen ITC", Font.BOLD, 20));
+        fieldEmail.setForeground(new Color(212,175,55));
         // SENHA
         labelSenha.setBounds(255, 420, 250, 50);
         senha.setBounds(235, 460, 250, 50);
         labelSenha.setFont(new Font("Algerian", Font.BOLD, 20));
         senha.setFont(new Font("Kristen ITC", Font.BOLD, 20));
+        senha.setForeground(new Color(212,175,55));
         // CONFIRMAR SENHA
         labelConfirmSenha.setBounds(255, 510, 250, 50);
         confirmaSenha.setBounds(235, 550, 250, 50);
         labelConfirmSenha.setFont(new Font("Algerian", Font.BOLD, 20));
-        confirmaSenha.setFont(new Font("Kristen ITC", Font.BOLD, 20));       
+        confirmaSenha.setFont(new Font("Kristen ITC", Font.BOLD, 20));    
+        confirmaSenha.setForeground(new Color(212,175,55));
         // BOTOES
         // SALVAR
         salvar.setBounds(50, 640, 250, 50);
@@ -125,20 +132,13 @@ public class EditarPerfilAdm implements ActionListener {
     // ORIENTAÇÃO DAS AÇÕES 
     public void actionPerformed(ActionEvent e) {
         Object src = e.getSource();
-        char[] senhaChar  = senha.getPassword();
-        String senhaString = String.valueOf(senhaChar);
         if (src == salvar) {
-        	database.getDatabase_adm().remove(index-2);
-        	database.getDatabase_adm().remove(index-2);
-        	database.getDatabase_adm().remove(index-2);
-        	database.getDatabase_adm().remove(index-2);
-        	database.getDatabase_adm().remove(index-2);
-        	database.getDatabase_adm().remove(index-2);
-        	database.getDatabase_adm().add(fieldCPF.getText());
-        	database.getDatabase_adm().add(fieldNome.getText());
-        	database.getDatabase_adm().add(fieldEmail.getText());
-        	database.getDatabase_adm().add(senhaString);
-        	database.getDatabase_adm().add("0");
+        	database.setDatabase_adm(Adm_control.editar_adm(index,
+        			database.getDatabase_adm(),
+        			fieldCPF,
+        			fieldNome,
+        			fieldEmail,
+        			senha));
         	int index = database.getDatabase_adm().indexOf(fieldEmail.getText());
         	new MenuAdmin(index, database).menuAdmin(index, database);
         	janela.dispose();

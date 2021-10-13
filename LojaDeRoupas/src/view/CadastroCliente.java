@@ -2,6 +2,7 @@ package view;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
+import controller.Client_control;
 import controller.Data_control;
 public class CadastroCliente implements ActionListener {
 	// DATABASE 
@@ -285,32 +286,34 @@ public class CadastroCliente implements ActionListener {
     // MÉTODO PARA INSTRUIR AS AÇÕES
     public void actionPerformed(ActionEvent e) {
         Object src = e.getSource();
-        char[] senhaChar  = senha.getPassword();
-        String senhaString = String.valueOf(senhaChar);
         if (src == cadastrar) {
-            	database.getDatabase_client().add(fieldCPF.getText());
-            	database.getDatabase_client().add(fieldNome.getText());
-            	database.getDatabase_client().add(fieldEmail.getText());
-            	database.getDatabase_client().add(senhaString);
-            	database.getDatabase_client().add(fieldDDD.getText()+fieldTele.getText());
-            	database.getDatabase_client().add(fieldCep.getText());
-            	database.getDatabase_client().add(fieldLogradouro.getText());
-            	database.getDatabase_client().add(fieldNumeroEnd.getText());
-            	database.getDatabase_client().add(fieldBairro.getText());
-            	database.getDatabase_client().add(fieldCidade.getText());
-            	database.getDatabase_client().add(fieldEstado.getText());
-            	database.getDatabase_client().add(fieldBand.getText());
-            	database.getDatabase_client().add(fieldNumCart.getText());
-            	database.getDatabase_client().add(fieldCodSeg.getText());
-            	database.getDatabase_client().add(fieldDataNasc.getText());
-            	database.getDatabase_client().add(fieldMesVenc.getText());
-            	database.getDatabase_client().add(fieldAnoVenc.getText());
-            	database.getDatabase_client().add("1");
-            	int index = database.getDatabase_client().indexOf(fieldEmail.getText());
+            	  database.setDatabase_client(
+            			Client_control.cadastrar_cliente(
+              			database.getDatabase_client(),
+              			fieldCPF,
+              			fieldNome,
+              			fieldEmail,
+              			senha,
+              			fieldDDD,
+              			fieldTele,
+              			fieldCep,
+              			fieldLogradouro,
+              			fieldNumeroEnd,
+              			fieldBairro,
+              			fieldCidade,
+              			fieldEstado,
+              			fieldBand,
+              			fieldNumCart,
+              			fieldCodSeg,
+              			fieldDataNasc,
+              			fieldMesVenc,
+              			fieldAnoVenc));
+        		int index = database.getDatabase_client().indexOf(fieldEmail.getText());
                 System.out.println("INDEX : "+index);
             	System.out.println("database após a adição dos itens: "+database.getDatabase_client());
             	new MenuCliente(index,database).menu(index,database);
             	janela.dispose();
+        	
         	}
         if (src == cancelar) {
         	new	Home().home();
