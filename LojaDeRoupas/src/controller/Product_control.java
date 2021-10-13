@@ -7,7 +7,7 @@ public class Product_control {
 	private static Data_control database = new Data_control();
 	static ArrayList<String> database_products = database.getDatabase_camiseta();
 	//T-SHIRTS NAMES
-	public static ArrayList<String> nomeCamisetas(){
+	public static ArrayList<String> nomeCamisetas(ArrayList<String> database_products){
 		ArrayList<String> nomes_camisetas = new ArrayList<String>() ;
 		for (int i = 1; i<database_products.size()-1; i = i+11){
 			nomes_camisetas.add(database_products.get(i));
@@ -16,7 +16,7 @@ public class Product_control {
 	}
 	//MAIN
 	public static void main (String[] args) {
-		System.out.println(nomeCamisetas());
+		System.out.println(nomeCamisetas(database_products));
 	}
 	//CADASTRAR PRODUTO
 	public static ArrayList<String> cadastrar_produto(

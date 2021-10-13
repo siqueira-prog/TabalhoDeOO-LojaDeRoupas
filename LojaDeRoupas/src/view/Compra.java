@@ -10,14 +10,14 @@ import controller.Product_control;
 //import controller.ControleCompra;
 public class Compra implements ActionListener {
 	// DATABASE 
-	static Data_control database = new Data_control();
+	private static Data_control database = new Data_control();
 	// EMAIL POSITION - INPUT AT LOGIN CLIENT 
     static int index;
     // NOME DA CAMISETA ESCOLHIDA
     static String camiseta_escolhida;
     // CARREGANDO AS INFORMAÇÕES PARA COLOCAR NA JLIST
-    private ArrayList<String> nomeCamisetas_arraylist = Product_control.nomeCamisetas();
-    private String[] lista = nomeCamisetas_arraylist.toArray(new String [nomeCamisetas_arraylist.size()]); 
+    private static ArrayList<String> nomeCamisetas_arraylist = Product_control.nomeCamisetas(database.getDatabase_camiseta());
+    private static String[] lista = nomeCamisetas_arraylist.toArray(new String [nomeCamisetas_arraylist.size()]); 
     // CRIANDO A JLIST E ADICIONADO AS INFORMAÇÕES
     JList<String> listprodutos = new JList<String>(lista);
     // CENTRALIZANDO OS ELEMENTOS DA JLIST
